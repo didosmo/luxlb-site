@@ -17,7 +17,7 @@
     <nav id="main-nav" class="scrolled">
         <div class="nav-container">
             <div class="logo">
-                <h2 onclick="window.location.href='../index.html'" style="cursor: pointer;">LUX</h2>
+                <img src="../assets/logo.png" alt="LUX" onclick="window.location.href='../index.html'" style="cursor:pointer;" />
             </div>
             <div class="nav-right">
                 <div class="nav-links">
@@ -57,11 +57,6 @@
                         </div>
                     </div>
                     <a href="../contact.html" data-i18n="nav.contact">Kontakt</a>
-                </div>
-                <div class="search-container">
-                    <input type="text" id="search-input" placeholder="Sök..."
-                        data-i18n-placeholder="search.placeholder">
-                    <div id="search-results" class="search-results-dropdown"></div>
                 </div>
                 <div class="lang-switcher">
                     <button class="lang-btn" data-lang="sv">SV</button>
@@ -123,60 +118,31 @@
         </div>
     </section>
 
-    <footer>
+        <footer>
         <div class="container">
-            <div class="footer-grid">
-                <!-- Column 1 - Brand -->
-                <div class="footer-col">
-                    <h2 style="letter-spacing: 0.3em; cursor: pointer; margin-bottom: 20px; font-size: 24px;"
-                        onclick="window.location.href='../index.html'">LUX</h2>
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <img src="../assets/logo.png" alt="LUX" onclick="window.location.href='../index.html'" style="cursor:pointer;" />
                     <p class="footer-tagline" data-i18n="footer.tagline">Quiet luxury. True guidance. Real Italy.</p>
                 </div>
-
-                <!-- Column 2 - Explore -->
-                <div class="footer-col">
-                    <h4 class="footer-col-title" data-i18n="footer.explore_title">Explore</h4>
-                    <ul class="footer-links">
-                        <li><a href="../properties.html" data-i18n="nav.properties">Properties</a></li>
-                        <li><a href="../region/marche.html" data-i18n="nav.region">The Region</a></li>
-                        <li><a href="index.html" data-i18n="nav.process">The Process</a></li>
-                        <li><a href="../about/index.html" data-i18n="nav.about">About</a></li>
-                        <li><a href="../contact.html" data-i18n="nav.contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3 - Legal -->
-                <div class="footer-col">
-                    <h4 class="footer-col-title" data-i18n="footer.legal_title">Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="#" data-i18n="footer.legal_info">Legal Information</a></li>
-                        <li><a href="#" data-i18n="footer.privacy">Privacy Policy</a></li>
-                        <li><a href="#" data-i18n="footer.cookies">Cookie Policy</a></li>
-                        <li><a href="#" data-i18n="footer.terms">Terms</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4 - Contact -->
-                <div class="footer-col">
-                    <h4 class="footer-col-title" data-i18n="footer.contact_title">Contact</h4>
-                    <div class="footer-contact-info">
-                        <p><a href="mailto:info@luxlb.com"
-                                style="color: inherit; text-decoration: none;">info@luxlb.com</a></p>
+                <div class="footer-cols">
+                    <div class="footer-col">
+                        <h4 class="footer-col-title" data-i18n="footer.contact_title">Contact</h4>
+                        <a href="mailto:info@luxlb.com">info@luxlb.com</a>
                         <p>+46 (0) 70 123 45 67</p>
-                        <p style="margin-top: 15px;"><strong data-i18n="footer.office_se">Sweden</strong><br><span
-                                data-i18n="footer.stockholm">Stockholm</span>
-                        </p>
-                        <p style="margin-top: 10px;"><strong data-i18n="footer.office_it">Italy</strong><br><span
-                                data-i18n="footer.marche">Marche</span></p>
                     </div>
-                    <div class="footer-social-icons">
-                        <a href="https://instagram.com/lux.residency" target="_blank"
-                            data-i18n="nav.instagram">Instagram</a>
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Locations</h4>
+                        <p><span data-i18n="footer.office_se">Sweden</span> — <span data-i18n="footer.stockholm">Stockholm</span></p>
+                        <p><span data-i18n="footer.office_it">Italy</span> — <span data-i18n="footer.marche">Marche</span></p>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Follow</h4>
+                        <a href="https://instagram.com/lux.residency" target="_blank" data-i18n="nav.instagram">Instagram</a>
                         <a href="#" data-i18n="nav.linkedin">LinkedIn</a>
                     </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <p data-i18n="footer.rights">© 2026 LUX ITALIA. ALL RIGHTS RESERVED.</p>
                 <p data-i18n="footer.authenticity">AUTHENTICITY IN EVERY DETAIL.</p>

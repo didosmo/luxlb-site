@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUX Italia - Quiet luxury. True guidance. Real Italy.</title>
+    <title>LUX Italia — Quiet luxury. True guidance. Real Italy.</title>
     <meta name="description"
-        content="LUX offers personal selection and guidance to homes in Italy’s most authentic regions.">
+        content="LUX offers personal selection and guidance to homes in Italy's most authentic regions. Boutique real estate curation in Marche.">
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,49 +19,48 @@
     <nav id="main-nav">
         <div class="nav-container">
             <div class="logo">
-                <img src="assets/logo.png" alt="LUX" onclick="window.location.href='index.html'" style="cursor:pointer;" />
+                <img src="assets/logo.png" alt="LUX" onclick="window.location.href='index.html'"
+                    style="cursor:pointer;" />
             </div>
-
             <div class="nav-right">
                 <div class="nav-links">
                     <div class="nav-item">
-                        <a data-i18n="nav.properties">Fastigheter</a>
+                        <a data-i18n="nav.properties">Properties</a>
                         <div class="dropdown-menu">
-                            <a href="properties.html?type=luxury" data-i18n="nav.luxury_homes">Lyxhem</a>
-                            <a href="properties.html?type=prestige" data-i18n="nav.prestige_homes">Prestigehem</a>
-                            <a href="properties.html?type=renovation"
-                                data-i18n="nav.renovation_opps">Renoveringsobjekt</a>
-                            <a href="properties.html" data-i18n="nav.all_properties">Alla fastigheter</a>
+                            <a href="properties.html?type=luxury" data-i18n="nav.luxury_homes">Luxury Homes</a>
+                            <a href="properties.html?type=prestige" data-i18n="nav.prestige_homes">Prestige Homes</a>
+                            <a href="properties.html?type=renovation" data-i18n="nav.renovation_opps">Renovation</a>
+                            <a href="properties.html" data-i18n="nav.all_properties">All Properties</a>
                         </div>
                     </div>
                     <div class="nav-item">
-                        <a data-i18n="nav.region">Regionen</a>
+                        <a data-i18n="nav.region">Region</a>
                         <div class="dropdown-menu">
-                            <a href="region/marche.html" data-i18n="nav.why_marche">Varför Marche</a>
-                            <a href="region/lifestyle.html" data-i18n="nav.lifestyle">Livsstil</a>
-                            <a href="region/market-insights.html" data-i18n="nav.market_insights">Marknadsinsikter</a>
-                            <a href="region/future-regions.html" data-i18n="nav.future_regions">Kommande regioner</a>
+                            <a href="region/marche.html" data-i18n="nav.why_marche">Why Marche</a>
+                            <a href="region/lifestyle.html" data-i18n="nav.lifestyle">Lifestyle</a>
+                            <a href="region/market-insights.html" data-i18n="nav.market_insights">Market Insights</a>
+                            <a href="region/future-regions.html" data-i18n="nav.future_regions">Future Regions</a>
                         </div>
                     </div>
                     <div class="nav-item">
-                        <a data-i18n="nav.process">Processen</a>
+                        <a data-i18n="nav.process">Process</a>
                         <div class="dropdown-menu">
-                            <a href="process/index.html" data-i18n="nav.the_process">Processen</a>
-                            <a href="process/services.html" data-i18n="nav.services">Tjänster</a>
-                            <a href="process/tours.html" data-i18n="nav.tours">Upptäcktsresor</a>
+                            <a href="process/index.html" data-i18n="nav.the_process">The Process</a>
+                            <a href="process/services.html" data-i18n="nav.services">Services</a>
+                            <a href="process/tours.html" data-i18n="nav.tours">Discovery Tours</a>
                         </div>
                     </div>
                     <div class="nav-item">
-                        <a data-i18n="nav.about">Om oss</a>
+                        <a data-i18n="nav.about">About</a>
                         <div class="dropdown-menu">
-                            <a href="about/index.html" data-i18n="nav.about_us">Om LUX</a>
-                            <a href="about/concept.html" data-i18n="nav.concept">Konceptet</a>
+                            <a href="about/index.html" data-i18n="nav.about_us">About LUX</a>
+                            <a href="about/concept.html" data-i18n="nav.concept">The Concept</a>
                         </div>
                     </div>
-                    <a href="contact.html" data-i18n="nav.contact">Kontakt</a>
+                    <a href="contact.html" data-i18n="nav.contact">Contact</a>
                 </div>
                 <div class="search-container">
-                    <input type="text" id="search-input" placeholder="Sök..."
+                    <input type="text" id="search-input" placeholder="Search…"
                         data-i18n-placeholder="search.placeholder">
                     <div id="search-results" class="search-results-dropdown"></div>
                 </div>
@@ -71,7 +70,6 @@
                     <button class="lang-btn" data-lang="it">IT</button>
                     <button class="lang-btn" data-lang="ar">AR</button>
                 </div>
-                <!-- Burger Icon -->
                 <div class="burger-menu" id="burger-trigger">
                     <span></span>
                     <span></span>
@@ -80,19 +78,19 @@
         </div>
     </nav>
 
-    <!-- Navigation Drawer -->
+    <!-- Mobile Drawer -->
     <div class="nav-drawer" id="nav-drawer">
         <div class="drawer-close" id="drawer-close">&times;</div>
         <div class="drawer-content">
             <div class="drawer-links">
-                <a href="properties.html" data-i18n="nav.properties">Fastigheter</a>
-                <a href="region/marche.html" data-i18n="nav.region">Regionen</a>
-                <a href="process/index.html" data-i18n="nav.process">Processen</a>
-                <a href="about/index.html" data-i18n="nav.about">Om oss</a>
-                <a href="contact.html" data-i18n="nav.contact">Kontakt</a>
+                <a href="properties.html" data-i18n="nav.properties">Properties</a>
+                <a href="region/marche.html" data-i18n="nav.region">Region</a>
+                <a href="process/index.html" data-i18n="nav.process">Process</a>
+                <a href="about/index.html" data-i18n="nav.about">About</a>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
             </div>
             <div class="drawer-footer">
-                <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+                <div class="drawer-footer-links">
                     <a href="https://instagram.com/lux.residency" target="_blank" class="drawer-footer-social-link"
                         data-i18n="nav.instagram">Instagram</a>
                     <a href="#" class="drawer-footer-social-link" data-i18n="nav.linkedin">LinkedIn</a>
@@ -105,13 +103,12 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="hero">
+        <section id="home" class="hero visible">
             <div class="hero-content">
-                <span class="text-uppercase" data-i18n="hero.subtitle"
-                    style="color: rgba(255,255,255,0.7); font-size: 11px; letter-spacing: 0.25em;">CURERADE
-                    HEM I DET AUTENTISKA ITALIEN</span>
+                <span class="text-uppercase" style="color: rgba(255,255,255,0.65);" data-i18n="hero.subtitle">Curated
+                    homes in authentic Italy</span>
                 <h1 data-i18n="hero.title">Quiet luxury. True guidance. Real Italy.</h1>
-                <a href="about/concept.html" class="btn" data-i18n="hero.cta">BÖRJA DIN RESA</a>
+                <a href="about/concept.html" class="btn" data-i18n="hero.cta">Begin Your Journey</a>
             </div>
         </section>
 
@@ -119,19 +116,20 @@
         <section id="opportunity">
             <div class="container">
                 <div class="text-center max-900 mb-80">
-                    <span class="text-uppercase text-terracotta" data-i18n="opportunity.label">MÖJLIGHETEN</span>
-                    <h2 data-i18n="opportunity.title">Där autenticitet möter möjligheter.</h2>
+                    <span class="text-uppercase text-accent" data-i18n="opportunity.label">The Opportunity</span>
+                    <h2 data-i18n="opportunity.title">Where authenticity meets opportunity.</h2>
                 </div>
                 <div id="opportunity-list" class="max-700">
                     <!-- Populated by JS -->
                 </div>
                 <p id="opportunity-footer" class="text-center"
-                    style="margin-top: 60px; font-style: italic; font-family: var(--font-serif);"
+                    style="margin-top: var(--sp-xl); font-style: italic; font-family: var(--font-serif); color: var(--c-secondary);"
                     data-i18n="opportunity.footer"></p>
             </div>
         </section>
     </main>
 
+    <!-- Footer CTA -->
     <section class="footer-cta">
         <div class="container">
             <h2 data-i18n="footer.cta_title">Planning your move to Italy?</h2>
@@ -141,58 +139,33 @@
 
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <!-- Column 1 - Brand -->
-                <div class="footer-col">
-                    <h2 style="letter-spacing: 0.3em; cursor: pointer; margin-bottom: 20px; font-size: 24px;"
-                        onclick="window.location.href='index.html'">LUX</h2>
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="LUX" onclick="window.location.href='index.html'"
+                        style="cursor:pointer;" />
                     <p class="footer-tagline" data-i18n="footer.tagline">Quiet luxury. True guidance. Real Italy.</p>
                 </div>
-
-                <!-- Column 2 - Explore -->
-                <div class="footer-col">
-                    <h4 class="footer-col-title" data-i18n="footer.explore_title">Explore</h4>
-                    <ul class="footer-links">
-                        <li><a href="properties.html" data-i18n="nav.properties">Properties</a></li>
-                        <li><a href="region/marche.html" data-i18n="nav.region">The Region</a></li>
-                        <li><a href="process/index.html" data-i18n="nav.process">The Process</a></li>
-                        <li><a href="about/index.html" data-i18n="nav.about">About</a></li>
-                        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3 - Legal -->
-                <div class="footer-col">
-                    <h4 class="footer-col-title" data-i18n="footer.legal_title">Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="#" data-i18n="footer.legal_info">Legal Information</a></li>
-                        <li><a href="#" data-i18n="footer.privacy">Privacy Policy</a></li>
-                        <li><a href="#" data-i18n="footer.cookies">Cookie Policy</a></li>
-                        <li><a href="#" data-i18n="footer.terms">Terms</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4 - Contact -->
-                <div class="footer-col">
-                    <h4 class="footer-col-title" data-i18n="footer.contact_title">Contact</h4>
-                    <div class="footer-contact-info">
-                        <p><a href="mailto:info@luxlb.com"
-                                style="color: inherit; text-decoration: none;">info@luxlb.com</a></p>
+                <div class="footer-cols">
+                    <div class="footer-col">
+                        <h4 class="footer-col-title" data-i18n="footer.contact_title">Contact</h4>
+                        <a href="mailto:info@luxlb.com">info@luxlb.com</a>
                         <p>+46 (0) 70 123 45 67</p>
-                        <p style="margin-top: 15px;"><strong data-i18n="footer.office_se">Sweden</strong><br><span
-                                data-i18n="footer.stockholm">Stockholm</span>
-                        </p>
-                        <p style="margin-top: 10px;"><strong data-i18n="footer.office_it">Italy</strong><br><span
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Locations</h4>
+                        <p><span data-i18n="footer.office_se">Sweden</span> — <span
+                                data-i18n="footer.stockholm">Stockholm</span></p>
+                        <p><span data-i18n="footer.office_it">Italy</span> — <span
                                 data-i18n="footer.marche">Marche</span></p>
                     </div>
-                    <div class="footer-social-icons">
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Follow</h4>
                         <a href="https://instagram.com/lux.residency" target="_blank"
                             data-i18n="nav.instagram">Instagram</a>
                         <a href="#" data-i18n="nav.linkedin">LinkedIn</a>
                     </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <p data-i18n="footer.rights">© 2026 LUX ITALIA. ALL RIGHTS RESERVED.</p>
                 <p data-i18n="footer.authenticity">AUTHENTICITY IN EVERY DETAIL.</p>
