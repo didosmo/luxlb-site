@@ -9,16 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <nav id="main-nav" class="scrolled">
         <div class="nav-container">
-            <div class="logo">
-                <img src="assets/logo.png" alt="LUX" onclick="window.location.href='index.html'" style="cursor:pointer;" />
-            </div>
+            <a href="index.html" class="brand-logo">LUX<span class="logo-dot">.</span></a>
             <div class="nav-right">
                 <div class="nav-links">
                     <div class="nav-item">
@@ -115,11 +113,35 @@
                             </div>
                         </div>
                     </div>
-                    <div class="contact-form-box">
-                        <span class="text-uppercase mb-30" data-i18n="contact.form_cta">ÖPPNA FÖRFRÅGAN</span>
-                        <a href="https://form.jotform.com/250925010081141" target="_blank" class="btn w-100"
-                            data-i18n="contact.form_cta">OPEN INQUIRY FORM</a>
-                        <p class="mt-30 text-muted small">Powered by Jotform</p>
+                    <div class="custom-form-container">
+                        <form id="contact-form" class="custom-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" data-i18n="contact.first_name">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" data-i18n="contact.last_name">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-i18n="contact.email_label">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" data-i18n="contact.phone">Phone (optional)</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-i18n="contact.message">Message</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <span data-i18n="contact.submit">Submit Inquiry</span>
+                                <span class="btn-arrow">→</span>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -133,11 +155,11 @@
         </div>
     </section>
 
-        <footer>
+    <footer>
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-brand">
-                    <img src="assets/logo.png" alt="LUX" onclick="window.location.href='index.html'" style="cursor:pointer;" />
+                    <a href="index.html" class="footer-brand-logo">LUX<span class="logo-dot">.</span></a>
                     <p class="footer-tagline" data-i18n="footer.tagline">Quiet luxury. True guidance. Real Italy.</p>
                 </div>
                 <div class="footer-cols">
@@ -148,12 +170,15 @@
                     </div>
                     <div class="footer-col">
                         <h4 class="footer-col-title">Locations</h4>
-                        <p><span data-i18n="footer.office_se">Sweden</span> — <span data-i18n="footer.stockholm">Stockholm</span></p>
-                        <p><span data-i18n="footer.office_it">Italy</span> — <span data-i18n="footer.marche">Marche</span></p>
+                        <p><span data-i18n="footer.office_se">Sweden</span> — <span
+                                data-i18n="footer.stockholm">Stockholm</span></p>
+                        <p><span data-i18n="footer.office_it">Italy</span> — <span
+                                data-i18n="footer.marche">Marche</span></p>
                     </div>
                     <div class="footer-col">
                         <h4 class="footer-col-title">Follow</h4>
-                        <a href="https://instagram.com/lux.residency" target="_blank" data-i18n="nav.instagram">Instagram</a>
+                        <a href="https://instagram.com/lux.residency" target="_blank"
+                            data-i18n="nav.instagram">Instagram</a>
                         <a href="#" data-i18n="nav.linkedin">LinkedIn</a>
                     </div>
                 </div>

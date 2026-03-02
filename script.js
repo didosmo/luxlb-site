@@ -259,13 +259,10 @@ function setupUI() {
     function updateNavLogo() {
         const nav = document.getElementById('main-nav');
         if (!nav) return;
-        const logoImg = nav.querySelector('.logo img');
         if (window.scrollY > 50) {
             nav.classList.add('scrolled');
-            if (logoImg) logoImg.style.filter = 'brightness(0) invert(0)';
         } else {
             nav.classList.remove('scrolled');
-            if (logoImg) logoImg.style.filter = 'brightness(0) invert(1)';
         }
     }
 

@@ -18,6 +18,7 @@
     /* Typography */
     --font-serif: "Playfair Display", serif;
     --font-sans: "Montserrat", sans-serif;
+    --font-logo: "League Spartan", sans-serif;
 
     /* Spacing scale: 8 / 16 / 24 / 40 / 60 / 80 / 120 */
     --sp-xs: 8px;
@@ -316,17 +317,32 @@ nav.scrolled {
 }
 
 /* Logo */
-.logo img {
-    height: 28px;
-    width: auto;
-    display: block;
-    cursor: pointer;
-    transition: filter 0.35s ease;
-    filter: brightness(0) invert(1);
+.brand-logo {
+    display: inline-block;
+    font-family: var(--font-logo);
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    padding-left: 20px;
+    color: var(--c-white);
+    text-decoration: none;
+    transition: color 0.4s var(--ease);
 }
 
-nav.scrolled .logo img {
-    filter: brightness(0) invert(0);
+nav.scrolled .brand-logo {
+    color: var(--c-text);
+}
+
+@media (min-width: 1025px) {
+    .brand-logo {
+        font-size: 32px;
+        padding-left: 0;
+    }
+}
+
+.logo-dot {
+    font-size: 1.1em;
+    margin-left: 0;
 }
 
 /* Nav right */
@@ -687,6 +703,7 @@ nav.scrolled .burger-menu span {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('assets/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -694,13 +711,14 @@ nav.scrolled .burger-menu span {
     text-align: center;
 }
 
-.hero::after {
-    content: '';
+.hero::before {
+    content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg,
-            rgba(30, 30, 30, 0.25) 0%,
-            rgba(30, 30, 30, 0.6) 100%);
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.35) 0%,
+            rgba(0, 0, 0, 0.25) 40%,
+            rgba(0, 0, 0, 0.15) 100%);
 }
 
 .hero-content {
@@ -711,8 +729,9 @@ nav.scrolled .burger-menu span {
 }
 
 .hero h1 {
-    color: white;
+    color: #f8f6f2;
     margin-bottom: var(--sp-lg);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
 @media (min-width: 1025px) {
@@ -919,24 +938,113 @@ nav.scrolled .burger-menu span {
 }
 
 /* Forms */
-input,
-textarea,
-select {
+.custom-form-container {
     width: 100%;
-    min-height: 48px;
-    padding: 12px 16px;
-    border: 1px solid var(--c-border);
-    border-radius: 0;
-    font-family: var(--font-sans);
-    font-size: 16px;
-    background: white;
-    color: var(--c-text);
 }
 
-input:focus,
-textarea:focus {
+.custom-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+@media (min-width: 769px) {
+    .form-row {
+        flex-direction: row;
+        gap: var(--sp-lg);
+    }
+
+    .form-row .form-group {
+        flex: 1;
+    }
+}
+
+.form-group {
+    margin-bottom: var(--sp-xl);
+    /* Generous spacing 60px */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--c-secondary);
+    margin-bottom: var(--sp-xs);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--c-border);
+    border-radius: 0;
+    padding: 12px 0;
+    font-family: var(--font-serif);
+    font-size: 18px;
+    color: var(--c-text);
+    transition: border-bottom-color 0.2s ease;
+    resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
     outline: none;
-    border-color: var(--c-accent);
+    border-bottom-color: var(--c-text);
+    /* Subtle border darkening */
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--c-muted);
+    transition: opacity 0.2s ease;
+}
+
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+    opacity: 0;
+    /* Fade placeholder on focus */
+}
+
+/* Accent Button */
+.submit-btn {
+    align-self: flex-start;
+    background: var(--c-accent);
+    color: var(--c-white);
+    border: none;
+    padding: 16px 32px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.3s ease;
+}
+
+.submit-btn .btn-arrow {
+    transition: transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: var(--c-text);
+}
+
+.submit-btn:hover .btn-arrow {
+    transform: translateX(4px);
+    /* Shift arrow on hover */
 }
 
 /* ── 10. FOOTER CTA ─────────────────────────────────────────── */
@@ -987,12 +1095,20 @@ footer {
     }
 }
 
-.footer-brand img {
-    height: 22px;
-    width: auto;
-    cursor: pointer;
-    filter: brightness(0) invert(0);
+.footer-brand-logo {
+    display: inline-block;
+    font-family: var(--font-logo);
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--c-text);
+    text-decoration: none;
     margin-bottom: var(--sp-sm);
+    transition: color 0.3s var(--ease);
+}
+
+.footer-brand-logo:hover {
+    color: var(--c-accent);
 }
 
 .footer-tagline {
