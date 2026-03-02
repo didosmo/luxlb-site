@@ -1,0 +1,538 @@
+{
+  "sv": {
+    "meta": {
+      "title": "LUX Italia - Quiet luxury. True guidance. Real Italy."
+    },
+    "nav": {
+      "home": "Hem",
+      "properties": "Fastigheter",
+      "luxury_homes": "Lyxhem",
+      "prestige_homes": "Prestigehem",
+      "renovation_opps": "Renoveringsobjekt",
+      "all_properties": "Alla fastigheter",
+      "under_construction": "Denna sida är under uppbyggnad. Här kommer vi att visa upp kurerade hem i Marche.",
+      "region": "Regionen",
+      "why_marche": "Varför Marche",
+      "lifestyle": "Livsstil",
+      "market_insights": "Marknadsinsikter",
+      "future_regions": "Kommande regioner",
+      "process": "Process",
+      "the_process": "Processen",
+      "services": "Tjänster",
+      "tours": "Upptäcktsresor",
+      "about": "Om oss",
+      "about_us": "Om LUX",
+      "concept": "Konceptet",
+      "contact": "Kontakt",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn"
+    },
+    "hero": {
+      "title": "Quiet luxury. True guidance. Real Italy.",
+      "subtitle": "CURERADE HEM I DET AUTENTISKA ITALIEN",
+      "cta": "BÖRJA DIN RESA"
+    },
+    "process": {
+      "label": "PROCESSEN",
+      "title": "Curated living. Tailored guidance.",
+      "text": "Vi erbjuder skräddarsydd hemletning i Italiens mest autentiska region — Marche. Inga publika listningar. Inga massmarknadskataloger. Varje hem väljs ut genom vårt betrodda lokala nätverk och presenteras endast när det passar din smak, livsstil och vision. Från första samtal till renovering — vi assisterar i varje steg."
+    },
+    "marche": {
+      "label": "UPPTÄCK MARCHE",
+      "title": "En region som inte behöver skrika.",
+      "text": "Marche avslöjar sig tyst — genom sina kullar, sin kustlinje, sin mat och sättet folk lever på. Ingenting är iscensatt. Ingenting är överdrivet. Bara äkta skönhet, äkta rytm, äkta Italien."
+    },
+    "opportunity": {
+      "label": "MÖJLIGHETEN",
+      "title": "Där autenticitet möter möjligheter.",
+      "list": [
+        "Varma, trygga samhällen",
+        "Enastående mat och vin",
+        "Kustlinje + landsbygd inom minuter",
+        "Fastighetspriser upp till 40% under Toscana",
+        "Ökande internationell efterfrågan"
+      ],
+      "footer": "För dem som värdesätter skönhet, avsikt och livet levt på riktiga villkor."
+    },
+    "tours": {
+      "label": "UPPTÄCKTSRESOR",
+      "title": "Se det, känn det, lev det.",
+      "text": "Följ med på en kurerad 3-dagarsresa för att utforska hem, vingårdar, hantverkare och kustliv i Marche. Vi designar varje resa personligen — skräddarsydd, balanserad, autentisk.",
+      "cta": "JOIN A DISCOVERY TOUR",
+      "presentation": "En kurerad presentation av Marche - klicka här"
+    },
+    "services": {
+      "label": "VÅRA TJÄNSTER",
+      "title": "Allt du behöver — omtänksamt hanterat.",
+      "items": [
+        {
+          "title": "Fastighetssök & förhandling",
+          "text": "Skräddarsydd sourcing, lokal insikt, transparent kommunikation."
+        },
+        {
+          "title": "Juridisk & renoveringshjälp",
+          "text": "Betrodda notarier, arkitekter och byggmästare."
+        },
+        {
+          "title": "Livsstilsintegration",
+          "text": "Hantverkare, vingårdar, designers och introduktioner till lokalsamhället."
+        }
+      ],
+      "footer": "Vi hittar inte bara ett hem åt dig — vi hjälper dig att höra hemma."
+    },
+    "about": {
+      "label": "OM LUX",
+      "title": "Tre grundare. Ett syfte.",
+      "text": "Ett svensk-italienskt samarbete format av strategi, kommunikation och djupa lokala rötter. Vårt mål är enkelt: att göra den italienska drömmen ärlig, lugn och vackert verklig."
+    },
+    "concept": {
+      "label": "KONCEPTET",
+      "title": "Quiet Luxury. True Guidance.",
+      "text": "Vårt koncept bygger på idén om 'Quiet Luxury' — att lyx inte handlar om att skrika högst, utan om kvalitet, hantverk och de meningsfulla detaljerna. Vi guidar dig genom Italien med ärlighet och personligt engagemang."
+    },
+    "contact": {
+      "label": "HÖR AV DIG",
+      "title": "Börja din resa.",
+      "text": "Redo att utforska Marche med oss? Skicka en förfrågan via vårt formulär eller kontakta oss på WhatsApp — vi svarar inom 24 timmar.",
+      "form_cta": "ÖPPNA FÖRFRÅGAN",
+      "email": "info@luxlb.com",
+      "whatsapp": "WHATSAPP",
+      "instagram": "INSTAGRAM"
+    },
+    "future_regions": {
+      "label": "KOMMANDE REGIONER",
+      "title": "Framtida regioner",
+      "text": "Selektiv expansion över Italiens mest betydelsefulla regioner.",
+      "regions": [
+        "Sicilien",
+        "Puglia",
+        "Umbrien"
+      ],
+      "soon": "Snart"
+    },
+    "search": {
+      "placeholder": "Sök...",
+      "no_results": "Inga resultat hittades för"
+    },
+    "footer": {
+      "cta_title": "Planerar du din flytt till Italien?",
+      "cta_button": "Boka ett Discovery Call",
+      "tagline": "Quiet luxury. True guidance. Real Italy.",
+      "explore_title": "UTFORSKA",
+      "legal_title": "JURIDIK",
+      "contact_title": "KONTAKT",
+      "office_se": "Sverige",
+      "office_it": "Italien",
+      "privacy": "Integritetspolicy",
+      "cookies": "Cookiepolicy",
+      "terms": "Användarvillkor",
+      "legal_info": "Juridisk information",
+      "rights": "© 2026 LUX ITALIA. ALLA RÄTTIGHETER FÖRBEHÅLLNA.",
+      "authenticity": "AUTENTICITET I VARJE DETALJ.",
+      "stockholm": "Stockholm",
+      "marche": "Marche"
+    }
+  },
+  "en": {
+    "meta": {
+      "title": "LUX Italia - Quiet luxury. True guidance. Real Italy."
+    },
+    "nav": {
+      "home": "Home",
+      "properties": "Properties",
+      "luxury_homes": "Luxury Homes",
+      "prestige_homes": "Prestige Homes",
+      "renovation_opps": "Renovation Opportunities",
+      "all_properties": "All Properties",
+      "under_construction": "This page is under construction. Here we will showcase curated homes in Marche.",
+      "region": "The Region",
+      "why_marche": "Why Marche",
+      "lifestyle": "Lifestyle",
+      "market_insights": "Market Insights",
+      "future_regions": "Future Regions",
+      "process": "Process",
+      "the_process": "The Process",
+      "services": "Services",
+      "tours": "Discovery Tours",
+      "about": "About",
+      "about_us": "About LUX",
+      "concept": "The Concept",
+      "contact": "Contact",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn"
+    },
+    "hero": {
+      "title": "Quiet luxury. True guidance. Real Italy.",
+      "subtitle": "CURATED HOMES IN AUTHENTIC ITALY",
+      "cta": "START YOUR JOURNEY"
+    },
+    "process": {
+      "label": "THE PROCESS",
+      "title": "Curated living. Tailored guidance.",
+      "text": "We offer bespoke home-finding in Italy’s most authentic region — Marche. No public listings. No mass-market catalogues. Every home is sourced through our trusted local network and presented only when it fits your taste, lifestyle and vision. From first conversation to renovation — we assist every step."
+    },
+    "marche": {
+      "label": "DISCOVER MARCHE",
+      "title": "A region that doesn't need to shout.",
+      "text": "Marche reveals itself quietly — through its hills, its coastline, its food, and the way people live. Nothing is staged. Nothing is excessive. Just real beauty, real rhythm, real Italy."
+    },
+    "opportunity": {
+      "label": "THE OPPORTUNITY",
+      "title": "Where authenticity meets opportunity.",
+      "list": [
+        "Warm, safe communities",
+        "Exceptional food and wine",
+        "Coastline + countryside within minutes",
+        "Property prices up to 40% under Tuscany",
+        "Rising international demand"
+      ],
+      "footer": "For those who value beauty, intention and life lived on real terms."
+    },
+    "tours": {
+      "label": "DISCOVERY TOURS",
+      "title": "See it, feel it, live it.",
+      "text": "Join a curated 3-day journey to explore homes, vineyards, artisans and coastal life in Marche. We design each tour personally — tailored, paced, authentic.",
+      "cta": "JOIN A DISCOVERY TOUR",
+      "presentation": "A curated presentation to Marche - click here"
+    },
+    "services": {
+      "label": "OUR SERVICES",
+      "title": "Everything you need — thoughtfully handled.",
+      "items": [
+        {
+          "title": "Property search & negotiation",
+          "text": "Tailored sourcing, local insight, transparent communication."
+        },
+        {
+          "title": "Legal & renovation assistance",
+          "text": "Trusted notaries, architects and builders."
+        },
+        {
+          "title": "Lifestyle integration",
+          "text": "Artisans, vineyards, designers and community introductions."
+        }
+      ],
+      "footer": "We don’t just find you a home — we help you belong."
+    },
+    "about": {
+      "label": "ABOUT LUX",
+      "title": "Three founders. One purpose.",
+      "text": "A Swedish–Italian collaboration shaped by strategy, communication and deep local roots. Our goal is simple: to make the Italian dream honest, calm and beautifully real."
+    },
+    "concept": {
+      "label": "THE CONCEPT",
+      "title": "Quiet Luxury. True Guidance.",
+      "text": "Our concept is built on 'Quiet Luxury' — where luxury isn't about shouting, but about quality, craftsmanship and meaningful details. We guide you through Italy with honesty and personal commitment."
+    },
+    "contact": {
+      "label": "GET IN TOUCH",
+      "title": "Start your journey.",
+      "text": "Ready to explore Marche with us? Send an inquiry via our form or connect on WhatsApp — we respond within 24 hours.",
+      "form_cta": "OPEN INQUIRY FORM",
+      "email": "info@luxlb.com",
+      "whatsapp": "WHATSAPP",
+      "instagram": "INSTAGRAM"
+    },
+    "future_regions": {
+      "label": "FUTURE REGIONS",
+      "title": "Future Regions",
+      "text": "Selective expansion across Italy’s most meaningful regions.",
+      "regions": [
+        "Sicily",
+        "Puglia",
+        "Umbria"
+      ],
+      "soon": "Soon"
+    },
+    "search": {
+      "placeholder": "Search...",
+      "no_results": "No results found for"
+    },
+    "footer": {
+      "cta_title": "Planning your move to Italy?",
+      "cta_button": "Book a Discovery Call",
+      "tagline": "Quiet luxury. True guidance. Real Italy.",
+      "explore_title": "EXPLORE",
+      "legal_title": "LEGAL",
+      "contact_title": "CONTACT",
+      "office_se": "Sweden",
+      "office_it": "Italy",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy",
+      "terms": "Terms of Use",
+      "legal_info": "Legal Information",
+      "rights": "© 2026 LUX ITALIA. ALL RIGHTS RESERVED.",
+      "authenticity": "AUTHENTICITY IN EVERY DETAIL.",
+      "stockholm": "Stockholm",
+      "marche": "Marche"
+    }
+  },
+  "it": {
+    "meta": {
+      "title": "LUX Italia - Quiet luxury. True guidance. Real Italy."
+    },
+    "nav": {
+      "home": "Home",
+      "properties": "Proprietà",
+      "luxury_homes": "Case di lusso",
+      "prestige_homes": "Case di prestigio",
+      "renovation_opps": "Opportunità di ristrutturazione",
+      "all_properties": "Tutte le proprietà",
+      "under_construction": "Questa pagina è in costruzione. Qui mostreremo case curate nelle Marche.",
+      "region": "La Regione",
+      "why_marche": "Perché le Marche",
+      "lifestyle": "Stile di vita",
+      "market_insights": "Approfondimenti sul mercato",
+      "future_regions": "Prossime regioni",
+      "process": "Processo",
+      "the_process": "Il Processo",
+      "services": "Servizi",
+      "tours": "Tour di scoperta",
+      "about": "Chi siamo",
+      "about_us": "Su LUX",
+      "concept": "Il Concetto",
+      "contact": "Contatti",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn"
+    },
+    "hero": {
+      "title": "Quiet luxury. True guidance. Real Italy.",
+      "subtitle": "CASE CURATE NELL'ITALIA AUTENTICA",
+      "cta": "INIZIA IL TUO VIAGGIO"
+    },
+    "process": {
+      "label": "IL PROCESSO",
+      "title": "Curated living. Tailored guidance.",
+      "text": "Offriamo una ricerca immobiliare su misura nella regione più autentica d'Italia: le Marche. Nessuna inserzione pubblica. Nessun catalogo di massa. Ogni casa viene selezionata attraverso la nostra fidata rete locale e presentata solo quando si adatta al tuo gusto, stile di vita e visione. Dalla prima conversazione alla ristrutturazione — ti assistiamo in ogni fase."
+    },
+    "marche": {
+      "label": "SCOPRI LE MARCHE",
+      "title": "Una regione che non ha bisogno di gridare.",
+      "text": "Le Marche si svelano silenziosamente — attraverso le colline, il litorale, il cibo e il modo in cui vive la gente. Niente è messo in scena. Niente è eccessivo. Solo vera bellezza, vero ritmo, vera Italia."
+    },
+    "opportunity": {
+      "label": "L'OPPORTUNITÀ",
+      "title": "Dove l'autenticità incontra l'opportunità.",
+      "list": [
+        "Comunità calde e sicure",
+        "Cibo e vino eccezionali",
+        "Costa + campagna in pochi minuti",
+        "Prezzi immobiliari fino al 40% inferiori alla Toscana",
+        "Crescente domanda internazionale"
+      ],
+      "footer": "Per chi apprezza la bellezza, l'intenzionalità e la vita vissuta a condizioni reali."
+    },
+    "tours": {
+      "label": "TOUR DI SCOPERTA",
+      "title": "Vedilo, sentilo, vivilo.",
+      "text": "Partecipa a un viaggio curato di 3 giorni per esplorare case, vigneti, artigiani e vita costiera nelle Marche. Progettiamo ogni tour personalmente — su misura, a un ritmo calmo, autentico.",
+      "cta": "UNISCITI A UN tour di scoperta",
+      "presentation": "Una presentazione curata delle Marche - clicca qui"
+    },
+    "services": {
+      "label": "I NOSTRI SERVIZI",
+      "title": "Tutto ciò di cui hai bisogno — gestito con cura.",
+      "items": [
+        {
+          "title": "Ricerca e negoziazione immobiliare",
+          "text": "Sourcing su misura, conoscenza locale, comunicazione trasparente."
+        },
+        {
+          "title": "Assistenza legale e ristrutturazione",
+          "text": "Notai, artigiani e costruttori di fiducia."
+        },
+        {
+          "title": "Integrazione nello stile di vita",
+          "text": "Artigiani, vigneti, designer e introduzione alla comunità locale."
+        }
+      ],
+      "footer": "Non troviamo solo una casa per te — ti aiutiamo ad appartenere."
+    },
+    "about": {
+      "label": "SU LUX",
+      "title": "Tre fondatori. Un unico scopo.",
+      "text": "Una collaborazione svedese-italiana formata da strategia, comunicazione e radici locali profonde. Il vårt mål ist semplice: rendere il sogno italiano onesto, calmo e meravigliosamente reale."
+    },
+    "concept": {
+      "label": "IL CONCETTO",
+      "title": "Quiet Luxury. True Guidance.",
+      "text": "Il nostro concetto si basa sull'idea di 'Quiet Luxury' — dove il lusso non consiste nel gridare forte, ma nella qualità, nell'artigianalità e nei dettagli significativi. Ti guidiamo attraverso l'Italia con onestà e impegno personale."
+    },
+    "contact": {
+      "label": "CONTATTACI",
+      "title": "Inizia il tuo viaggio.",
+      "text": "Pronto a esplorare le Marche con noi? Invia una richiesta tramite il nostro modulo o contattaci su WhatsApp — rispondiamo entro 24 ore.",
+      "form_cta": "APRI IL MODULO DI RICHIESTA",
+      "email": "info@luxlb.com",
+      "whatsapp": "WHATSAPP",
+      "instagram": "INSTAGRAM"
+    },
+    "future_regions": {
+      "label": "PROSSIME REGIONI",
+      "title": "Regioni Future",
+      "text": "Espansione selettiva nelle regioni più significative d'Italia.",
+      "regions": [
+        "Sicilia",
+        "Puglia",
+        "Umbria"
+      ],
+      "soon": "Presto"
+    },
+    "search": {
+      "placeholder": "Cerca...",
+      "no_results": "Nessun risultato trovato per"
+    },
+    "footer": {
+      "cta_title": "Stai pianificando il tuo trasferimento in Italia?",
+      "cta_button": "Prenota una Discovery Call",
+      "tagline": "Quiet luxury. True guidance. Real Italy.",
+      "explore_title": "ESPLORA",
+      "legal_title": "LEGALE",
+      "contact_title": "CONTATTI",
+      "office_se": "Svezia",
+      "office_it": "Italia",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy",
+      "terms": "Termini di utilizzo",
+      "legal_info": "Informazioni legali",
+      "rights": "© 2026 LUX ITALIA. TUTTI I DIRITTI RISERVATI.",
+      "authenticity": "AUTENTICITÀ IN OGNI DETTAGLIO.",
+      "stockholm": "Stoccolma",
+      "marche": "Marche"
+    }
+  },
+  "ar": {
+    "meta": {
+      "title": "LUX Italia - فخامة هادئة. إرشاد حقيقي. إيطاليا الحقيقية."
+    },
+    "nav": {
+      "home": "الرئيسية",
+      "properties": "العقارات",
+      "luxury_homes": "منازل فاخرة",
+      "prestige_homes": "منازل راقية",
+      "renovation_opps": "فرص التجديد",
+      "all_properties": "كل العقارات",
+      "under_construction": "هذه الصفحة قيد الإنشاء. سنقوم هنا بعرض منازل منتقاة في ماركي.",
+      "region": "المنطقة",
+      "why_marche": "لماذا ماركي",
+      "lifestyle": "نمط الحياة",
+      "market_insights": "رؤى السوق",
+      "future_regions": "المناطق القادمة",
+      "process": "العملية",
+      "the_process": "آلية العمل",
+      "services": "الخدمات",
+      "tours": "جولات استكشافية",
+      "about": "من نحن",
+      "about_us": "عن LUX",
+      "concept": "المفهوم",
+      "contact": "اتصل بنا",
+      "instagram": "إنستغرام",
+      "linkedin": "لينكد إن"
+    },
+    "hero": {
+      "title": "فخامة هادئة. إرشاد حقيقي. إيطاليا الواقعية.",
+      "subtitle": "منازل منتقاة في إيطاليا الأصيلة",
+      "cta": "ابدأ رحلتك"
+    },
+    "process": {
+      "label": "آلية العمل",
+      "title": "حياة منتقاة. إرشاد مخصص.",
+      "text": "نقدم خدمة البحث عن المنازل المخصصة في أكثر مناطق إيطاليا أصالة — ماركي. لا توجد قوائم عامة. لا توجد قوالب تسويقية جماعية. يتم اختيار كل منزل من خلال شبكتنا المحلية الموثوقة ويتم تقديمه فقط عندما يناسب ذوقك وأسلوب حياتك ورؤيتك. من المحادثة الأولى إلى التجديد — نحن نرافقك في كل خطوة."
+    },
+    "marche": {
+      "label": "اكتشف ماركي",
+      "title": "منطقة لا تحتاج للصراخ لتُبرز جمالها.",
+      "text": "تكشف ماركي عن نفسها بهدوء — من خلال تلالها وساحلها وطعامها وطريقة عيش الناس. لا شيء مصطنع. لا شيء مبالغ فيه. فقط جمال حقيقي، إيقاع حقيقي، إيطاليا الحقيقية."
+    },
+    "opportunity": {
+      "label": "الفرصة",
+      "title": "حيث تلتقي الأصالة بالفرص.",
+      "list": [
+        "مجتمعات دافئة وآمنة",
+        "طعام ونبيذ استثنائي",
+        "ساحل وريف في غضون دقائق",
+        "أسعار عقارات أقل بنسبة تصل إلى 40٪ عن توسكانا",
+        "طلب دولي متزايد"
+      ],
+      "footer": "لأولئك الذين يقدرون الجمال والقصد والحياة المعاشة بشروط حقيقية."
+    },
+    "tours": {
+      "label": "جولات استكشافية",
+      "title": "شاهدها، اشعر بها، عشها.",
+      "text": "انضم إلينا في رحلة منسقة لمدة 3 أيام لاستكشاف المنازل ومزارع العنب والحرفيين والحياة الساحلية في ماركي. نحن نصمم كل جولة شخصيًا — مخصصة، متوازنة، وأصيلة.",
+      "cta": "انضم إلى جولة استكشافية",
+      "presentation": "عرض منسق لماركي - اضغط هنا"
+    },
+    "services": {
+      "label": "خدماتنا",
+      "title": "كل ما تحتاجه — يتم التعامل معه بعناية.",
+      "items": [
+        {
+          "title": "البحث عن العقارات والتفاوض",
+          "text": "مصادر مخصصة، رؤية محلية، تواصل شفاف."
+        },
+        {
+          "title": "المساعدة القانونية والتجديد",
+          "text": "كتاب عدل ومهندسون وبناؤون موثوقون."
+        },
+        {
+          "title": "التكامل مع نمط الحياة",
+          "text": "حرفيون، مزارع عنب، مصممون وتعريف بالمجتمع المحلي."
+        }
+      ],
+      "footer": "نحن لا نجد لك منزلاً فحسب — بل نساعدك على الانتماء."
+    },
+    "about": {
+      "label": "عن LUX",
+      "title": "ثلاثة مؤسسين. هدف واحد.",
+      "text": "تعاون سويدي إيطالي تشكل من خلال الاستراتيجية والتواصل والجذور المحلية العميقة. هدفنا بسيط: جعل الحلم الإيطالي صادقًا وهادئًا وجميلًا بشكل واقعي."
+    },
+    "concept": {
+      "label": "المفهوم",
+      "title": "فخامة هادئة. إرشاد حقيقي.",
+      "text": "مفهومنا مبني على فكرة 'الفخامة الهادئة' — حيث لا تتعلق الفخامة بالصراخ العالي، بل بالجودة والحرفية والتفاصيل الهادفة. نحن نرشدك عبر إيطاليا بصدق والتزام شخصي."
+    },
+    "contact": {
+      "label": "تواصل معنا",
+      "title": "ابدأ رحلتك.",
+      "text": "هل أنت مستعد لاستكشاف ماركي معنا؟ أرسل استفسارًا عبر نموذجنا أو تواصل معنا عبر واتساب — نرد في غضون 24 ساعة.",
+      "form_cta": "افتح نموذج الاستفسار",
+      "email": "info@luxlb.com",
+      "whatsapp": "واتساب",
+      "instagram": "إنستغرام"
+    },
+    "future_regions": {
+      "label": "المناطق القادمة",
+      "title": "مناطق المستقبل",
+      "text": "توسع انتقائي عبر أكثر المناطق أهمية في إيطاليا.",
+      "regions": [
+        "صقلية",
+        "بوليا",
+        "أومبريا"
+      ],
+      "soon": "قريباً"
+    },
+    "search": {
+      "placeholder": "بحث...",
+      "no_results": "لم يتم العثور على نتائج لـ"
+    },
+    "footer": {
+      "cta_title": "تخطط للانتقال إلى إيطاليا؟",
+      "cta_button": "احجز مكالمة استكشافية",
+      "tagline": "فخامة هادئة. إرشاد حقيقي. إيطاليا الحقيقية.",
+      "explore_title": "استكشف",
+      "legal_title": "قانوني",
+      "contact_title": "اتصل بنا",
+      "office_se": "السويد",
+      "office_it": "إيطاليا",
+      "privacy": "سياسة الخصوصية",
+      "cookies": "سياسة ملفات الارتباط",
+      "terms": "شروط الاستخدام",
+      "legal_info": "معلومات قانونية",
+      "rights": "© 2026 LUX ITALIA. جميع الحقوق محفوظة.",
+      "authenticity": "الأصالة في كل تفصيل.",
+      "stockholm": "ستوكهولم",
+      "marche": "ماركي"
+    }
+  }
+}
