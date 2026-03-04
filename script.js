@@ -240,21 +240,22 @@ function setupDrawer() {
         });
     });
 
-    // Accordion Logic
-    const accordionBtns = drawer.querySelectorAll('.drawer-accordion-btn');
-    accordionBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    // Mobile Accordion logic
+    const triggers = drawer.querySelectorAll('.mobile-accordion-trigger');
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            const item = trigger.closest('.mobile-accordion-item');
+            const isActive = item.classList.contains('active');
 
-            // Close all other accordions
-            accordionBtns.forEach(otherBtn => {
-                if (otherBtn !== btn) {
-                    otherBtn.setAttribute('aria-expanded', 'false');
-                }
+            // Close other accordions
+            drawer.querySelectorAll('.mobile-accordion-item').forEach(otherItem => {
+                otherItem.classList.remove('active');
             });
 
-            // Toggle current
-            btn.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+            if (!isActive) {
+                item.classList.add('active');
+            }
         });
     });
 

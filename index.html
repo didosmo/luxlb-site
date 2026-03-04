@@ -18,17 +18,51 @@
 <body>
     <nav id="main-nav">
         <div class="nav-container">
-            <a href="index.html" class="brand-logo">LUX<span class="logo-dot">.</span></a>
-            <div class="nav-right">
-                <div class="nav-links">
-                    <div class="nav-item">
-                        <a data-i18n="nav.properties">Properties</a>
-                        <div class="dropdown-menu">
-                            <a href="properties.html?type=luxury" data-i18n="nav.luxury_homes">Luxury Homes</a>
-                            <a href="properties.html?type=prestige" data-i18n="nav.prestige_homes">Prestige Homes</a>
-                            <a href="properties.html?type=renovation" data-i18n="nav.renovation_opps">Renovation</a>
-                            <a href="properties.html" data-i18n="nav.all_properties">All Properties</a>
-                        </div>
+            <!-- Zone 1: Logo -->
+            <a href="index.html" class="brand-logo">LUX</a>
+
+            <!-- Zone 2: Links (Center) -->
+            <div class="nav-links-center">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <div class="nav-item">
+                    <a href="properties.html" class="nav-link" data-i18n="nav.properties">Properties</a>
+                </div>
+                <div class="nav-item">
+                    <a href="region/marche.html" class="nav-link" data-i18n="nav.region">Region</a>
+                    <div class="dropdown-menu">
+                        <a href="region/marche.html" data-i18n="nav.why_marche">Why Marche</a>
+                        <a href="region/lifestyle.html" data-i18n="nav.lifestyle">Lifestyle</a>
+                        <a href="region/future-regions.html" data-i18n="nav.future_regions">Future Regions</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="private-advisory/index.html" class="nav-link" data-i18n="nav.private_advisory">Private Advisory</a>
+                    <div class="dropdown-menu">
+                        <a href="private-advisory/index.html" data-i18n="nav.the_process">The Process</a>
+                        <a href="private-advisory/services.html" data-i18n="nav.services">Services</a>
+                    </div>
+                </div>
+                <a href="private-tours/index.html" class="nav-link" data-i18n="nav.private_tours">Private Tours</a>
+                <a href="market-intelligence/index.html" class="nav-link" data-i18n="nav.market_intelligence">Market Intelligence</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+            </div>
+
+            <!-- Zone 3: Actions (Right) -->
+            <div class="nav-actions-right">
+                <a href="contact.html" class="nav-cta" data-i18n="nav.request_intro">Private Introduction</a>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="sv">SV</button>
+                    <button class="lang-btn" data-lang="it">IT</button>
+                    <button class="lang-btn" data-lang="ar">AR</button>
+                </div>
+                <div class="burger-menu" id="burger-trigger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
                     </div>
                     <div class="nav-item">
                         <a data-i18n="nav.region">Region</a>
