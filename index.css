@@ -1469,9 +1469,14 @@ img {
         padding-top: 0;
         transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         background: transparent;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
     }
 
-    /* Backdrop gradient */
+    /* Top Scrim for Readability (NAV ONLY) */
     header nav::before,
     nav#main-nav::before {
         content: '';
@@ -1479,8 +1484,8 @@ img {
         top: 0;
         left: 0;
         width: 100%;
-        height: 140px;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+        height: 160px;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
         z-index: -1;
         pointer-events: none;
         transition: opacity 0.4s ease;
@@ -1500,11 +1505,32 @@ img {
     }
 
     .nav-container {
-        padding: 0 40px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        height: 100%;
         max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 40px;
+        gap: 40px;
     }
 
-    /* Center Zone */
+    /* Logo Styling */
+    .brand-logo {
+        font-family: var(--font-logo);
+        font-size: 32px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.4s ease;
+    }
+
+    nav.scrolled .brand-logo {
+        color: var(--c-text);
+    }
+
+    /* Center Zone: Links */
     .nav-links-center {
         display: flex;
         justify-content: center;
@@ -1513,29 +1539,20 @@ img {
 
     .nav-link {
         font-family: var(--font-sans) !important;
-        /* Ensure no serif inheritance */
         font-size: 15px !important;
         font-weight: 500 !important;
         letter-spacing: 0.04em !important;
         text-transform: none;
-        color: rgba(255, 255, 255, 0.9) !important;
+        color: rgba(255, 255, 255, 0.95) !important;
         position: relative;
         padding: 8px 0;
         transition: all 0.3s ease;
+        text-decoration: none;
     }
 
-    header nav.scrolled .nav-link,
-    nav#main-nav.scrolled .nav-link {
+    header nav.scrolled .nav-link {
         color: var(--c-text) !important;
-        opacity: 0.7;
-    }
-
-    header nav.scrolled .nav-link:hover,
-    nav#main-nav.scrolled .nav-link:hover,
-    header nav.scrolled .nav-link.active,
-    nav#main-nav.scrolled .nav-link.active {
-        opacity: 1;
-        color: var(--c-text) !important;
+        opacity: 0.8;
     }
 
     .nav-link:hover,
@@ -1544,7 +1561,13 @@ img {
         opacity: 1 !important;
     }
 
-    /* Underline Indicator */
+    header nav.scrolled .nav-link:hover,
+    header nav.scrolled .nav-link.active {
+        color: var(--c-text) !important;
+        opacity: 1;
+    }
+
+    /* Subtle Underline Indicator (Pure White over Hero) */
     .nav-link::after {
         content: '';
         position: absolute;
@@ -1553,14 +1576,12 @@ img {
         width: 100%;
         height: 1px;
         background: #ffffff;
-        /* Explicit white for hero state */
         transform: scaleX(0);
         transform-origin: right;
-        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    header nav.scrolled .nav-link::after,
-    nav#main-nav.scrolled .nav-link::after {
+    header nav.scrolled .nav-link::after {
         background: var(--c-text);
     }
 
@@ -1570,20 +1591,21 @@ img {
         transform-origin: left;
     }
 
-    /* Right Zone */
+    /* Right Zone: Actions */
     .nav-actions-right {
         display: flex;
         align-items: center;
-        gap: 24px;
+        gap: 28px;
     }
 
     /* Premium Outline CTA */
     .nav-cta {
         display: inline-flex;
         align-items: center;
-        padding: 10px 22px;
+        padding: 10px 24px;
         border-radius: 999px;
-        font-size: 13.5px;
+        font-family: var(--font-sans);
+        font-size: 14px;
         font-weight: 500;
         letter-spacing: 0.03em;
         border: 1px solid rgba(255, 255, 255, 0.4);
@@ -1598,20 +1620,50 @@ img {
         border-color: #ffffff;
     }
 
-    header nav.scrolled .nav-cta,
-    nav#main-nav.scrolled .nav-cta {
+    header nav.scrolled .nav-cta {
         border-color: rgba(0, 0, 0, 0.15);
         color: var(--c-text) !important;
     }
 
-    header nav.scrolled .nav-cta:hover,
-    nav#main-nav.scrolled .nav-cta:hover {
+    header nav.scrolled .nav-cta:hover {
         background: var(--c-text);
         color: #ffffff !important;
         border-color: var(--c-text);
     }
 
-    /* Dropdown Premium Styles */
+    /* Language Switcher */
+    .lang-switcher {
+        display: flex;
+        gap: 12px;
+    }
+
+    .lang-btn {
+        font-family: var(--font-sans);
+        font-size: 11px;
+        font-weight: 600;
+        background: none;
+        border: none;
+        color: rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+        padding: 4px;
+        transition: color 0.3s ease;
+    }
+
+    .lang-btn:hover,
+    .lang-btn.active {
+        color: #ffffff;
+    }
+
+    header nav.scrolled .lang-btn {
+        color: rgba(0, 0, 0, 0.4);
+    }
+
+    header nav.scrolled .lang-btn:hover,
+    header nav.scrolled .lang-btn.active {
+        color: var(--c-text);
+    }
+
+    /* Dropdown Premium Style */
     .nav-item {
         position: relative;
     }
@@ -1621,14 +1673,12 @@ img {
         top: 100%;
         left: 50%;
         transform: translateX(-50%) translateY(10px);
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background: #ffffff;
         border: 1px solid rgba(0, 0, 0, 0.06);
-        border-radius: 12px;
-        padding: 12px 8px;
+        border-radius: 10px;
+        padding: 12px 0;
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-        min-width: 220px;
+        min-width: 210px;
         opacity: 0;
         pointer-events: none;
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1643,11 +1693,11 @@ img {
 
     .dropdown-menu a {
         display: block;
-        padding: 10px 16px;
+        padding: 10px 24px;
+        font-family: var(--font-sans);
         font-size: 14px;
         color: var(--c-text) !important;
         text-decoration: none;
-        border-radius: 8px;
         transition: background 0.2s ease;
     }
 
