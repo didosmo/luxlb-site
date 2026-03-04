@@ -216,32 +216,29 @@ function navigateToPage(id) {
 
 function setupDrawer() {
     const burger = document.getElementById('burger-trigger');
-    const drawer = document.getElementById('nav-drawer');
-    const overlay = document.getElementById('drawer-overlay');
+    const overlay = document.getElementById('nav-overlay'); // New ID for isolated overlay
     const closeBtn = document.getElementById('drawer-close');
-    const links = document.querySelectorAll('.drawer-links a');
+    const links = document.querySelectorAll('.mobile-nav-links a');
 
-    if (!burger || !drawer || !overlay) return;
+    if (!burger || !overlay) return;
 
     function toggleDrawer() {
+        const isOpen = overlay.classList.toggle('is-open');
         burger.classList.toggle('burger-active');
-        drawer.classList.toggle('active');
-        overlay.classList.toggle('active');
-        document.body.style.overflow = drawer.classList.contains('active') ? 'hidden' : '';
+        document.body.classList.toggle('menu-open', isOpen);
     }
 
     burger.addEventListener('click', toggleDrawer);
-    overlay.addEventListener('click', toggleDrawer);
     if (closeBtn) closeBtn.addEventListener('click', toggleDrawer);
 
     links.forEach(link => {
         link.addEventListener('click', () => {
-            if (drawer.classList.contains('active')) toggleDrawer();
+            if (overlay.classList.contains('is-open')) toggleDrawer();
         });
     });
 
     // Mobile Accordion logic
-    const triggers = drawer.querySelectorAll('.mobile-accordion-trigger');
+    const triggers = overlay.querySelectorAll('.mobile-accordion-trigger');
     triggers.forEach(trigger => {
         trigger.addEventListener('click', (e) => {
             e.preventDefault();
@@ -249,7 +246,7 @@ function setupDrawer() {
             const isActive = item.classList.contains('active');
 
             // Close other accordions
-            drawer.querySelectorAll('.mobile-accordion-item').forEach(otherItem => {
+            overlay.querySelectorAll('.mobile-accordion-item').forEach(otherItem => {
                 otherItem.classList.remove('active');
             });
 
@@ -261,13 +258,13 @@ function setupDrawer() {
 
     // Simple "Drag" (Swipe) to close
     let touchStartX = 0;
-    drawer.addEventListener('touchstart', e => {
+    overlay.addEventListener('touchstart', e => {
         touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
 
-    drawer.addEventListener('touchend', e => {
+    overlay.addEventListener('touchend', e => {
         const touchEndX = e.changedTouches[0].screenX;
-        if (touchEndX > touchStartX + 50) { // Swiped right
+        if (touchEndX > touchStartX + 60) { // Swiped right
             toggleDrawer();
         }
     }, { passive: true });
