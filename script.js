@@ -240,6 +240,24 @@ function setupDrawer() {
         });
     });
 
+    // Accordion Logic
+    const accordionBtns = drawer.querySelectorAll('.drawer-accordion-btn');
+    accordionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+            // Close all other accordions
+            accordionBtns.forEach(otherBtn => {
+                if (otherBtn !== btn) {
+                    otherBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Toggle current
+            btn.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+        });
+    });
+
     // Simple "Drag" (Swipe) to close
     let touchStartX = 0;
     drawer.addEventListener('touchstart', e => {

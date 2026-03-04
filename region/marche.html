@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="../index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <nav id="main-nav" class="scrolled">
+    <nav id="main-nav">
         <div class="nav-container">
             <a href="../index.html" class="brand-logo">LUX<span class="logo-dot">.</span></a>
             <div class="nav-right">
@@ -73,9 +75,35 @@
         <div class="drawer-close" id="drawer-close">&times;</div>
         <div class="drawer-content">
             <div class="drawer-links">
-                <a href="../properties.html" data-i18n="nav.properties">Fastigheter</a>
+                <div class="drawer-accordion">
+                    <button class="drawer-accordion-btn" aria-expanded="false" aria-controls="props-submenu">
+                        <span data-i18n="nav.properties">Fastigheter</span>
+                        <span class="chevron"></span>
+                    </button>
+                    <div class="drawer-submenu" id="props-submenu">
+                        <div class="drawer-submenu-inner">
+                            <a href="../properties.html" data-i18n="nav.all_properties">Alla fastigheter</a>
+                            <a href="../properties.html?type=luxury" data-i18n="nav.luxury_homes">Lyxhem</a>
+                            <a href="../properties.html?type=prestige" data-i18n="nav.prestige_homes">Prestigehem</a>
+                            <a href="../properties.html?type=renovation"
+                                data-i18n="nav.renovation_opps">Renoveringsobjekt</a>
+                        </div>
+                    </div>
+                </div>
                 <a href="marche.html" class="active" data-i18n="nav.region">Regionen</a>
-                <a href="../process/index.html" data-i18n="nav.process">Processen</a>
+                <div class="drawer-accordion">
+                    <button class="drawer-accordion-btn" aria-expanded="false" aria-controls="proc-submenu">
+                        <span data-i18n="nav.process">Processen</span>
+                        <span class="chevron"></span>
+                    </button>
+                    <div class="drawer-submenu" id="proc-submenu">
+                        <div class="drawer-submenu-inner">
+                            <a href="../process/index.html" data-i18n="nav.the_process">Processen</a>
+                            <a href="../process/services.html" data-i18n="nav.services">Tjänster</a>
+                            <a href="../process/tours.html" data-i18n="nav.tours">Upptäcktsresor</a>
+                        </div>
+                    </div>
+                </div>
                 <a href="../about/index.html" data-i18n="nav.about">Om oss</a>
                 <a href="../contact.html" data-i18n="nav.contact">Kontakt</a>
             </div>
@@ -95,7 +123,7 @@
         <!-- Hero Section -->
         <section class="hero hero-secondary visible" style="background-image: url('../assets/hero-bg.jpg');">
             <div class="hero-content">
-                <span class="text-uppercase text-terracotta" data-i18n="marche.label">UPPTÄCK MARCHE</span>
+                <span class="kicker" data-i18n="marche.label">UPPTÄCK MARCHE</span>
                 <h1 data-i18n="marche.title">En region som inte behöver skrika.</h1>
             </div>
         </section>
@@ -122,7 +150,7 @@
         </div>
     </section>
 
-        <footer>
+    <footer>
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-brand">
@@ -137,12 +165,15 @@
                     </div>
                     <div class="footer-col">
                         <h4 class="footer-col-title">Locations</h4>
-                        <p><span data-i18n="footer.office_se">Sweden</span> — <span data-i18n="footer.stockholm">Stockholm</span></p>
-                        <p><span data-i18n="footer.office_it">Italy</span> — <span data-i18n="footer.marche">Marche</span></p>
+                        <p><span data-i18n="footer.office_se">Sweden</span> — <span
+                                data-i18n="footer.stockholm">Stockholm</span></p>
+                        <p><span data-i18n="footer.office_it">Italy</span> — <span
+                                data-i18n="footer.marche">Marche</span></p>
                     </div>
                     <div class="footer-col">
                         <h4 class="footer-col-title">Follow</h4>
-                        <a href="https://instagram.com/lux.residency" target="_blank" data-i18n="nav.instagram">Instagram</a>
+                        <a href="https://instagram.com/lux.residency" target="_blank"
+                            data-i18n="nav.instagram">Instagram</a>
                         <a href="#" data-i18n="nav.linkedin">LinkedIn</a>
                     </div>
                 </div>

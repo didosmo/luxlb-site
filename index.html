@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -78,9 +80,35 @@
         <div class="drawer-close" id="drawer-close">&times;</div>
         <div class="drawer-content">
             <div class="drawer-links">
-                <a href="properties.html" data-i18n="nav.properties">Properties</a>
+                <div class="drawer-accordion">
+                    <button class="drawer-accordion-btn" aria-expanded="false" aria-controls="props-submenu">
+                        <span data-i18n="nav.properties">Properties</span>
+                        <span class="chevron"></span>
+                    </button>
+                    <div class="drawer-submenu" id="props-submenu">
+                        <div class="drawer-submenu-inner">
+                            <a href="properties.html" data-i18n="nav.all_properties">All Properties</a>
+                            <a href="properties.html?type=luxury" data-i18n="nav.luxury_homes">Luxury Homes</a>
+                            <a href="properties.html?type=prestige" data-i18n="nav.prestige_homes">Prestige Homes</a>
+                            <a href="properties.html?type=renovation" data-i18n="nav.renovation_opps">Renovation
+                                Opportunities</a>
+                        </div>
+                    </div>
+                </div>
                 <a href="region/marche.html" data-i18n="nav.region">Region</a>
-                <a href="process/index.html" data-i18n="nav.process">Process</a>
+                <div class="drawer-accordion">
+                    <button class="drawer-accordion-btn" aria-expanded="false" aria-controls="proc-submenu">
+                        <span data-i18n="nav.process">Process</span>
+                        <span class="chevron"></span>
+                    </button>
+                    <div class="drawer-submenu" id="proc-submenu">
+                        <div class="drawer-submenu-inner">
+                            <a href="process/index.html" data-i18n="nav.the_process">The Process</a>
+                            <a href="process/services.html" data-i18n="nav.services">Services</a>
+                            <a href="process/tours.html" data-i18n="nav.tours">Discovery Tours</a>
+                        </div>
+                    </div>
+                </div>
                 <a href="about/index.html" data-i18n="nav.about">About</a>
                 <a href="contact.html" data-i18n="nav.contact">Contact</a>
             </div>
@@ -100,8 +128,7 @@
         <!-- Hero Section -->
         <section id="home" class="hero hero-primary visible" style="background-image: url('assets/hero-bg.jpg');">
             <div class="hero-content">
-                <span class="text-uppercase" style="color: rgba(255,255,255,0.65);" data-i18n="hero.subtitle">Curated
-                    homes in authentic Italy</span>
+                <span class="kicker" data-i18n="hero.subtitle">Curated homes in authentic Italy</span>
                 <h1 data-i18n="hero.title">Quiet luxury. True guidance. Real Italy.</h1>
                 <a href="about/concept.html" class="btn" data-i18n="hero.cta">Begin Your Journey</a>
             </div>
