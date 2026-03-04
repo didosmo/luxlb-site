@@ -1483,14 +1483,14 @@ img {
     }
 
     .nav-link {
-        font-size: 14.5px;
+        font-size: 15px;
         font-weight: 500;
         letter-spacing: 0.04em;
         text-transform: none;
-        color: rgba(255, 255, 255, 0.85) !important;
+        color: rgba(255, 255, 255, 0.9) !important;
         position: relative;
         padding: 8px 0;
-        transition: color 0.3s ease;
+        transition: all 0.3s ease;
     }
 
     header nav.scrolled .nav-link {
@@ -1507,6 +1507,7 @@ img {
     .nav-link:hover,
     .nav-link.active {
         color: #ffffff !important;
+        opacity: 1 !important;
     }
 
     /* Elegant underline indicator */
@@ -1622,12 +1623,16 @@ img {
 
 /* Mobile Adjustments for Accordions */
 @media (max-width: 768px) {
-    .mobile-drawer {
+
+    /* Unify class name to nav-drawer to match script.js and cleanup */
+    .nav-drawer {
         background: #ffffff;
         padding: 80px 40px 40px;
         display: flex;
         flex-direction: column;
         gap: 24px;
+        height: 100vh;
+        overflow-y: auto;
     }
 
     .mobile-nav-item,
@@ -1647,6 +1652,7 @@ img {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        cursor: pointer;
     }
 
     .mobile-accordion-content {
@@ -1660,7 +1666,8 @@ img {
     }
 
     .mobile-accordion-item.active .mobile-accordion-content {
-        max-height: 400px;
+        max-height: 500px;
+        /* Increased for more items */
         padding-top: 16px;
         padding-bottom: 8px;
     }
@@ -1670,6 +1677,7 @@ img {
         color: var(--c-text);
         opacity: 0.6;
         text-decoration: none;
+        padding: 4px 0;
     }
 
     .mobile-accordion-trigger::after {
@@ -1684,6 +1692,8 @@ img {
     }
 
     .mobile-cta-wrapper {
-        margin-top: 20px;
+        margin-top: auto;
+        /* Push to bottom */
+        padding-top: 24px;
     }
 }

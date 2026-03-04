@@ -14,8 +14,9 @@
 </head>
 
 <body>
-    <nav id="main-nav">
+            <nav id="main-nav">
         <div class="nav-container">
+            
             <!-- Zone 1: Logo -->
             <a href="../index.html" class="brand-logo">LUX</a>
 
@@ -26,10 +27,11 @@
                     <a href="../properties.html" class="nav-link" data-i18n="nav.properties">Properties</a>
                 </div>
                 <div class="nav-item">
-                    <a href="../region/marche.html" class="nav-link" data-i18n="nav.region">Region</a>
+                    <a href="../region/marche.html" class="nav-link" data-i18n="nav.region">The Region</a>
                     <div class="dropdown-menu">
                         <a href="../region/marche.html" data-i18n="nav.why_marche">Why Marche</a>
                         <a href="../region/lifestyle.html" data-i18n="nav.lifestyle">Lifestyle</a>
+                        <a href="../region/market-insights.html" data-i18n="nav.market_insights">Market Insights</a>
                         <a href="../region/future-regions.html" data-i18n="nav.future_regions">Future Regions</a>
                     </div>
                 </div>
@@ -42,6 +44,13 @@
                 </div>
                 <a href="../private-tours/index.html" class="nav-link" data-i18n="nav.private_tours">Private Tours</a>
                 <a href="../market-intelligence/index.html" class="nav-link" data-i18n="nav.market_intelligence">Market Intelligence</a>
+                <div class="nav-item">
+                    <a href="../about/index.html" class="nav-link" data-i18n="nav.about">About</a>
+                    <div class="dropdown-menu">
+                        <a href="../about/index.html" data-i18n="nav.about_us">About LUX</a>
+                        <a href="../about/concept.html" data-i18n="nav.concept">The Concept</a>
+                    </div>
+                </div>
                 <a href="../contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
             </div>
 
@@ -61,93 +70,56 @@
                 </div>
             </div>
         </div>
-                    </div>
-                    <div class="nav-item">
-                        <a data-i18n="nav.region">Regionen</a>
-                        <div class="dropdown-menu">
-                            <a href="../region/marche.html" data-i18n="nav.why_marche">Varför Marche</a>
-                            <a href="../region/lifestyle.html" data-i18n="nav.lifestyle">Livsstil</a>
-                            <a href="../region/market-insights.html"
-                                data-i18n="nav.market_insights">Marknadsinsikter</a>
-                            <a href="../region/future-regions.html" data-i18n="nav.future_regions">Kommande regioner</a>
-                        </div>
-                    </div>
-                    <div class="nav-item">
-                        <a data-i18n="nav.process">Processen</a>
-                        <div class="dropdown-menu">
-                            <a href="../process/index.html" data-i18n="nav.the_process">Processen</a>
-                            <a href="../process/services.html" data-i18n="nav.services">Tjänster</a>
-                            <a href="../process/tours.html" data-i18n="nav.tours">Upptäcktsresor</a>
-                        </div>
-                    </div>
-                    <div class="nav-item">
-                        <a class="active" data-i18n="nav.about">Om oss</a>
-                        <div class="dropdown-menu">
-                            <a href="index.html" data-i18n="nav.about_us">Om LUX</a>
-                            <a href="concept.html" data-i18n="nav.concept">Konceptet</a>
-                        </div>
-                    </div>
-                    <a href="../contact.html" data-i18n="nav.contact">Kontakt</a>
-                </div>
-                <div class="lang-switcher">
-                    <button class="lang-btn" data-lang="sv">SV</button>
-                    <button class="lang-btn" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="it">IT</button>
-                    <button class="lang-btn" data-lang="ar">AR</button>
-                </div>
-                <!-- Burger Icon -->
-                <div class="burger-menu" id="burger-trigger">
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
     </nav>
-    <!-- Navigation Drawer -->
+
+    <!-- Mobile Drawer -->
+    
     <div class="nav-drawer" id="nav-drawer">
         <div class="drawer-close" id="drawer-close">&times;</div>
-        <div class="drawer-content">
-            <div class="drawer-links">
-                <div class="drawer-accordion">
-                    <button class="drawer-accordion-btn" aria-expanded="false" aria-controls="props-submenu">
-                        <span data-i18n="nav.properties">Fastigheter</span>
-                        <span class="chevron"></span>
-                    </button>
-                    <div class="drawer-submenu" id="props-submenu">
-                        <div class="drawer-submenu-inner">
-                            <a href="../properties.html" data-i18n="nav.all_properties">Alla fastigheter</a>
-                            <a href="../properties.html?type=luxury" data-i18n="nav.luxury_homes">Lyxhem</a>
-                            <a href="../properties.html?type=prestige" data-i18n="nav.prestige_homes">Prestigehem</a>
-                            <a href="../properties.html?type=renovation"
-                                data-i18n="nav.renovation_opps">Renoveringsobjekt</a>
-                        </div>
-                    </div>
+        <div class="mobile-nav-links">
+            <a href="../index.html" class="mobile-nav-item" data-i18n="nav.home">Home</a>
+            <a href="../properties.html" class="mobile-nav-item" data-i18n="nav.properties">Properties</a>
+            
+            <div class="mobile-accordion-item">
+                <button class="mobile-accordion-trigger">
+                    <span data-i18n="nav.region">The Region</span>
+                </button>
+                <div class="mobile-accordion-content">
+                    <a href="../region/marche.html" class="mobile-sub-link" data-i18n="nav.why_marche">Why Marche</a>
+                    <a href="../region/lifestyle.html" class="mobile-sub-link" data-i18n="nav.lifestyle">Lifestyle</a>
+                    <a href="../region/market-insights.html" class="mobile-sub-link" data-i18n="nav.market_insights">Market Insights</a>
+                    <a href="../region/future-regions.html" class="mobile-sub-link" data-i18n="nav.future_regions">Future Regions</a>
                 </div>
-                <a href="../region/marche.html" data-i18n="nav.region">Regionen</a>
-                <div class="drawer-accordion">
-                    <button class="drawer-accordion-btn" aria-expanded="false" aria-controls="proc-submenu">
-                        <span data-i18n="nav.process">Processen</span>
-                        <span class="chevron"></span>
-                    </button>
-                    <div class="drawer-submenu" id="proc-submenu">
-                        <div class="drawer-submenu-inner">
-                            <a href="../process/index.html" data-i18n="nav.the_process">Processen</a>
-                            <a href="../process/services.html" data-i18n="nav.services">Tjänster</a>
-                            <a href="../process/tours.html" data-i18n="nav.tours">Upptäcktsresor</a>
-                        </div>
-                    </div>
-                </div>
-                <a href="index.html" class="active" data-i18n="nav.about">Om oss</a>
-                <a href="../contact.html" data-i18n="nav.contact">Kontakt</a>
             </div>
-            <div class="drawer-footer">
-                <div style="display: flex; gap: 20px; margin-bottom: 30px;">
-                    <a href="https://instagram.com/lux.residency" target="_blank" class="drawer-footer-social-link"
-                        data-i18n="nav.instagram">Instagram</a>
-                    <a href="#" class="drawer-footer-social-link" data-i18n="nav.linkedin">LinkedIn</a>
+
+            <div class="mobile-accordion-item">
+                <button class="mobile-accordion-trigger">
+                    <span data-i18n="nav.private_advisory">Private Advisory</span>
+                </button>
+                <div class="mobile-accordion-content">
+                    <a href="../private-advisory/index.html" class="mobile-sub-link" data-i18n="nav.the_process">The Process</a>
+                    <a href="../private-advisory/services.html" class="mobile-sub-link" data-i18n="nav.services">Services</a>
                 </div>
-                <p>© 2026 LUX ITALIA</p>
             </div>
+
+            <a href="../private-tours/index.html" class="mobile-nav-item" data-i18n="nav.private_tours">Private Tours</a>
+            <a href="../market-intelligence/index.html" class="mobile-nav-item" data-i18n="nav.market_intelligence">Market Intelligence</a>
+            
+            <div class="mobile-accordion-item">
+                <button class="mobile-accordion-trigger">
+                    <span data-i18n="nav.about">About</span>
+                </button>
+                <div class="mobile-accordion-content">
+                    <a href="../about/index.html" class="mobile-sub-link" data-i18n="nav.about_us">About LUX</a>
+                    <a href="../about/concept.html" class="mobile-sub-link" data-i18n="nav.concept">The Concept</a>
+                </div>
+            </div>
+            
+            <a href="../contact.html" class="mobile-nav-item" data-i18n="nav.contact">Contact</a>
+        </div>
+        
+        <div class="mobile-cta-wrapper">
+            <a href="../contact.html" class="nav-cta" data-i18n="nav.request_intro">Private Introduction</a>
         </div>
     </div>
     <div class="drawer-overlay" id="drawer-overlay"></div>
