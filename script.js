@@ -224,6 +224,20 @@ function setupDrawer() {
 
     if (!burger || (!overlay && !legacyDrawer)) return;
 
+    // Re-introduce a minimal mobile footer strip for overlay templates.
+    if (overlay && !overlay.querySelector('.mobile-menu-footer')) {
+        const footer = document.createElement('div');
+        footer.className = 'mobile-menu-footer';
+        footer.innerHTML = `
+            <div class="mobile-menu-footer-links">
+                <a href="https://instagram.com/lux.residency" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="#">LinkedIn</a>
+            </div>
+            <p>&copy; 2026 LUX ITALIA</p>
+        `;
+        overlay.appendChild(footer);
+    }
+
     function toggleDrawer() {
         let isOpen = false;
 
