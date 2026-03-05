@@ -2214,6 +2214,18 @@ nav#main-nav::before {
 /* ── 15. NAV/LANG TYPOGRAPHY ALIGNMENT ────────────────────── */
 /* Make primary nav + dropdown visually match language controls. */
 @media (min-width: 1025px) {
+    .nav-links-center,
+    .nav-links {
+        flex-wrap: nowrap;
+    }
+
+    .nav-item.open .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+    }
+
     .nav-links-center .nav-link,
     .nav-links .nav-item>a,
     .nav-links>a,
@@ -2321,14 +2333,20 @@ nav#main-nav::before {
     }
 
     .mobile-nav-overlay {
-        width: min(82vw, 360px) !important;
+        inset: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
         padding: 88px 22px 22px !important;
+        border-left: none !important;
+        box-shadow: none !important;
     }
 
     .nav-drawer {
-        width: min(82vw, 360px) !important;
-        max-width: min(82vw, 360px) !important;
+        width: 100% !important;
+        max-width: 100% !important;
         padding: 88px 22px 22px !important;
+        border-left: none !important;
+        box-shadow: none !important;
     }
 
     .mobile-nav-links,
@@ -2453,5 +2471,35 @@ nav#main-nav::before {
     .drawer-submenu a:focus-visible::after,
     .drawer-submenu a.active::after {
         transform: scaleX(1);
+    }
+}
+
+/* ── 16. Navigation Functional Lock ───────────────────────── */
+/* Functional-only overrides: sticky consistency, no header resize, no nav wrapping */
+@media (min-width: 1025px) {
+    header nav,
+    nav#main-nav,
+    header nav.scrolled,
+    nav#main-nav.scrolled {
+        height: 90px !important;
+    }
+
+    .nav-container {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .nav-links-center,
+    .nav-links {
+        flex-wrap: nowrap !important;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 1024px) {
+    header nav,
+    nav#main-nav,
+    header nav.scrolled,
+    nav#main-nav.scrolled {
+        height: 90px !important;
     }
 }

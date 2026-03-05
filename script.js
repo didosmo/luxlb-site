@@ -11,6 +11,183 @@ function getPathPrefix() {
     return '../'.repeat(depth);
 }
 
+function getNavConfig(prefix) {
+    return [
+        {
+            key: 'discover',
+            label: 'Discover',
+            href: `${prefix}discover/index.html`,
+            subs: [
+                { label: 'Regions', href: `${prefix}discover/regions/index.html` },
+                { label: 'Lifestyle', href: `${prefix}discover/lifestyle/index.html` },
+                { label: 'Experiences', href: `${prefix}discover/experiences/index.html` }
+            ]
+        },
+        {
+            key: 'properties',
+            label: 'Properties',
+            href: `${prefix}properties/index.html`,
+            subs: [
+                { label: 'Featured Homes', href: `${prefix}properties/featured-homes/index.html` },
+                { label: 'Selected Opportunities', href: `${prefix}properties/selected-opportunities/index.html` }
+            ]
+        },
+        {
+            key: 'insights',
+            label: 'Insights',
+            href: `${prefix}insights/index.html`,
+            subs: [
+                { label: 'Market Insights', href: `${prefix}insights/market-insights/index.html` },
+                { label: 'Reports', href: `${prefix}insights/reports/index.html` },
+                { label: 'Articles', href: `${prefix}insights/articles/index.html` }
+            ]
+        },
+        {
+            key: 'access',
+            label: 'Access',
+            href: `${prefix}access/index.html`,
+            subs: [
+                { label: 'Off Market Opportunities', href: `${prefix}access/off-market/index.html` },
+                { label: 'Private Introductions', href: `${prefix}access/private-introductions/index.html` }
+            ]
+        },
+        {
+            key: 'about',
+            label: 'About',
+            href: `${prefix}about/index.html`,
+            subs: [
+                { label: 'Concept', href: `${prefix}about/concept.html` },
+                { label: 'Process', href: `${prefix}about/process/index.html` }
+            ]
+        },
+        {
+            key: 'contact',
+            label: 'Contact',
+            href: `${prefix}contact/index.html`,
+            subs: [
+                { label: 'Contact page', href: `${prefix}contact/index.html` }
+            ]
+        }
+    ];
+}
+
+function normalizeNavigationStructure() {
+    const prefix = getPathPrefix();
+    const config = getNavConfig(prefix);
+
+    // Desktop centered nav variant
+    const center = document.querySelector('.nav-links-center');
+    if (center) {
+        center.querySelectorAll(':scope > a.nav-link').forEach(a => {
+            if (a.textContent.trim().toLowerCase() === 'contact') a.remove();
+        });
+
+        const existingItems = Array.from(center.querySelectorAll(':scope > .nav-item'));
+        while (existingItems.length < config.length) {
+            const item = document.createElement('div');
+            item.className = 'nav-item';
+            center.appendChild(item);
+            existingItems.push(item);
+        }
+        existingItems.slice(config.length).forEach(item => item.remove());
+
+        const items = center.querySelectorAll(':scope > .nav-item');
+        config.forEach((entry, idx) => {
+            const item = items[idx];
+
+            let topLink = item.querySelector(':scope > a');
+            if (!topLink) {
+                topLink = document.createElement('a');
+                topLink.className = 'nav-link';
+                item.insertBefore(topLink, item.firstChild);
+            }
+            topLink.href = entry.href;
+            topLink.textContent = entry.label;
+
+            let menu = item.querySelector(':scope > .dropdown-menu');
+            if (!menu) {
+                menu = document.createElement('div');
+                menu.className = 'dropdown-menu';
+                item.appendChild(menu);
+            }
+            menu.innerHTML = entry.subs.map(sub => `<a href="${sub.href}">${sub.label}</a>`).join('');
+        });
+    }
+
+    // Desktop legacy nav variant
+    const legacy = document.querySelector('.nav-links');
+    if (legacy) {
+        const existingItems = Array.from(legacy.querySelectorAll(':scope > .nav-item'));
+        while (existingItems.length < config.length) {
+            const item = document.createElement('div');
+            item.className = 'nav-item';
+            legacy.appendChild(item);
+            existingItems.push(item);
+        }
+        existingItems.slice(config.length).forEach(item => item.remove());
+
+        const items = legacy.querySelectorAll(':scope > .nav-item');
+        config.forEach((entry, idx) => {
+            const item = items[idx];
+
+            let topLink = item.querySelector(':scope > a');
+            if (!topLink) {
+                topLink = document.createElement('a');
+                item.insertBefore(topLink, item.firstChild);
+            }
+            topLink.href = entry.href;
+            topLink.textContent = entry.label;
+
+            let menu = item.querySelector(':scope > .dropdown-menu');
+            if (!menu) {
+                menu = document.createElement('div');
+                menu.className = 'dropdown-menu';
+                item.appendChild(menu);
+            }
+            menu.innerHTML = entry.subs.map(sub => `<a href="${sub.href}">${sub.label}</a>`).join('');
+        });
+    }
+
+    // Desktop right contact action
+    document.querySelectorAll('.nav-actions-right .nav-cta, .nav-right .nav-cta').forEach(a => {
+        a.href = `${prefix}contact/index.html`;
+        a.textContent = 'Contact';
+    });
+
+    // Mobile overlay structure
+    const mobileLinks = document.querySelector('.mobile-nav-links');
+    if (mobileLinks) {
+        const blocks = config.map(entry => `
+            <div class="mobile-accordion-item">
+                <button class="mobile-accordion-trigger"><span>${entry.label}</span></button>
+                <div class="mobile-accordion-content">
+                    ${entry.subs.map(sub => `<a href="${sub.href}" class="mobile-sub-link">${sub.label}</a>`).join('')}
+                </div>
+            </div>
+        `).join('');
+        mobileLinks.innerHTML = blocks;
+    }
+
+    // Legacy mobile drawer structure
+    const drawerLinks = document.querySelector('.drawer-links');
+    if (drawerLinks) {
+        const blocks = config.map(entry => `
+            <div class="drawer-accordion">
+                <button class="drawer-accordion-btn" aria-expanded="false" aria-controls="${entry.key}-submenu">
+                    <span>${entry.label}</span>
+                    <span class="chevron"></span>
+                </button>
+                <div class="drawer-submenu" id="${entry.key}-submenu">
+                    <div class="drawer-submenu-inner">
+                        ${entry.subs.map(sub => `<a href="${sub.href}">${sub.label}</a>`).join('')}
+                    </div>
+                </div>
+            </div>
+        `).join('');
+        drawerLinks.innerHTML = blocks;
+    }
+}
+
 // Load translations
 async function loadTranslations() {
     try {
@@ -314,6 +491,45 @@ function setupDrawer() {
     }, { passive: true });
 }
 
+function setupDesktopDropdowns() {
+    if (window.matchMedia('(max-width: 1024px)').matches) return;
+
+    const navItems = document.querySelectorAll('#main-nav .nav-item');
+    let closeTimer = null;
+
+    function closeAll() {
+        navItems.forEach(item => item.classList.remove('open'));
+    }
+
+    navItems.forEach(item => {
+        const trigger = item.querySelector(':scope > a');
+        const menu = item.querySelector(':scope > .dropdown-menu');
+        if (!trigger || !menu) return;
+
+        item.addEventListener('mouseenter', () => {
+            if (closeTimer) clearTimeout(closeTimer);
+            closeAll();
+            item.classList.add('open');
+        });
+
+        item.addEventListener('mouseleave', () => {
+            if (closeTimer) clearTimeout(closeTimer);
+            closeTimer = setTimeout(() => item.classList.remove('open'), 120);
+        });
+
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isOpen = item.classList.contains('open');
+            closeAll();
+            if (!isOpen) item.classList.add('open');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('#main-nav .nav-item')) closeAll();
+    });
+}
+
 // UI Interactions
 function setupUI() {
     function updateNavLogo() {
@@ -379,6 +595,8 @@ function setupUI() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+    normalizeNavigationStructure();
     loadTranslations();
     setupUI();
+    setupDesktopDropdowns();
 });
