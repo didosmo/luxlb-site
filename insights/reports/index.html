@@ -4,71 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umbria Market Insights - LUX Italia</title>
+    <title data-i18n="market_intelligence.hub_title">Market Intelligence - LUX Italia</title>
     <link rel="stylesheet" href="../../index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
         rel="stylesheet">
-    <style>
-        .market-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 40px 0;
-            font-family: var(--font-sans);
-        }
-
-        .market-table tr {
-            border-bottom: 1px solid var(--c-border);
-        }
-
-        .market-table td {
-            padding: 20px 0;
-            font-size: 16px;
-        }
-
-        .market-table td:first-child {
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 13px;
-            color: var(--c-text);
-        }
-
-        .market-table td:last-child {
-            text-align: right;
-            color: var(--c-secondary);
-        }
-
-        .reno-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-        }
-
-        .reno-table tr {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .reno-table td {
-            padding: 15px 0;
-        }
-
-        .reno-table td:last-child {
-            text-align: right;
-            font-weight: 500;
-        }
-
-        .data-source-block {
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid var(--c-border);
-            font-size: 12px;
-            color: var(--c-muted);
-            font-style: italic;
-        }
-    </style>
 </head>
 
 <body>
@@ -200,105 +142,75 @@
     </div>
 
     <main>
+        <section class="visible">
+            <div class="container">
+                <span class="text-uppercase text-terracotta">Placeholder</span>
+                <h1>Reports</h1>
+                <p>This page is currently a placeholder in the new platform architecture. Curated content will be added in the next content pass.</p>
+            </div>
+        </section>
         <!-- Hero Section -->
         <section class="hero hero-secondary visible" style="background-image: url('../../assets/hero-bg.jpg');">
             <div class="hero-content">
-                <h1 data-i18n="market_intelligence.region_insights_title">Umbria Market Insights</h1>
-                <p class="hero-subtitle" data-i18n="market_intelligence.region_insights_subtitle"
+                <h1 data-i18n="market_intelligence.hub_title">Market Intelligence</h1>
+                <p class="hero-subtitle" data-i18n="market_intelligence.hub_subtitle"
                     style="font-family: var(--font-serif); font-size: 1.5rem; margin-top: 20px; max-width: 800px;">
-                    A closer look at pricing, demand and long-term trends in the Umbria region.
+                    Insights into the Italian property market, with a focus on carefully selected regions.
                 </p>
             </div>
         </section>
 
-        <!-- Market Snapshot -->
-        <section class="visible" style="padding: 100px 0;">
+        <!-- Intro Section -->
+        <section id="intro" class="visible" style="padding: 100px 0;">
             <div class="container">
-                <div class="grid-2" style="align-items: center;">
-                    <div>
-                        <h2 data-i18n="market_intelligence.snapshot_title">Market Snapshot</h2>
-                        <table class="market-table">
-                            <tr>
-                                <td data-i18n="market_intelligence.label_avg_price">Average price</td>
-                                <td data-i18n="market_intelligence.value_avg_price">€1,400–2,000 / m²</td>
-                            </tr>
-                            <tr>
-                                <td data-i18n="market_intelligence.label_foreign_buyers">Foreign buyers</td>
-                                <td data-i18n="market_intelligence.value_foreign_buyers">~10–12%</td>
-                            </tr>
-                            <tr>
-                                <td data-i18n="market_intelligence.label_renovation_cost">Renovation cost</td>
-                                <td data-i18n="market_intelligence.value_renovation_cost">€900–1,600 / m²</td>
-                            </tr>
-                            <tr>
-                                <td data-i18n="market_intelligence.label_demand_trend">Demand trend</td>
-                                <td data-i18n="market_intelligence.value_demand_trend">Increasing</td>
-                            </tr>
-                        </table>
-                        <p class="text-muted" style="font-size: 13px;" data-i18n="market_intelligence.source_text">
-                            Source: ISTAT, OMI, Idealista.</p>
-                    </div>
-                    <div>
-                        <h3 data-i18n="market_intelligence.price_trends_title">Price Trends</h3>
-                        <p data-i18n="market_intelligence.placeholder_block">This is a placeholder section that will be
-                            updated with detailed analysis of local market trends and economic indicators.</p>
-
-                        <h3 data-i18n="market_intelligence.demand_title" style="margin-top: 40px;">International Buyer
-                            Demand</h3>
-                        <p data-i18n="market_intelligence.placeholder_block">This is a placeholder section that will be
-                            updated with detailed analysis of local market trends and economic indicators.</p>
-                    </div>
+                <div class="max-900 text-center" style="margin: 0 auto;">
+                    <p style="font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.8;"
+                        data-i18n="market_intelligence.hub_intro">
+                        The Italian property market varies significantly between regions.
+                        Here we share curated insights into pricing, demand and long-term trends in selected areas of
+                        central Italy.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Why This Region & Renovation -->
-        <section class="bg-light visible" style="padding: 100px 0; background: #f9f9f9;">
+        <!-- Regions Grid -->
+        <section id="regions" class="bg-light visible" style="padding: 100px 0; background: #f9f9f9;">
             <div class="container">
-                <div class="grid-2" style="gap: 80px;">
-                    <div>
-                        <h2 data-i18n="market_intelligence.why_title">Why This Region</h2>
-                        <p style="font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.8;"
-                            data-i18n="market_intelligence.why_placeholder">
-                            This region represents a unique opportunity for those seeking authenticity and long-term
-                            value in a growing market.
-                        </p>
+                <div class="grid-2" style="gap: 40px;">
+                    <!-- Marche -->
+                    <div class="service-card" style="background: white; padding: 40px; border: 1px solid #eee;">
+                        <h3 data-i18n="market_intelligence.marche_name" style="margin-bottom: 20px;">Marche</h3>
+                        <p data-i18n="market_intelligence.marche_desc" style="margin-bottom: 30px;">Adriatic coastline,
+                            historic villages and exceptional value compared to Tuscany.</p>
+                        <a href="market-insights/index.html" class="discovery-btn"
+                            data-i18n="market_intelligence.view_insights">View Market Insights</a>
                     </div>
-                    <div>
-                        <h2 data-i18n="market_intelligence.renovation_title">Renovation Economics</h2>
-                        <table class="reno-table">
-                            <tr>
-                                <td data-i18n="market_intelligence.reno_light_label">Light renovation</td>
-                                <td data-i18n="market_intelligence.reno_light_value">€600–900 / m²</td>
-                            </tr>
-                            <tr>
-                                <td data-i18n="market_intelligence.reno_full_label">Full renovation</td>
-                                <td data-i18n="market_intelligence.reno_full_value">€1,200–1,800 / m²</td>
-                            </tr>
-                            <tr>
-                                <td data-i18n="market_intelligence.reno_premium_label">Premium restoration</td>
-                                <td data-i18n="market_intelligence.reno_premium_value">€2,000+ / m²</td>
-                            </tr>
-                        </table>
+                    <!-- Umbria -->
+                    <div class="service-card" style="background: white; padding: 40px; border: 1px solid #eee;">
+                        <h3 data-i18n="market_intelligence.umbria_name" style="margin-bottom: 20px;">Umbria</h3>
+                        <p data-i18n="market_intelligence.umbria_desc" style="margin-bottom: 30px;">Timeless hill towns
+                            and strong demand for renovation properties.</p>
+                        <a href="market-insights/index.html" class="discovery-btn"
+                            data-i18n="market_intelligence.view_insights">View Market Insights</a>
+                    </div>
+                    <!-- Tuscany -->
+                    <div class="service-card" style="background: white; padding: 40px; border: 1px solid #eee;">
+                        <h3 data-i18n="market_intelligence.tuscany_name" style="margin-bottom: 20px;">Tuscany</h3>
+                        <p data-i18n="market_intelligence.tuscany_desc" style="margin-bottom: 30px;">Italy’s most
+                            established international property market.</p>
+                        <a href="market-insights/index.html" class="discovery-btn"
+                            data-i18n="market_intelligence.view_insights">View Market Insights</a>
+                    </div>
+                    <!-- Abruzzo -->
+                    <div class="service-card" style="background: white; padding: 40px; border: 1px solid #eee;">
+                        <h3 data-i18n="market_intelligence.abruzzo_name" style="margin-bottom: 20px;">Abruzzo</h3>
+                        <p data-i18n="market_intelligence.abruzzo_desc" style="margin-bottom: 30px;">Wild landscapes,
+                            national parks and increasingly attractive pricing.</p>
+                        <a href="market-insights/index.html" class="discovery-btn"
+                            data-i18n="market_intelligence.view_insights">View Market Insights</a>
                     </div>
                 </div>
-
-                <div class="data-source-block" data-i18n="market_intelligence.data_sources_footer">
-                    Data sources include ISTAT, OMI (Agenzia delle Entrate), Idealista and Bank of Italy housing
-                    reports.
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section class="visible" style="padding: 120px 0; text-align: center;">
-            <div class="container">
-                <p style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 40px;"
-                    data-i18n="market_intelligence.cta_text">
-                    Looking for curated opportunities in Umbria?
-                </p>
-                <a href="../../contact/index.html" class="discovery-btn" data-i18n="market_intelligence.cta_btn">Request a
-                    private introduction</a>
             </div>
         </section>
     </main>
@@ -328,8 +240,8 @@
                         <a href="https://instagram.com/lux.residency" target="_blank"
                             data-i18n="nav.instagram">Instagram</a>
                         <a href="#" data-i18n="nav.linkedin">LinkedIn</a>
-                        <a href="../../about/index.html" data-i18n="nav.about">About</a>
-                        <a href="../../contact/index.html" data-i18n="nav.contact">Contact</a>
+                        <a href="../about/index.html" data-i18n="nav.about">About</a>
+                        <a href="../contact/index.html" data-i18n="nav.contact">Contact</a>
                     </div>
                 </div>
             </div>

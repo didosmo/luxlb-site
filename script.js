@@ -1,13 +1,20 @@
 let currentLang = localStorage.getItem('lux_lang') || 'en';
 let translations = {};
 
+function getPathPrefix() {
+    const path = window.location.pathname;
+    const segments = path.split('/').filter(Boolean);
+    if (segments.length === 0) return '';
+
+    const last = segments[segments.length - 1];
+    const depth = last.includes('.') ? segments.length - 1 : segments.length;
+    return '../'.repeat(depth);
+}
+
 // Load translations
 async function loadTranslations() {
     try {
-        const isSubfolder = window.location.pathname.includes('/about/') ||
-            window.location.pathname.includes('/process/') ||
-            window.location.pathname.includes('/region/');
-        const prefix = isSubfolder ? '../' : '';
+        const prefix = getPathPrefix();
         const response = await fetch(prefix + 'translations.json');
         translations = await response.json();
         updateContent();
@@ -192,23 +199,20 @@ function handleSearch(e) {
 }
 
 function navigateToPage(id) {
-    const isSubfolder = window.location.pathname.includes('/about/') ||
-        window.location.pathname.includes('/process/') ||
-        window.location.pathname.includes('/region/');
-    const prefix = isSubfolder ? '../' : '';
+    const prefix = getPathPrefix();
 
     const pageMap = {
-        'process': prefix + 'process/index.html',
-        'tours': prefix + 'process/tours.html',
-        'services': prefix + 'process/services.html',
-        'marche': prefix + 'region/marche.html',
-        'lifestyle': prefix + 'region/lifestyle.html',
-        'market_insights': prefix + 'region/market-insights.html',
-        'future_regions': prefix + 'region/future-regions.html',
-        'properties': prefix + 'properties.html',
+        'process': prefix + 'about/process/index.html',
+        'tours': prefix + 'discover/experiences/index.html',
+        'services': prefix + 'access/off-market/index.html',
+        'marche': prefix + 'discover/index.html',
+        'lifestyle': prefix + 'discover/lifestyle/index.html',
+        'market_insights': prefix + 'insights/market-insights/index.html',
+        'future_regions': prefix + 'discover/regions/index.html',
+        'properties': prefix + 'properties/index.html',
         'about': prefix + 'about/index.html',
         'concept': prefix + 'about/concept.html',
-        'contact': prefix + 'contact.html',
+        'contact': prefix + 'contact/index.html',
         'opportunity': prefix + 'index.html#opportunity'
     };
     window.location.href = pageMap[id] || (prefix + id + '.html');
