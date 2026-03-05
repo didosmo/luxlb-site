@@ -216,14 +216,24 @@ function navigateToPage(id) {
 
 function setupDrawer() {
     const burger = document.getElementById('burger-trigger');
-    const overlay = document.getElementById('nav-overlay'); // New ID for isolated overlay
+    const overlay = document.getElementById('nav-overlay'); // New mobile overlay
+    const legacyDrawer = document.getElementById('nav-drawer'); // Legacy process/region templates
+    const legacyOverlay = document.getElementById('drawer-overlay');
     const closeBtn = document.getElementById('drawer-close');
-    const links = document.querySelectorAll('.mobile-nav-links a');
+    const links = document.querySelectorAll('.mobile-nav-links a, .drawer-links a');
 
-    if (!burger || !overlay) return;
+    if (!burger || (!overlay && !legacyDrawer)) return;
 
     function toggleDrawer() {
-        const isOpen = overlay.classList.toggle('is-open');
+        let isOpen = false;
+
+        if (overlay) {
+            isOpen = overlay.classList.toggle('is-open');
+        } else if (legacyDrawer) {
+            isOpen = legacyDrawer.classList.toggle('active');
+            if (legacyOverlay) legacyOverlay.classList.toggle('active', isOpen);
+        }
+
         burger.classList.toggle('burger-active');
         document.body.classList.toggle('menu-open', isOpen);
     }
@@ -233,38 +243,54 @@ function setupDrawer() {
 
     links.forEach(link => {
         link.addEventListener('click', () => {
-            if (overlay.classList.contains('is-open')) toggleDrawer();
+            const modernOpen = overlay && overlay.classList.contains('is-open');
+            const legacyOpen = legacyDrawer && legacyDrawer.classList.contains('active');
+            if (modernOpen || legacyOpen) toggleDrawer();
         });
     });
 
     // Mobile Accordion logic
-    const triggers = overlay.querySelectorAll('.mobile-accordion-trigger');
+    const triggerScope = overlay || legacyDrawer;
+    const triggers = triggerScope ? triggerScope.querySelectorAll('.mobile-accordion-trigger, .drawer-accordion-btn') : [];
     triggers.forEach(trigger => {
         trigger.addEventListener('click', (e) => {
             e.preventDefault();
-            const item = trigger.closest('.mobile-accordion-item');
-            const isActive = item.classList.contains('active');
+            const isLegacyTrigger = trigger.classList.contains('drawer-accordion-btn');
 
-            // Close other accordions
+            if (isLegacyTrigger) {
+                const expanded = trigger.getAttribute('aria-expanded') === 'true';
+                const all = legacyDrawer ? legacyDrawer.querySelectorAll('.drawer-accordion-btn') : [];
+                all.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+                trigger.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+                return;
+            }
+
+            const item = trigger.closest('.mobile-accordion-item');
+            if (!item || !overlay) return;
+
+            const isActive = item.classList.contains('active');
             overlay.querySelectorAll('.mobile-accordion-item').forEach(otherItem => {
                 otherItem.classList.remove('active');
             });
-
-            if (!isActive) {
-                item.classList.add('active');
-            }
+            if (!isActive) item.classList.add('active');
         });
     });
 
     // Simple "Drag" (Swipe) to close
     let touchStartX = 0;
-    overlay.addEventListener('touchstart', e => {
+    const touchScope = overlay || legacyDrawer;
+    if (!touchScope) return;
+
+    touchScope.addEventListener('touchstart', e => {
         touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
 
-    overlay.addEventListener('touchend', e => {
+    touchScope.addEventListener('touchend', e => {
         const touchEndX = e.changedTouches[0].screenX;
         if (touchEndX > touchStartX + 60) { // Swiped right
+            const modernOpen = overlay && overlay.classList.contains('is-open');
+            const legacyOpen = legacyDrawer && legacyDrawer.classList.contains('active');
+            if (!modernOpen && !legacyOpen) return;
             toggleDrawer();
         }
     }, { passive: true });

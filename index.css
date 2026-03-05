@@ -1816,3 +1816,423 @@ img {
         display: none !important;
     }
 }
+
+/* ── 14. ULTRA-PREMIUM NAV OVERRIDES ──────────────────────── */
+/* Applies one stable nav language across all templates. */
+
+/* Sticky header baseline */
+header nav,
+nav#main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1200;
+    background: transparent !important;
+    box-shadow: none;
+    transition: height 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Remove dark readability scrim from older nav variant */
+header nav::before,
+nav#main-nav::before {
+    content: none !important;
+}
+
+/* Desktop header behavior: 90 -> 70 on scroll */
+@media (min-width: 1025px) {
+    header nav,
+    nav#main-nav {
+        height: 90px !important;
+    }
+
+    header nav.scrolled,
+    nav#main-nav.scrolled {
+        height: 70px !important;
+        background: #fff !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04) !important;
+        border-bottom: none !important;
+    }
+
+    .nav-container {
+        max-width: 1440px;
+        padding: 0 36px;
+    }
+
+    .brand-logo {
+        color: #fff !important;
+    }
+
+    nav.scrolled .brand-logo {
+        color: var(--c-text) !important;
+    }
+
+    /* Primary menu typography + spacing */
+    .nav-links-center,
+    .nav-links {
+        align-items: center;
+        gap: 44px !important;
+    }
+
+    .nav-links-center .nav-link,
+    .nav-links .nav-item>a,
+    .nav-links>a {
+        font-family: var(--font-sans) !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.5px !important;
+        color: #fff !important;
+        opacity: 0.95;
+        padding: 8px 0 !important;
+        position: relative;
+        transition: opacity 0.18s ease;
+    }
+
+    .nav-links-center .nav-link::after,
+    .nav-links .nav-item>a::after,
+    .nav-links>a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background: #fff;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.18s ease;
+    }
+
+    .nav-links-center .nav-link:hover::after,
+    .nav-links-center .nav-link.active::after,
+    .nav-links .nav-item>a:hover::after,
+    .nav-links .nav-item>a.active::after,
+    .nav-links>a:hover::after,
+    .nav-links>a.active::after {
+        transform: scaleX(1);
+    }
+
+    .nav-links-center .nav-link:hover,
+    .nav-links .nav-item>a:hover,
+    .nav-links>a:hover {
+        opacity: 1;
+    }
+
+    nav.scrolled .nav-links-center .nav-link,
+    nav.scrolled .nav-links .nav-item>a,
+    nav.scrolled .nav-links>a {
+        color: var(--c-text) !important;
+    }
+
+    nav.scrolled .nav-links-center .nav-link::after,
+    nav.scrolled .nav-links .nav-item>a::after,
+    nav.scrolled .nav-links>a::after {
+        background: var(--c-text);
+    }
+
+    /* Keep CTA clean and fixed on right side */
+    .nav-actions-right,
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .nav-cta {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        border-radius: 999px;
+        padding: 10px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.6) !important;
+        color: #fff !important;
+        background: transparent !important;
+    }
+
+    .nav-cta:hover {
+        background: #fff !important;
+        border-color: #fff !important;
+        color: var(--c-text) !important;
+    }
+
+    .lang-btn {
+        color: rgba(255, 255, 255, 0.72) !important;
+    }
+
+    nav.scrolled .lang-btn {
+        color: rgba(30, 30, 30, 0.55) !important;
+    }
+
+    .lang-btn:hover,
+    .lang-btn.active,
+    nav.scrolled .lang-btn:hover,
+    nav.scrolled .lang-btn.active {
+        color: var(--c-text) !important;
+    }
+
+    /* Discrete dropdowns (no mega-menu feel) */
+    .dropdown-menu {
+        min-width: 220px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 8px;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+        padding: 8px 0;
+        transform: translateX(-50%) translateY(6px);
+        transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .dropdown-menu a {
+        font-size: 14px !important;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        padding: 9px 18px !important;
+        color: var(--c-text) !important;
+    }
+
+    .dropdown-menu a:hover {
+        background: rgba(0, 0, 0, 0.03);
+        padding-left: 18px !important;
+    }
+}
+
+/* Mobile header and menu behavior */
+@media (max-width: 1024px) {
+    nav#main-nav .nav-container,
+    header nav .nav-container {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        gap: 0;
+    }
+
+    header nav,
+    nav#main-nav {
+        height: 90px !important;
+        background: transparent !important;
+    }
+
+    header nav.scrolled,
+    nav#main-nav.scrolled {
+        height: 70px !important;
+        background: #fff !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    .brand-logo {
+        color: #fff !important;
+    }
+
+    nav.scrolled .brand-logo {
+        color: var(--c-text) !important;
+    }
+
+    .nav-actions-right,
+    .nav-right {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    /* Mobile: CTA hidden everywhere (desktop only) */
+    .nav-actions-right .nav-cta,
+    .nav-right .nav-cta,
+    .mobile-cta-wrapper,
+    .drawer-footer .nav-cta {
+        display: none !important;
+    }
+
+    .burger-menu {
+        order: 2;
+        margin-left: 8px;
+        margin-right: 0;
+        padding: 0;
+        width: 24px;
+        min-width: 24px;
+        max-width: 24px;
+        gap: 6px;
+    }
+
+    .lang-switcher {
+        order: 1;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    .burger-menu span {
+        width: 24px !important;
+        height: 1.5px;
+        background: #fff !important;
+    }
+
+    nav.scrolled .lang-btn {
+        color: rgba(30, 30, 30, 0.58) !important;
+    }
+
+    nav.scrolled .lang-btn.active,
+    nav.scrolled .lang-btn:hover {
+        color: var(--c-text) !important;
+    }
+
+    nav.scrolled .burger-menu span {
+        background: var(--c-text) !important;
+    }
+
+    /* Phone-level alignment tuning */
+    @media (max-width: 768px) {
+        nav#main-nav .nav-container,
+        header nav .nav-container {
+            padding: 0 22px;
+        }
+
+        .nav-actions-right,
+        .nav-right {
+            gap: 10px;
+        }
+
+        .lang-switcher {
+            gap: 10px;
+            transform: translateY(1px);
+        }
+
+        .burger-menu {
+            margin-left: 2px;
+            transform: translateY(1px);
+        }
+    }
+
+    /* Modern full-width mobile nav */
+    .mobile-nav-overlay {
+        background: #fff !important;
+        padding: 96px 28px 30px !important;
+        transition: opacity 0.22s ease, visibility 0.22s ease !important;
+    }
+
+    .mobile-nav-links {
+        gap: 26px !important;
+    }
+
+    .mobile-nav-item,
+    .mobile-accordion-trigger {
+        font-size: 20px !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.2px;
+        padding-bottom: 0 !important;
+        border: 0 !important;
+    }
+
+    .mobile-accordion-content {
+        padding-left: 0 !important;
+        gap: 12px !important;
+    }
+
+    .mobile-accordion-item.active .mobile-accordion-content {
+        padding-top: 10px !important;
+        padding-bottom: 2px !important;
+    }
+
+    .mobile-sub-link {
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        opacity: 0.8;
+    }
+
+    .mobile-cta-wrapper .nav-cta {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Legacy drawer pages: force same mobile experience */
+    .nav-drawer {
+        width: 100% !important;
+        max-width: none !important;
+        right: -100% !important;
+        background: #fff !important;
+        padding: 96px 28px 30px !important;
+        transition: right 0.22s ease !important;
+    }
+
+    .nav-drawer.active {
+        right: 0 !important;
+    }
+
+    .drawer-overlay {
+        display: none !important;
+    }
+
+    .drawer-links {
+        gap: 26px !important;
+    }
+
+    .drawer-links a,
+    .drawer-accordion-btn {
+        font-family: var(--font-sans) !important;
+        font-size: 20px !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.2px;
+        color: var(--c-text) !important;
+        padding: 0 !important;
+        border-bottom: none !important;
+    }
+
+    .drawer-submenu a {
+        font-size: 16px !important;
+        font-weight: 400 !important;
+    }
+
+    .drawer-footer-social-link {
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.2px !important;
+        text-transform: none !important;
+    }
+}
+
+/* ── 15. NAV/LANG TYPOGRAPHY ALIGNMENT ────────────────────── */
+/* Make primary nav + dropdown visually match language controls. */
+@media (min-width: 1025px) {
+    .nav-links-center .nav-link,
+    .nav-links .nav-item>a,
+    .nav-links>a,
+    .dropdown-menu a {
+        font-family: var(--font-sans) !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.08em !important;
+        text-transform: uppercase;
+    }
+
+    .dropdown-menu a {
+        opacity: 0.78;
+        transition: opacity 0.18s ease, background 0.18s ease;
+    }
+
+    .dropdown-menu a:hover {
+        opacity: 1;
+    }
+
+    .lang-btn {
+        font-family: var(--font-sans) !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.08em !important;
+        text-transform: uppercase;
+        opacity: 0.78;
+        transition: opacity 0.18s ease, color 0.18s ease;
+    }
+
+    .lang-btn:hover,
+    .lang-btn.active {
+        opacity: 1;
+    }
+
+    .nav-cta {
+        font-family: var(--font-sans) !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.08em !important;
+        text-transform: uppercase;
+    }
+}
