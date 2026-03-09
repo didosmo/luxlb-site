@@ -3614,44 +3614,78 @@ section {
 }
 
 /* ============================================================
-   GLOBAL PRESENTATION RULESET
-   Scope: alignment/wrappers/grid centering/CTA row alignment
+   DOM-SPECIFIC ALIGNMENT RULESET
+   Based on actual page structures (section > .container > ...)
    ============================================================ */
 
-/* 1) Editorial wrapper consistency for heading + intro patterns */
-main section > .container > :is(.max-900, .max-700, .text-center) {
+/* A) Heading + intro wrappers used across page types */
+main section > .container > .max-900,
+main section > .container > .max-700,
+main section > .container.text-center,
+#future-regions-preview .text-center {
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 
-main section > .container > h2,
-main section > .container > p,
-main section > .container > :is(.section-intro, .editorial-intro, .insights-intro) {
+/* 2-column text/image sections using first column as editorial intro */
+#private-access .grid-2 > div:first-child,
+#curated-approach .grid-2 > div:first-child {
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 
-/* Keep editorial axis consistent for common heading sections */
-#private-access .container > div:first-child,
-#future-regions-preview .text-center,
-#related-paths .container > h2,
-#example-report-topics .container > h2,
-#market-insights .container > h2,
-#step-by-step .container > h2,
-#contact-form-section .text-left-desktop > h2 {
+/* Sections where h2 is direct child of container and followed by card grids */
+#lifestyle > .container > h2,
+#market-insights > .container > h2,
+#discover-pillars > .container > h2,
+#next-paths > .container > h2,
+#insights-pillars > .container > h2,
+#starting-points > .container > h2,
+#reports-coverage > .container > h2,
+#example-report-topics > .container > h2,
+#editorial-themes > .container > h2,
+#example-article-topics > .container > h2,
+#key-themes > .container > h2,
+#example-insights > .container > h2,
+#what-private-introductions-mean > .container > h2,
+#what-off-market-includes > .container > h2,
+#what-makes-it-different > .container > h2,
+#what-buyers-gain > .container > h2,
+#reach-out-about > .container > h2,
+#future-regions-preview > .container > h2,
+#step-by-step > .container > h2,
+#related-paths > .container > h2 {
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 
-/* 2) Card grids: shared 3/2/1 presentation logic and centered axis */
-main section .grid-3,
-main section :is(#properties-grid, #future-regions-grid, #services-grid) {
+/* B) Card grids that are actual .grid-3 wrappers in the DOM */
+#lifestyle .grid-3,
+#selected-opportunities .grid-3,
+#market-insights .grid-3,
+#discover-pillars .grid-3,
+#next-paths .grid-3,
+#insights-pillars .grid-3,
+#starting-points .grid-3,
+#reports-coverage .grid-3,
+#example-report-topics .grid-3,
+#editorial-themes .grid-3,
+#example-article-topics .grid-3,
+#key-themes .grid-3,
+#example-insights .grid-3,
+#what-private-introductions-mean .grid-3,
+#related-paths .grid-3,
+#what-off-market-includes .grid-3,
+#what-makes-it-different .grid-3,
+#what-buyers-gain .grid-3,
+#reach-out-about .grid-3,
+#future-regions-preview .grid-3 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -3661,24 +3695,99 @@ main section :is(#properties-grid, #future-regions-grid, #services-grid) {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    main section .grid-3,
-    main section :is(#properties-grid, #future-regions-grid, #services-grid) {
+    #lifestyle .grid-3,
+    #selected-opportunities .grid-3,
+    #market-insights .grid-3,
+    #discover-pillars .grid-3,
+    #next-paths .grid-3,
+    #insights-pillars .grid-3,
+    #starting-points .grid-3,
+    #reports-coverage .grid-3,
+    #example-report-topics .grid-3,
+    #editorial-themes .grid-3,
+    #example-article-topics .grid-3,
+    #key-themes .grid-3,
+    #example-insights .grid-3,
+    #what-private-introductions-mean .grid-3,
+    #related-paths .grid-3,
+    #what-off-market-includes .grid-3,
+    #what-makes-it-different .grid-3,
+    #what-buyers-gain .grid-3,
+    #reach-out-about .grid-3,
+    #future-regions-preview .grid-3 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 24px;
     }
 }
 
 @media (min-width: 1025px) {
-    main section .grid-3,
-    main section :is(#properties-grid, #future-regions-grid, #services-grid) {
+    #lifestyle .grid-3,
+    #selected-opportunities .grid-3,
+    #market-insights .grid-3,
+    #discover-pillars .grid-3,
+    #next-paths .grid-3,
+    #insights-pillars .grid-3,
+    #starting-points .grid-3,
+    #reports-coverage .grid-3,
+    #example-report-topics .grid-3,
+    #editorial-themes .grid-3,
+    #example-article-topics .grid-3,
+    #key-themes .grid-3,
+    #example-insights .grid-3,
+    #what-private-introductions-mean .grid-3,
+    #related-paths .grid-3,
+    #what-off-market-includes .grid-3,
+    #what-makes-it-different .grid-3,
+    #what-buyers-gain .grid-3,
+    #reach-out-about .grid-3,
+    #future-regions-preview .grid-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 32px;
     }
 }
 
-/* 3) Card internals stay left-aligned */
+/* C) CTA rows that exist in the DOM as inline wrappers under centered blocks */
+.hero-content > div[style*="display: flex"],
+main section > .container > .max-900 > div[style*="display: flex"],
+main section > .container.text-center > div[style*="display: flex"],
+#discover-final-cta .container > div,
+#properties-final-cta .container > div,
+#insights-final-cta .container > div,
+#reports-final-cta .container > div,
+#articles-final-cta .container > div,
+#market-insights-final-cta .container > div,
+#private-introductions-final-cta .container > div,
+#off-market-final-cta .container > div,
+#process-final-cta .container > div,
+#concept-final-cta .container > div,
+#contact-final-cta .container > div,
+#marche-final-cta .container > div,
+#platform-cta .container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Single CTA links in centered editorial wrappers */
+main section > .container > .max-900 > a:is(.btn, .discovery-btn, .submit-btn),
+main section > .container.text-center > a:is(.btn, .discovery-btn, .submit-btn) {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#private-access .grid-2 > div:first-child > a:is(.btn, .discovery-btn, .submit-btn),
+#curated-approach .grid-2 > div:first-child > a:is(.btn, .discovery-btn, .submit-btn) {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* D) Keep card internals left-aligned (including card buttons) */
 .service-card,
-.service-card :is(h3, p, a, .btn, .discovery-btn) {
+.service-card :is(h3, p, a, .btn, .discovery-btn, .submit-btn) {
     text-align: left;
 }
 
@@ -3687,44 +3796,23 @@ main section :is(#properties-grid, #future-regions-grid, #services-grid) {
     margin-right: 0;
 }
 
-/* 4) CTA rows aligned to section center axis */
-main section :is(.cta-wrapper, .section-cta, .hero-cta, .cta-row, .btn-row) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-/* Align anonymous CTA groups commonly used in the pages */
-main section :is(.max-900, .max-700, .text-center) > div:has(> .btn),
-main section :is(.max-900, .max-700, .text-center) > div:has(> .discovery-btn),
-main section :is(.max-900, .max-700, .text-center) > div:has(> .submit-btn) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-/* Single CTA in centered wrappers */
-main section :is(.max-900, .max-700, .text-center) > :is(.btn, .discovery-btn, .submit-btn) {
+/* E) Image placeholder and editorial blocks stay on centerline */
+main section > .container > :is(.image-break, .editorial-image-break, .image-placeholder),
+main section > .container > .service-card[style*="justify-content: center"] {
     margin-left: auto;
     margin-right: auto;
 }
 
-/* 5) Image blocks / placeholders keep section centerline */
-main section > .container > :is(.image-break, .editorial-image-break, .image-placeholder, .service-card) {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* 6) Contact page presentation balance inside existing layout */
+/* F) Contact DOM-specific alignment */
 #contact-introduction .max-900,
 #reach-out-about > .container > h2,
-#contact-form-section .text-left-desktop,
 #alternative-contact .max-900,
 #contact-final-cta .max-900 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact-form-section .grid-2 {
     margin-left: auto;
     margin-right: auto;
 }
@@ -3737,113 +3825,4 @@ main section > .container > :is(.image-break, .editorial-image-break, .image-pla
         margin-left: auto;
         margin-right: auto;
     }
-}
-
-/* ============================================================
-   GLOBAL LAYOUT CONSISTENCY PASS (optical alignment only)
-   Note: complementary selectors only; no base layout class edits.
-   ============================================================ */
-
-/* Container consistency in main sections where layout drifts visually */
-main > section > .container {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 24px;
-    padding-right: 24px;
-}
-
-/* Editorial text block consistency */
-main > section > .container > h2,
-main > section > .container > .max-900 > h2,
-main > section > .container > .max-700 > h2,
-main > section > .container > .text-center > h2,
-main > section > .container > .max-900 > p,
-main > section > .container > .max-700 > p,
-main > section > .container > .text-center > p {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-/* Optical check sections: keep titles and intros on same center axis */
-#market-insights > .container > h2,
-#related-paths > .container > h2,
-#example-report-topics > .container > h2,
-#future-regions-preview > .container > h2,
-#starting-points > .container > h2,
-#next-paths > .container > h2 {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-/* Card grid consistency on key sections */
-#market-insights .grid-3,
-#related-paths .grid-3,
-#example-report-topics .grid-3,
-#future-regions-preview .grid-3,
-#starting-points .grid-3,
-#next-paths .grid-3 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    #market-insights .grid-3,
-    #related-paths .grid-3,
-    #example-report-topics .grid-3,
-    #future-regions-preview .grid-3,
-    #starting-points .grid-3,
-    #next-paths .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1025px) {
-    #market-insights .grid-3,
-    #related-paths .grid-3,
-    #example-report-topics .grid-3,
-    #future-regions-preview .grid-3,
-    #starting-points .grid-3,
-    #next-paths .grid-3 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* ============================================================
-   Alignment Fix: Centered section wrappers
-   ============================================================ */
-
-.cta-wrapper,
-.section-cta,
-.hero-cta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.btn,
-.discovery-btn,
-.submit-btn {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.image-break,
-.editorial-image-break,
-.image-placeholder {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.service-card {
-    text-align: left;
 }
