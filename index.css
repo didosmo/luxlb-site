@@ -3040,3 +3040,154 @@ img,
 .discovery-btn:hover {
     background: rgba(30, 30, 30, 0.05);
 }
+
+/* ============================================================
+   VISUAL REFINEMENT PASS (Premium Editorial)
+   Scope-locked: visual tuning only
+   ============================================================ */
+
+/* 1) Hero text width */
+.hero-content {
+    max-width: 560px;
+}
+
+.hero h1,
+.hero p {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 2) Hero overlay refinement */
+.hero::before {
+    background: linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.28));
+}
+
+/* 3) Section spacing refinement */
+section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+@media (min-width: 1025px) {
+    section {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+/* 4) Editorial text width normalization */
+.section-intro,
+.insights-intro,
+.editorial-intro,
+.editorial-text,
+.max-700 p,
+.max-900 p {
+    max-width: 640px;
+}
+
+/* 5) Grid spacing refinement */
+.grid-2,
+.grid-3,
+#properties-grid,
+#future-regions-grid,
+#services-grid {
+    gap: 20px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .grid-2,
+    .grid-3,
+    #properties-grid,
+    #future-regions-grid,
+    #services-grid {
+        gap: 24px;
+    }
+}
+
+@media (min-width: 1025px) {
+
+    .grid-2,
+    .grid-3,
+    #properties-grid,
+    #future-regions-grid,
+    #services-grid {
+        gap: 28px;
+    }
+}
+
+/* 6) CTA proportions */
+.btn,
+.discovery-btn,
+.submit-btn {
+    padding: 16px 30px;
+}
+
+/* 7) Subtle image hover */
+@media (min-width: 1025px) {
+
+    img:hover,
+    .img-primary:hover,
+    .img-secondary:hover,
+    .hero img:hover,
+    .service-card img:hover {
+        transform: scale(1.015);
+    }
+}
+
+/* 8) Underline hover animation (text links + navigation) */
+main a:not(.btn):not(.discovery-btn):not(.submit-btn),
+footer a:not(.btn):not(.discovery-btn):not(.submit-btn),
+.nav-link,
+.nav-links .nav-item>a,
+.nav-links>a {
+    position: relative;
+    text-decoration: none;
+}
+
+main a:not(.btn):not(.discovery-btn):not(.submit-btn)::after,
+footer a:not(.btn):not(.discovery-btn):not(.submit-btn)::after,
+.nav-link::after,
+.nav-links .nav-item>a::after,
+.nav-links>a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+main a:not(.btn):not(.discovery-btn):not(.submit-btn):hover::after,
+footer a:not(.btn):not(.discovery-btn):not(.submit-btn):hover::after,
+.nav-link:hover::after,
+.nav-links .nav-item>a:hover::after,
+.nav-links>a:hover::after,
+.nav-link.active::after,
+.nav-links .nav-item>a.active::after,
+.nav-links>a.active::after {
+    width: 100%;
+}
+
+/* 9) Editorial image break support */
+.image-break,
+.editorial-image-break {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    width: 100%;
+}
+
+.image-break img,
+.editorial-image-break img {
+    width: 100%;
+}
