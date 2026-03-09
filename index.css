@@ -3191,3 +3191,69 @@ footer a:not(.btn):not(.discovery-btn):not(.submit-btn):hover::after,
 .editorial-image-break img {
     width: 100%;
 }
+
+/* ============================================================
+   FINAL PREMIUM POLISH
+   ============================================================ */
+
+/* 1) Hero vertical balance */
+.hero-content {
+    transform: translateY(-8%);
+}
+
+/* 2) Image radius reduction */
+img,
+.img-primary,
+.img-secondary {
+    border-radius: 4px;
+}
+
+/* 3) Property card shadow refinement */
+.service-card {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+/* 4) Accent hover for links */
+a:hover {
+    color: var(--c-accent);
+}
+
+a.btn:hover,
+a.discovery-btn:hover,
+.submit-btn:hover {
+    color: inherit;
+}
+
+/* 5) Image transition smoothness */
+img,
+.img-primary,
+.img-secondary,
+.hero img,
+.service-card img {
+    transition: transform 0.5s cubic-bezier(.2, .8, .2, 1);
+}
+
+/* 6) CTA letter spacing */
+.btn,
+.discovery-btn,
+.submit-btn {
+    letter-spacing: 0.07em;
+}
+
+/* 7) Editorial divider support */
+.divider {
+    width: 40px;
+    height: 1px;
+    background: var(--c-border);
+    margin: 40px 0;
+}
+
+.image-break,
+.editorial-image-break {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.service-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
