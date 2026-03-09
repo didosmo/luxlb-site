@@ -3257,3 +3257,350 @@ img,
 .service-card {
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
+
+/* ============================================================
+   OPTICAL CORRECTION PASS
+   ============================================================ */
+
+/* 1) Header/Hero readability: darker top zone, softer lower zone */
+.hero::before {
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.52) 0%,
+            rgba(0, 0, 0, 0.38) 24%,
+            rgba(0, 0, 0, 0.24) 52%,
+            rgba(0, 0, 0, 0.18) 100%);
+}
+
+nav#main-nav:not(.scrolled) .brand-logo,
+nav#main-nav:not(.scrolled) .nav-link,
+nav#main-nav:not(.scrolled) .lang-btn,
+nav#main-nav:not(.scrolled) .nav-cta,
+nav#main-nav:not(.scrolled) .burger-menu span {
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* 2) Text alignment system */
+.hero-content,
+section .max-900,
+section .section-intro,
+section .insights-intro,
+section .editorial-intro {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section h2,
+section .max-900>p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-card,
+.service-card h3,
+.service-card p {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.text-left-desktop,
+.custom-form-container,
+.custom-form,
+.form-group {
+    text-align: left;
+}
+
+/* 3) Section spacing normalization */
+section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    section {
+        padding-top: 76px;
+        padding-bottom: 76px;
+    }
+}
+
+@media (min-width: 1025px) {
+    section {
+        padding-top: 92px;
+        padding-bottom: 92px;
+    }
+}
+
+.hero+section {
+    padding-top: clamp(48px, 7vw, 72px);
+}
+
+/* 4) Card block spacing refinements */
+.service-card {
+    padding: 20px;
+}
+
+.service-card h3,
+.service-card-title {
+    margin-bottom: 10px;
+}
+
+.service-card p,
+.service-card-text {
+    margin-bottom: 12px;
+}
+
+.grid-2,
+.grid-3,
+#properties-grid,
+#future-regions-grid,
+#services-grid {
+    margin-bottom: 6px;
+}
+
+/* 5) Contact page balance */
+#contact-form-section .grid-2 {
+    align-items: start;
+    gap: 22px;
+}
+
+#contact-form-section .text-left-desktop {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact-form-section .custom-form-container {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact-form-section .form-group {
+    margin-bottom: 22px;
+}
+
+/* 6) Mobile optical balance */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 50vh;
+    }
+
+    .hero-content {
+        transform: translateY(-4%);
+    }
+
+    .hero h1 {
+        margin-bottom: 14px;
+    }
+
+    .hero p {
+        margin-bottom: 20px;
+    }
+
+    section {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    #contact-form-section .grid-2 {
+        gap: 16px;
+    }
+
+    #contact-form-section .form-group {
+        margin-bottom: 16px;
+    }
+}
+
+/* ============================================================
+   OPTICAL + CTA CORRECTION PASS
+   ============================================================ */
+
+/* 1) Header/Hero readability with darker top zone */
+.hero::before {
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.56) 0%,
+            rgba(0, 0, 0, 0.40) 24%,
+            rgba(0, 0, 0, 0.26) 54%,
+            rgba(0, 0, 0, 0.18) 100%);
+}
+
+nav#main-nav:not(.scrolled) .brand-logo,
+nav#main-nav:not(.scrolled) .nav-link,
+nav#main-nav:not(.scrolled) .lang-btn,
+nav#main-nav:not(.scrolled) .nav-cta,
+nav#main-nav:not(.scrolled) .burger-menu span {
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 2) Editorial alignment defaults */
+.hero-content,
+section .max-900,
+section .section-intro,
+section .insights-intro,
+section .editorial-intro {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section h2,
+section .max-900 > p,
+section .cta-row,
+section .btn-row {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-card,
+.service-card h3,
+.service-card p,
+.custom-form-container,
+.custom-form,
+.form-group,
+.form-group label {
+    text-align: left;
+}
+
+/* Keep longer process flows left where needed */
+#step-by-step .service-card,
+#step-by-step .service-card h3,
+#step-by-step .service-card p,
+#who-this-process-suits .max-900,
+#who-this-process-suits .max-900 p {
+    text-align: left;
+}
+
+/* 3) Section spacing normalization */
+section {
+    padding-top: 58px;
+    padding-bottom: 58px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    section {
+        padding-top: 74px;
+        padding-bottom: 74px;
+    }
+}
+
+@media (min-width: 1025px) {
+    section {
+        padding-top: 88px;
+        padding-bottom: 88px;
+    }
+}
+
+.hero + section {
+    padding-top: clamp(44px, 6vw, 68px);
+}
+
+/* 4) Card/content block spacing */
+.service-card {
+    padding: 18px;
+}
+
+.service-card h3,
+.service-card-title {
+    margin-bottom: 8px;
+}
+
+.service-card p,
+.service-card-text {
+    margin-bottom: 10px;
+}
+
+.grid-2,
+.grid-3,
+#properties-grid,
+#future-regions-grid,
+#services-grid {
+    margin-bottom: 4px;
+}
+
+/* 5) Contact page balance */
+#contact-form-section .grid-2 {
+    align-items: start;
+    gap: 18px;
+}
+
+#contact-form-section .text-left-desktop {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact-form-section .custom-form-container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact-form-section .service-card {
+    margin-top: 16px !important;
+}
+
+#contact-form-section .form-group {
+    margin-bottom: 18px;
+}
+
+/* 6) CTA system correction */
+.btn,
+.submit-btn {
+    background: #b96f4c;
+    color: var(--c-white);
+    border-color: #b96f4c;
+}
+
+.btn:hover,
+.submit-btn:hover {
+    background: #293449;
+    color: var(--c-white);
+    border-color: #293449;
+}
+
+.discovery-btn {
+    background: transparent;
+    color: var(--c-text);
+    border-color: var(--c-text);
+}
+
+.discovery-btn:hover {
+    background: #293449;
+    color: var(--c-white);
+    border-color: #293449;
+}
+
+/* 7) Mobile balance */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 48vh;
+    }
+
+    .hero-content {
+        transform: translateY(-3%);
+    }
+
+    .hero h1 {
+        margin-bottom: 12px;
+    }
+
+    .hero p {
+        margin-bottom: 16px;
+    }
+
+    section {
+        padding-top: 52px;
+        padding-bottom: 52px;
+    }
+
+    #contact-form-section .grid-2 {
+        gap: 14px;
+    }
+
+    #contact-form-section .form-group {
+        margin-bottom: 14px;
+    }
+}
