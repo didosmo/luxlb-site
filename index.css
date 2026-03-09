@@ -3614,6 +3614,132 @@ section {
 }
 
 /* ============================================================
+   GLOBAL PRESENTATION RULESET
+   Scope: alignment/wrappers/grid centering/CTA row alignment
+   ============================================================ */
+
+/* 1) Editorial wrapper consistency for heading + intro patterns */
+main section > .container > :is(.max-900, .max-700, .text-center) {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+main section > .container > h2,
+main section > .container > p,
+main section > .container > :is(.section-intro, .editorial-intro, .insights-intro) {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Keep editorial axis consistent for common heading sections */
+#private-access .container > div:first-child,
+#future-regions-preview .text-center,
+#related-paths .container > h2,
+#example-report-topics .container > h2,
+#market-insights .container > h2,
+#step-by-step .container > h2,
+#contact-form-section .text-left-desktop > h2 {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* 2) Card grids: shared 3/2/1 presentation logic and centered axis */
+main section .grid-3,
+main section :is(#properties-grid, #future-regions-grid, #services-grid) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    main section .grid-3,
+    main section :is(#properties-grid, #future-regions-grid, #services-grid) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+}
+
+@media (min-width: 1025px) {
+    main section .grid-3,
+    main section :is(#properties-grid, #future-regions-grid, #services-grid) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 32px;
+    }
+}
+
+/* 3) Card internals stay left-aligned */
+.service-card,
+.service-card :is(h3, p, a, .btn, .discovery-btn) {
+    text-align: left;
+}
+
+.service-card :is(.btn, .discovery-btn, .submit-btn) {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* 4) CTA rows aligned to section center axis */
+main section :is(.cta-wrapper, .section-cta, .hero-cta, .cta-row, .btn-row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Align anonymous CTA groups commonly used in the pages */
+main section :is(.max-900, .max-700, .text-center) > div:has(> .btn),
+main section :is(.max-900, .max-700, .text-center) > div:has(> .discovery-btn),
+main section :is(.max-900, .max-700, .text-center) > div:has(> .submit-btn) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Single CTA in centered wrappers */
+main section :is(.max-900, .max-700, .text-center) > :is(.btn, .discovery-btn, .submit-btn) {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 5) Image blocks / placeholders keep section centerline */
+main section > .container > :is(.image-break, .editorial-image-break, .image-placeholder, .service-card) {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 6) Contact page presentation balance inside existing layout */
+#contact-introduction .max-900,
+#reach-out-about > .container > h2,
+#contact-form-section .text-left-desktop,
+#alternative-contact .max-900,
+#contact-final-cta .max-900 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    #contact-form-section .text-left-desktop,
+    #contact-form-section .text-left-desktop > h2,
+    #contact-form-section .text-left-desktop > p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ============================================================
    GLOBAL LAYOUT CONSISTENCY PASS (optical alignment only)
    Note: complementary selectors only; no base layout class edits.
    ============================================================ */
