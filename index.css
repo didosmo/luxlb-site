@@ -3614,6 +3614,84 @@ section {
 }
 
 /* ============================================================
+   GLOBAL LAYOUT CONSISTENCY PASS (optical alignment only)
+   Note: complementary selectors only; no base layout class edits.
+   ============================================================ */
+
+/* Container consistency in main sections where layout drifts visually */
+main > section > .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* Editorial text block consistency */
+main > section > .container > h2,
+main > section > .container > .max-900 > h2,
+main > section > .container > .max-700 > h2,
+main > section > .container > .text-center > h2,
+main > section > .container > .max-900 > p,
+main > section > .container > .max-700 > p,
+main > section > .container > .text-center > p {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Optical check sections: keep titles and intros on same center axis */
+#market-insights > .container > h2,
+#related-paths > .container > h2,
+#example-report-topics > .container > h2,
+#future-regions-preview > .container > h2,
+#starting-points > .container > h2,
+#next-paths > .container > h2 {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Card grid consistency on key sections */
+#market-insights .grid-3,
+#related-paths .grid-3,
+#example-report-topics .grid-3,
+#future-regions-preview .grid-3,
+#starting-points .grid-3,
+#next-paths .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #market-insights .grid-3,
+    #related-paths .grid-3,
+    #example-report-topics .grid-3,
+    #future-regions-preview .grid-3,
+    #starting-points .grid-3,
+    #next-paths .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    #market-insights .grid-3,
+    #related-paths .grid-3,
+    #example-report-topics .grid-3,
+    #future-regions-preview .grid-3,
+    #starting-points .grid-3,
+    #next-paths .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ============================================================
    Alignment Fix: Centered section wrappers
    ============================================================ */
 
