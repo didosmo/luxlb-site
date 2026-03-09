@@ -3573,6 +3573,14 @@ section {
     border-color: #293449;
 }
 
+.discovery-btn:hover,
+.btn-outline:hover,
+.secondary-btn:hover {
+    background: #293449;
+    color: #ffffff !important;
+    border-color: #293449;
+}
+
 /* 7) Mobile balance */
 @media (max-width: 768px) {
     .hero {
@@ -3603,4 +3611,35 @@ section {
     #contact-form-section .form-group {
         margin-bottom: 14px;
     }
+}
+
+/* ============================================================
+   Alignment Fix: Centered section wrappers
+   ============================================================ */
+
+.cta-wrapper,
+.section-cta,
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn,
+.discovery-btn,
+.submit-btn {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-break,
+.editorial-image-break,
+.image-placeholder {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.service-card {
+    text-align: left;
 }
