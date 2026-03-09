@@ -530,6 +530,151 @@ function setupDesktopDropdowns() {
     });
 }
 
+function setupImagePerformance() {
+    const images = document.querySelectorAll('img');
+    if (!images.length) return;
+
+    images.forEach((img, index) => {
+        if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+
+        // Keep the first visual image eager, lazy-load the rest.
+        const inHero = !!img.closest('.hero');
+        if (index === 0 || inHero) {
+            if (!img.hasAttribute('loading')) img.setAttribute('loading', 'eager');
+            if (!img.hasAttribute('fetchpriority')) img.setAttribute('fetchpriority', 'high');
+            return;
+        }
+
+        if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+    });
+}
+
+function ensureFooterLegalLinks() {
+    const footerCols = document.querySelectorAll('footer .footer-col');
+    if (!footerCols.length) return;
+
+    const targetCol = footerCols[footerCols.length - 1];
+    if (!targetCol || targetCol.querySelector('.footer-legal-links')) return;
+
+    const prefix = getPathPrefix();
+    const wrapper = document.createElement('div');
+    wrapper.className = 'footer-legal-links';
+    wrapper.innerHTML = `
+        <a href="${prefix}legal/privacy-policy/index.html">Privacy Policy</a>
+        <a href="${prefix}legal/cookie-policy/index.html">Cookie Policy</a>
+        <a href="${prefix}legal/terms-of-use/index.html">Terms of Use</a>
+    `;
+    targetCol.appendChild(wrapper);
+}
+
+function initCookieConsent() {
+    const CONSENT_KEY = 'lux_cookie_consent_v1';
+    const existingConsent = localStorage.getItem(CONSENT_KEY);
+
+    function saveConsent(consent) {
+        localStorage.setItem(CONSENT_KEY, JSON.stringify({
+            necessary: true,
+            analytics: !!consent.analytics,
+            updatedAt: new Date().toISOString()
+        }));
+    }
+
+    function closeBanner() {
+        const banner = document.getElementById('cookie-banner');
+        if (banner) banner.remove();
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('cookie-preferences-modal');
+        if (modal) modal.remove();
+    }
+
+    function openPreferences() {
+        closeModal();
+
+        const current = existingConsent ? JSON.parse(existingConsent) : { analytics: false };
+        const modal = document.createElement('div');
+        modal.id = 'cookie-preferences-modal';
+        modal.className = 'cookie-preferences-modal';
+        modal.innerHTML = `
+            <div class="cookie-preferences-panel" role="dialog" aria-modal="true" aria-labelledby="cookie-preferences-title">
+                <h3 id="cookie-preferences-title">Cookie preferences</h3>
+                <div class="cookie-pref-group">
+                    <div class="cookie-pref-head">
+                        <strong>Necessary cookies</strong>
+                        <span>Always active</span>
+                    </div>
+                    <p>Necessary cookies help the website function properly.</p>
+                </div>
+                <div class="cookie-pref-group">
+                    <label class="cookie-pref-toggle" for="analytics-cookies-toggle">
+                        <span>
+                            <strong>Analytics cookies</strong>
+                            <p>Analytics cookies help us understand how visitors interact with the site.</p>
+                        </span>
+                        <input id="analytics-cookies-toggle" type="checkbox" ${current.analytics ? 'checked' : ''} />
+                    </label>
+                </div>
+                <div class="cookie-pref-actions">
+                    <button type="button" class="cookie-btn cookie-btn-secondary" id="cookie-pref-cancel">Cancel</button>
+                    <button type="button" class="cookie-btn cookie-btn-primary" id="cookie-pref-save">Save preferences</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        const cancelBtn = modal.querySelector('#cookie-pref-cancel');
+        const saveBtn = modal.querySelector('#cookie-pref-save');
+        const analyticsToggle = modal.querySelector('#analytics-cookies-toggle');
+
+        if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+        if (saveBtn) {
+            saveBtn.addEventListener('click', () => {
+                saveConsent({ analytics: !!analyticsToggle?.checked });
+                closeModal();
+                closeBanner();
+            });
+        }
+    }
+
+    if (existingConsent) return;
+
+    const banner = document.createElement('div');
+    banner.id = 'cookie-banner';
+    banner.className = 'cookie-banner';
+    banner.innerHTML = `
+        <p>This website uses cookies to improve the experience, analyse traffic and understand how visitors interact with the site.</p>
+        <div class="cookie-banner-actions">
+            <button type="button" class="cookie-btn cookie-btn-primary" id="cookie-accept-all">Accept all</button>
+            <button type="button" class="cookie-btn cookie-btn-secondary" id="cookie-reject">Reject</button>
+            <button type="button" class="cookie-btn cookie-btn-link" id="cookie-preferences">Preferences</button>
+        </div>
+    `;
+
+    document.body.appendChild(banner);
+
+    const acceptBtn = banner.querySelector('#cookie-accept-all');
+    const rejectBtn = banner.querySelector('#cookie-reject');
+    const prefBtn = banner.querySelector('#cookie-preferences');
+
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+            saveConsent({ analytics: true });
+            closeBanner();
+        });
+    }
+    if (rejectBtn) {
+        rejectBtn.addEventListener('click', () => {
+            saveConsent({ analytics: false });
+            closeBanner();
+        });
+    }
+    if (prefBtn) {
+        prefBtn.addEventListener('click', openPreferences);
+    }
+}
+
 // UI Interactions
 function setupUI() {
     function updateNavLogo() {
@@ -599,4 +744,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadTranslations();
     setupUI();
     setupDesktopDropdowns();
+    setupImagePerformance();
+    ensureFooterLegalLinks();
+    initCookieConsent();
 });

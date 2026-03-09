@@ -136,62 +136,119 @@
     </div>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero hero-minimal visible" style="background-image: url('assets/hero-bg.jpg');">
             <div class="hero-content">
-                <span class="kicker" data-i18n="contact.label">HÖR AV DIG</span>
-                <h1 data-i18n="contact.title">Börja din resa.</h1>
+                <span class="kicker">[IMAGE: quiet Italian terrace / landscape / elegant minimal scene]</span>
+                <h1>Start the conversation.</h1>
+                <p>Whether you are exploring Marche, considering a property or simply looking to understand the region better, we welcome thoughtful enquiries.</p>
+                <a href="../access/private-introductions/index.html" class="btn">Request Access</a>
             </div>
         </section>
 
-        <!-- Main Content -->
-        <section id="contact" class="visible">
+        <section id="contact-introduction" class="visible">
+            <div class="container">
+                <div class="max-900">
+                    <h2>A more personal starting point.</h2>
+                    <p>LUX is designed around dialogue rather than volume.</p>
+                    <p>Many conversations begin simply - with a question about the region, a type of property or a place that has caught someone’s attention.</p>
+                    <p>From there, the conversation can grow naturally depending on interest, timing and fit.</p>
+                </div>
+                <div class="service-card" style="margin-top: 24px; min-height: 260px; display: flex; align-items: center; justify-content: center;">
+                    <span class="text-uppercase text-terracotta">[IMAGE: editorial desk / quiet workspace / planning scene]</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="reach-out-about" class="visible">
+            <div class="container">
+                <h2>You may wish to reach out about.</h2>
+                <div class="grid-3">
+                    <div class="service-card">
+                        <h3>Exploring Marche</h3>
+                        <p>Understanding the region, towns and different settings.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Property opportunities</h3>
+                        <p>Discussing homes, projects or off-market possibilities.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Private introductions</h3>
+                        <p>Learning more about how LUX connects buyers with the region through local networks.</p>
+                    </div>
+                </div>
+                <div class="service-card" style="margin-top: 24px; min-height: 260px; display: flex; align-items: center; justify-content: center;">
+                    <span class="text-uppercase text-terracotta">[IMAGE: village street / regional atmosphere]</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-form-section" class="visible">
             <div class="container">
                 <div class="grid-2">
                     <div class="text-left-desktop">
-                        <p class="mb-80" data-i18n="contact.text"></p>
-
-                        <div class="contact-methods">
-                            <a href="mailto:info@luxlb.com" class="contact-email-link"
-                                data-i18n="contact.email">info@luxlb.com</a>
-                            <div class="contact-social-btns">
-                                <a href="https://wa.me/46709756848" target="_blank" class="discovery-btn"
-                                    data-i18n="contact.whatsapp">WHATSAPP</a>
-                                <a href="https://www.instagram.com/lux.residency/" target="_blank" class="discovery-btn"
-                                    data-i18n="contact.instagram">INSTAGRAM</a>
-                            </div>
+                        <h2>Contact LUX</h2>
+                        <p>Share a few details about what you are exploring.</p>
+                        <p>This might include preferred region, property type, timing or simply a general question.</p>
+                        <div class="service-card" style="margin-top: 24px; min-height: 220px; display: flex; align-items: center; justify-content: center;">
+                            <span class="text-uppercase text-terracotta">[IMAGE: minimal editorial image / architecture detail]</span>
                         </div>
                     </div>
                     <div class="custom-form-container">
                         <form id="contact-form" class="custom-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="firstName" data-i18n="contact.first_name">First Name</label>
-                                    <input type="text" id="firstName" name="firstName" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastName" data-i18n="contact.last_name">Last Name</label>
-                                    <input type="text" id="lastName" name="lastName" required>
-                                </div>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="email" data-i18n="contact.email_label">Email</label>
+                                <label for="email">Email</label>
                                 <input type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="phone" data-i18n="contact.phone">Phone (optional)</label>
-                                <input type="tel" id="phone" name="phone">
+                                <label for="country">Country</label>
+                                <input type="text" id="country" name="country">
                             </div>
                             <div class="form-group">
-                                <label for="message" data-i18n="contact.message">Message</label>
+                                <label for="area-of-interest">Area of interest</label>
+                                <input type="text" id="area-of-interest" name="area_of_interest">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
                                 <textarea id="message" name="message" rows="4" required></textarea>
                             </div>
+                            <div class="form-consent">
+                                <input type="checkbox" id="privacy-consent" name="privacy_consent" required>
+                                <label for="privacy-consent">I agree to the <a href="../legal/privacy-policy/index.html">Privacy Policy</a>.</label>
+                            </div>
                             <button type="submit" class="submit-btn">
-                                <span data-i18n="contact.submit">Submit Inquiry</span>
+                                <span>Send enquiry</span>
                                 <span class="btn-arrow">→</span>
                             </button>
                         </form>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="alternative-contact" class="visible">
+            <div class="container">
+                <div class="max-900">
+                    <h2>Direct contact.</h2>
+                    <p>For more direct conversations, you may also reach out via email.</p>
+                    <p><a href="mailto:info@luxlb.com" class="contact-email-link">info@luxlb.com</a></p>
+                </div>
+                <div class="service-card" style="margin-top: 24px; min-height: 260px; display: flex; align-items: center; justify-content: center;">
+                    <span class="text-uppercase text-terracotta">[IMAGE: quiet architectural detail / Italian doorway]</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-final-cta" class="visible">
+            <div class="container text-center max-900">
+                <h2>Looking for a more considered path into Italy?</h2>
+                <p>LUX combines regional understanding, curated introductions and selective access for buyers seeking something quieter and more meaningful.</p>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="../access/private-introductions/index.html" class="btn">Request Access</a>
+                    <a href="../discover/regions/marche/index.html" class="discovery-btn">Explore Marche</a>
                 </div>
             </div>
         </section>
