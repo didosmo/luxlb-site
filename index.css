@@ -3279,38 +3279,6 @@ nav#main-nav:not(.scrolled) .burger-menu span {
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* 2) Text alignment system */
-.hero-content,
-section .max-900,
-section .section-intro,
-section .insights-intro,
-section .editorial-intro {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-section h2,
-section .max-900>p {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.service-card,
-.service-card h3,
-.service-card p {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.text-left-desktop,
-.custom-form-container,
-.custom-form,
-.form-group {
-    text-align: left;
-}
 
 /* 3) Section spacing normalization */
 section {
@@ -3359,27 +3327,6 @@ section {
     margin-bottom: 6px;
 }
 
-/* 5) Contact page balance */
-#contact-form-section .grid-2 {
-    align-items: start;
-    gap: 22px;
-}
-
-#contact-form-section .text-left-desktop {
-    max-width: 560px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#contact-form-section .custom-form-container {
-    max-width: 620px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#contact-form-section .form-group {
-    margin-bottom: 22px;
-}
 
 /* 6) Mobile optical balance */
 @media (max-width: 768px) {
@@ -3404,13 +3351,6 @@ section {
         padding-bottom: 56px;
     }
 
-    #contact-form-section .grid-2 {
-        gap: 16px;
-    }
-
-    #contact-form-section .form-group {
-        margin-bottom: 16px;
-    }
 }
 
 /* ============================================================
@@ -3434,44 +3374,6 @@ nav#main-nav:not(.scrolled) .burger-menu span {
     text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* 2) Editorial alignment defaults */
-.hero-content,
-section .max-900,
-section .section-intro,
-section .insights-intro,
-section .editorial-intro {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-section h2,
-section .max-900 > p,
-section .cta-row,
-section .btn-row {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.service-card,
-.service-card h3,
-.service-card p,
-.custom-form-container,
-.custom-form,
-.form-group,
-.form-group label {
-    text-align: left;
-}
-
-/* Keep longer process flows left where needed */
-#step-by-step .service-card,
-#step-by-step .service-card h3,
-#step-by-step .service-card p,
-#who-this-process-suits .max-900,
-#who-this-process-suits .max-900 p {
-    text-align: left;
-}
 
 /* 3) Section spacing normalization */
 section {
@@ -3520,31 +3422,6 @@ section {
     margin-bottom: 4px;
 }
 
-/* 5) Contact page balance */
-#contact-form-section .grid-2 {
-    align-items: start;
-    gap: 18px;
-}
-
-#contact-form-section .text-left-desktop {
-    max-width: 540px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#contact-form-section .custom-form-container {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#contact-form-section .service-card {
-    margin-top: 16px !important;
-}
-
-#contact-form-section .form-group {
-    margin-bottom: 18px;
-}
 
 /* 6) CTA system correction */
 .btn,
@@ -3604,13 +3481,6 @@ section {
         padding-bottom: 52px;
     }
 
-    #contact-form-section .grid-2 {
-        gap: 14px;
-    }
-
-    #contact-form-section .form-group {
-        margin-bottom: 14px;
-    }
 }
 
 /* ============================================================
