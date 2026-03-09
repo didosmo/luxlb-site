@@ -549,6 +549,23 @@ function setupImagePerformance() {
     });
 }
 
+function ensureBrandLogoDot() {
+    const logos = document.querySelectorAll('.brand-logo');
+    if (!logos.length) return;
+
+    logos.forEach((logo) => {
+        if (logo.querySelector('.logo-dot')) return;
+
+        const base = (logo.textContent || '').trim().replace(/\.+$/, '');
+        logo.textContent = base || 'LUX';
+
+        const dot = document.createElement('span');
+        dot.className = 'logo-dot';
+        dot.textContent = '.';
+        logo.appendChild(dot);
+    });
+}
+
 function ensureFooterLegalLinks() {
     const footerCols = document.querySelectorAll('footer .footer-col');
     if (!footerCols.length) return;
@@ -741,6 +758,7 @@ function setupUI() {
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     normalizeNavigationStructure();
+    ensureBrandLogoDot();
     loadTranslations();
     setupUI();
     setupDesktopDropdowns();
