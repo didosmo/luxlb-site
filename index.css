@@ -1232,9 +1232,9 @@ nav.scrolled .burger-menu span {
 }
 
 .footer-cta .discovery-btn:hover {
-    background: white;
-    color: var(--c-dark);
-    border-color: white;
+    background: transparent;
+    color: #2F4A68;
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* ── 11. FOOTER ─────────────────────────────────────────────── */
