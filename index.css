@@ -3599,6 +3599,11 @@ main section > .container.text-center,
     color: var(--c-white);
 }
 
+#private-access .btn,
+#private-access .btn:hover {
+    color: var(--c-white);
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
     #lifestyle .grid-3,
     #selected-opportunities .grid-3,
