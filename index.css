@@ -3573,6 +3573,11 @@ main section > .container.text-center,
     margin-right: auto;
 }
 
+#lifestyle .service-card h3,
+#lifestyle .service-card p {
+    text-align: center;
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
     #lifestyle .grid-3,
     #selected-opportunities .grid-3,
@@ -3596,6 +3601,11 @@ main section > .container.text-center,
     #future-regions-preview .grid-3 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 24px;
+    }
+
+    #lifestyle .service-card h3,
+    #lifestyle .service-card p {
+        text-align: left;
     }
 }
 
@@ -3622,6 +3632,11 @@ main section > .container.text-center,
     #future-regions-preview .grid-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 32px;
+    }
+
+    #lifestyle .service-card h3,
+    #lifestyle .service-card p {
+        text-align: left;
     }
 }
 
