@@ -3594,6 +3594,11 @@ main section > .container.text-center,
     margin-right: auto;
 }
 
+#platform-cta .btn,
+#platform-cta .btn:hover {
+    color: var(--c-white);
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
     #lifestyle .grid-3,
     #selected-opportunities .grid-3,
