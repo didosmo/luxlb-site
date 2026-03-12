@@ -3583,6 +3583,17 @@ main section > .container.text-center,
     text-align: center;
 }
 
+#market-insights .service-card h3,
+#market-insights .service-card p {
+    text-align: center;
+}
+
+#market-insights > .container > .mt-30 > .discovery-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
     #lifestyle .grid-3,
     #selected-opportunities .grid-3,
