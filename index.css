@@ -852,14 +852,26 @@ nav.scrolled .burger-menu span {
     margin-bottom: var(--sp-lg);
 }
 
+.hero-headline-top,
 .hero-headline-line {
     display: block;
+}
+
+.hero-headline-line {
     white-space: nowrap;
 }
 
 @media (max-width: 768px) {
+    .hero-headline-top,
     .hero-headline-line {
         display: inline;
+    }
+
+    .hero-headline-top::after {
+        content: " ";
+    }
+
+    .hero-headline-line {
         white-space: normal;
     }
 }
