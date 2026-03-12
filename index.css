@@ -3592,6 +3592,9 @@ main section > .container.text-center,
     display: block;
     margin-left: auto;
     margin-right: auto;
+    min-width: 320px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 #platform-cta .btn,
