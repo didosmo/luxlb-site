@@ -3801,7 +3801,7 @@ main section > .container > .service-card[style*="justify-content: center"] {
     margin-bottom: 34px;
     color: #ffffff;
     font-family: var(--font-serif);
-    font-size: clamp(30px, 2.2vw, 40px);
+    font-size: clamp(16px, 1.1vw, 18px);
     line-height: 1.35;
 }
 
