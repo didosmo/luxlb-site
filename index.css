@@ -852,13 +852,15 @@ nav.scrolled .burger-menu span {
     margin-bottom: var(--sp-lg);
 }
 
-.hero-headline-break {
-    display: inline;
+.hero-headline-line {
+    display: block;
+    white-space: nowrap;
 }
 
 @media (max-width: 768px) {
-    .hero-headline-break {
-        display: none;
+    .hero-headline-line {
+        display: inline;
+        white-space: normal;
     }
 }
 
