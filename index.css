@@ -3508,6 +3508,14 @@ main section > .container.text-center,
     text-align: center;
 }
 
+main section > .container > :is(.max-900, .max-700) > p,
+main section > .container.text-center > p,
+#future-regions-preview .text-center > p,
+#private-access .grid-2 > div:first-child > p,
+#curated-approach .grid-2 > div:first-child > p {
+    text-align: center;
+}
+
 /* 2-column text/image sections using first column as editorial intro */
 #private-access .grid-2 > div:first-child,
 #curated-approach .grid-2 > div:first-child {
@@ -3580,10 +3588,6 @@ main section > .container.text-center,
 
 #selected-opportunities .service-card h3,
 #selected-opportunities .service-card p {
-    text-align: center;
-}
-
-#selected-opportunities > .container > .max-900 > p {
     text-align: center;
 }
 
