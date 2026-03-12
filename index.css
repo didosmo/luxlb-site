@@ -3513,6 +3513,8 @@ main section > .container.text-center > p,
 #future-regions-preview .text-center > p,
 #private-access .grid-2 > div:first-child > p,
 #curated-approach .grid-2 > div:first-child > p {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
 
@@ -3588,12 +3590,6 @@ main section > .container.text-center > p,
 
 #selected-opportunities .service-card h3,
 #selected-opportunities .service-card p {
-    text-align: center;
-}
-
-#selected-opportunities > .container > .max-900 > p {
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
 }
 
