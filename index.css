@@ -3633,10 +3633,6 @@ main section > .container.text-center,
         gap: 24px;
     }
 
-    #lifestyle .service-card h3,
-    #lifestyle .service-card p {
-        text-align: left;
-    }
 }
 
 @media (min-width: 1025px) {
@@ -3664,10 +3660,6 @@ main section > .container.text-center,
         gap: 32px;
     }
 
-    #lifestyle .service-card h3,
-    #lifestyle .service-card p {
-        text-align: left;
-    }
 }
 
 /* C) CTA rows that exist in the DOM as inline wrappers under centered blocks */
