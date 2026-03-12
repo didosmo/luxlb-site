@@ -3578,6 +3578,11 @@ main section > .container.text-center,
     text-align: center;
 }
 
+#selected-opportunities .service-card h3,
+#selected-opportunities .service-card p {
+    text-align: center;
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
     #lifestyle .grid-3,
     #selected-opportunities .grid-3,
