@@ -3459,6 +3459,10 @@ section {
     border-color: #293449;
 }
 
+.hero .discovery-btn {
+    border-color: #ffffff;
+}
+
 .discovery-btn:hover,
 .btn-outline:hover,
 .secondary-btn:hover {
