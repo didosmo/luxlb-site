@@ -3591,6 +3591,12 @@ main section > .container.text-center > p,
     text-align: center;
 }
 
+#selected-opportunities > .container > .max-900 > p {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 #market-insights .service-card h3,
 #market-insights .service-card p {
     text-align: center;
