@@ -855,6 +855,7 @@ nav.scrolled .burger-menu span {
 .hero-headline-top,
 .hero-headline-line {
     display: block;
+    text-align: center;
 }
 
 .hero-headline-line {
