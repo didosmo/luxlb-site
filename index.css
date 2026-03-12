@@ -3588,13 +3588,14 @@ main section > .container.text-center,
     text-align: center;
 }
 
+#market-insights > .container > .mt-30 {
+    text-align: center;
+}
+
 #market-insights > .container > .mt-30 > .discovery-btn {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: inline-block;
     min-width: 320px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 14px 40px;
 }
 
 #platform-cta .btn,
