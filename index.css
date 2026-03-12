@@ -863,13 +863,8 @@ nav.scrolled .burger-menu span {
 }
 
 @media (max-width: 768px) {
-    .hero-headline-top,
     .hero-headline-line {
-        display: inline;
-    }
-
-    .hero-headline-top::after {
-        content: " ";
+        display: block;
     }
 
     .hero-headline-line {
