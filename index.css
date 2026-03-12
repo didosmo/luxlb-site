@@ -3459,8 +3459,8 @@ section {
     border-color: #293449;
 }
 
-.hero .discovery-btn {
-    border-color: #ffffff;
+.hero-content > div[style*="display: flex"] > .discovery-btn {
+    border: 1px solid #ffffff;
 }
 
 .discovery-btn:hover,
