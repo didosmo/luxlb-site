@@ -852,6 +852,16 @@ nav.scrolled .burger-menu span {
     margin-bottom: var(--sp-lg);
 }
 
+.hero-headline-break {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .hero-headline-break {
+        display: none;
+    }
+}
+
 .hero p,
 .hero .kicker,
 .hero a {
