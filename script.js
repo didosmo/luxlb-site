@@ -14,13 +14,14 @@ function getPathPrefix() {
 function getNavConfig(prefix) {
     return [
         {
-            key: 'discover',
-            label: 'Discover',
-            href: `${prefix}discover/index.html`,
+            key: 'markets',
+            label: 'Markets',
+            href: `${prefix}markets/index.html`,
             subs: [
-                { label: 'Regions', href: `${prefix}discover/regions/index.html` },
-                { label: 'Lifestyle', href: `${prefix}discover/lifestyle/index.html` },
-                { label: 'Experiences', href: `${prefix}discover/experiences/index.html` }
+                { label: 'Italy', href: `${prefix}markets/italy/index.html` },
+                { label: 'Croatia', href: `${prefix}markets/croatia/index.html` },
+                { label: 'Marche', href: `${prefix}markets/italy/marche/index.html` },
+                { label: 'Zadar', href: `${prefix}markets/croatia/zadar/index.html` }
             ]
         },
         {
@@ -380,12 +381,12 @@ function navigateToPage(id) {
 
     const pageMap = {
         'process': prefix + 'about/process/index.html',
-        'tours': prefix + 'discover/experiences/index.html',
+        'tours': prefix + 'markets/croatia/zadar/index.html',
         'services': prefix + 'access/off-market/index.html',
-        'marche': prefix + 'discover/index.html',
-        'lifestyle': prefix + 'discover/lifestyle/index.html',
+        'marche': prefix + 'markets/italy/marche/index.html',
+        'lifestyle': prefix + 'markets/italy/index.html',
         'market_insights': prefix + 'insights/market-insights/index.html',
-        'future_regions': prefix + 'discover/regions/index.html',
+        'future_regions': prefix + 'markets/index.html',
         'properties': prefix + 'properties/index.html',
         'about': prefix + 'about/index.html',
         'concept': prefix + 'about/concept.html',
