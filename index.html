@@ -138,14 +138,24 @@
     </div>
 
     <main>
-        <section class="hero hero-primary visible" style="background-image: url('assets/hero-bg.jpg');">
+        <section class="hero hero-primary visible">
+            <div class="editable-image-frame editable-image-frame--hero hero-media">
+                <img
+                    src="assets/hero-bg.jpg"
+                    alt="Curated homes in authentic Italy"
+                    class="editable-image"
+                    data-image-slot="hero-image">
+            </div>
             <div class="hero-content">
-                <span class="kicker">CURATED HOMES IN AUTHENTIC ITALY</span>
-                <h1><span class="hero-headline-top">Quiet luxury.</span><span class="hero-headline-line">True guidance. Real Italy.</span></h1>
-                <p>LUX connects international buyers with carefully curated homes, local expertise and private opportunities in one of Italy's most authentic regions.</p>
+                <span class="kicker" data-editable="hero-kicker">CURATED HOMES IN AUTHENTIC ITALY</span>
+                <h1>
+                    <span class="hero-headline-top" data-editable="hero-title-line-1">Quiet luxury.</span>
+                    <span class="hero-headline-line" data-editable="hero-title-line-2">True guidance. Real Italy.</span>
+                </h1>
+                <p data-editable="hero-intro">LUX connects international buyers with carefully curated homes, local expertise and private opportunities in one of Italy's most authentic regions.</p>
                 <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                    <a href="access/off-market/index.html" class="btn">Request Access</a>
-                    <a href="discover/regions/index.html" class="discovery-btn">Discover Marche</a>
+                    <a href="access/off-market/index.html" class="btn" data-editable="hero-cta-text">Request Access</a>
+                    <a href="discover/regions/index.html" class="discovery-btn" data-editable="hero-secondary-cta-text">Discover Marche</a>
                 </div>
             </div>
         </section>
@@ -153,13 +163,19 @@
         <section id="intro" class="visible">
             <div class="container">
                 <div class="max-900">
-                    <h2>A curated gateway to Italy.</h2>
-                    <p>LUX is not a traditional property portal.</p>
-                    <p>We curate homes, regions and introductions for international buyers looking for something more personal than a listing website.</p>
-                    <p>Through trusted local networks and selective partnerships we connect buyers with opportunities that rarely appear on the open market.</p>
+                    <h2 data-editable="intro-headline">A curated gateway to Italy.</h2>
+                    <p data-editable="intro-body-1">LUX is not a traditional property portal.</p>
+                    <p data-editable="intro-body-2">We curate homes, regions and introductions for international buyers looking for something more personal than a listing website.</p>
+                    <p data-editable="intro-body-3">Through trusted local networks and selective partnerships we connect buyers with opportunities that rarely appear on the open market.</p>
                 </div>
-                <div class="service-card" style="margin-top: 24px; min-height: 260px; display: flex; align-items: center; justify-content: center;">
-                    <span class="text-uppercase text-terracotta">[IMAGE: Italian village / piazza / lifestyle scene]</span>
+                <div class="service-card service-card--media mt-30">
+                    <div class="editable-image-frame editable-image-frame--landscape">
+                        <img
+                            src="assets/hero-bg.jpg"
+                            alt="Italian village lifestyle scene"
+                            class="editable-image"
+                            data-image-slot="intro-image">
+                    </div>
                 </div>
             </div>
         </section>
@@ -167,41 +183,69 @@
         <section id="region-spotlight" class="visible">
             <div class="container">
                 <div class="max-900">
-                    <h2>Marche - Italy's quiet masterpiece.</h2>
-                    <p>Stretching from the Adriatic Sea to the Apennine mountains, Marche offers landscapes, culture and villages that still feel undiscovered.</p>
-                    <p>It is one of Italy's most authentic regions and increasingly sought after by international buyers looking for a quieter alternative to Tuscany.</p>
-                    <a href="discover/regions/index.html" class="discovery-btn">Discover the Region</a>
+                    <h2 data-editable="region-spotlight-headline">Marche - Italy's quiet masterpiece.</h2>
+                    <p data-editable="region-spotlight-body-1">Stretching from the Adriatic Sea to the Apennine mountains, Marche offers landscapes, culture and villages that still feel undiscovered.</p>
+                    <p data-editable="region-spotlight-body-2">It is one of Italy's most authentic regions and increasingly sought after by international buyers looking for a quieter alternative to Tuscany.</p>
+                    <a href="discover/regions/index.html" class="discovery-btn" data-editable="region-spotlight-cta-text">Discover the Region</a>
                 </div>
                 <div class="grid-2 mt-30">
-                    <div class="service-card" style="min-height: 200px; display: flex; align-items: center; justify-content: center;"><span class="text-uppercase text-terracotta">[IMAGE: Marche coastline]</span></div>
-                    <div class="service-card" style="min-height: 200px; display: flex; align-items: center; justify-content: center;"><span class="text-uppercase text-terracotta">[IMAGE: Marche hills]</span></div>
-                    <div class="service-card" style="min-height: 200px; display: flex; align-items: center; justify-content: center;"><span class="text-uppercase text-terracotta">[IMAGE: Historic village]</span></div>
-                    <div class="service-card" style="min-height: 200px; display: flex; align-items: center; justify-content: center;"><span class="text-uppercase text-terracotta">[IMAGE: Vineyard landscape]</span></div>
+                    <div class="service-card service-card--media">
+                        <div class="editable-image-frame editable-image-frame--landscape">
+                            <img src="assets/hero-bg.jpg" alt="Marche coastline" class="editable-image" data-image-slot="marche-image-1">
+                        </div>
+                    </div>
+                    <div class="service-card service-card--media">
+                        <div class="editable-image-frame editable-image-frame--landscape">
+                            <img src="assets/hero-bg.jpg" alt="Marche hills" class="editable-image" data-image-slot="marche-image-2">
+                        </div>
+                    </div>
+                    <div class="service-card service-card--media">
+                        <div class="editable-image-frame editable-image-frame--landscape">
+                            <img src="assets/hero-bg.jpg" alt="Historic village" class="editable-image" data-image-slot="marche-image-3">
+                        </div>
+                    </div>
+                    <div class="service-card service-card--media">
+                        <div class="editable-image-frame editable-image-frame--landscape">
+                            <img src="assets/hero-bg.jpg" alt="Vineyard landscape" class="editable-image" data-image-slot="marche-image-4">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="lifestyle" class="visible">
             <div class="container">
-                <h2>A different rhythm of life.</h2>
+                <h2 data-editable="lifestyle-headline">A different rhythm of life.</h2>
                 <div class="grid-3">
                     <div class="service-card">
-                        <h3>Sea and mountains</h3>
-                        <p>Within an hour you move between Adriatic beaches and mountain villages.</p>
+                        <h3 data-editable="lifestyle-card-1-headline">Sea and mountains</h3>
+                        <p data-editable="lifestyle-card-1-body">Within an hour you move between Adriatic beaches and mountain villages.</p>
                     </div>
                     <div class="service-card">
-                        <h3>Food and culture</h3>
-                        <p>Local markets, vineyards and centuries of culinary tradition shape everyday life here.</p>
+                        <h3 data-editable="lifestyle-card-2-headline">Food and culture</h3>
+                        <p data-editable="lifestyle-card-2-body">Local markets, vineyards and centuries of culinary tradition shape everyday life here.</p>
                     </div>
                     <div class="service-card">
-                        <h3>Authenticity</h3>
-                        <p>Marche remains one of the few Italian regions where daily life still moves at a slower, more authentic pace.</p>
+                        <h3 data-editable="lifestyle-card-3-headline">Authenticity</h3>
+                        <p data-editable="lifestyle-card-3-body">Marche remains one of the few Italian regions where daily life still moves at a slower, more authentic pace.</p>
                     </div>
                 </div>
                 <div class="grid-3 mt-30">
-                    <div class="service-card" style="min-height: 180px; display: flex; align-items: center; justify-content: center;"><span class="text-uppercase text-terracotta">[IMAGE: vineyard / countryside]</span></div>
-                    <div class="service-card" style="min-height: 180px; display: flex; align-items: center; justify-content: center;"><span class="text-uppercase text-terracotta">[IMAGE: local market]</span></div>
-                    <div class="service-card" style="min-height: 180px; display: flex; align-items: center; justify-content: center;"><span class="text-uppercase text-terracotta">[IMAGE: coastal village]</span></div>
+                    <div class="service-card service-card--media">
+                        <div class="editable-image-frame editable-image-frame--landscape">
+                            <img src="assets/hero-bg.jpg" alt="Vineyard countryside" class="editable-image" data-image-slot="lifestyle-image-1">
+                        </div>
+                    </div>
+                    <div class="service-card service-card--media">
+                        <div class="editable-image-frame editable-image-frame--landscape">
+                            <img src="assets/hero-bg.jpg" alt="Local market" class="editable-image" data-image-slot="lifestyle-image-2">
+                        </div>
+                    </div>
+                    <div class="service-card service-card--media">
+                        <div class="editable-image-frame editable-image-frame--landscape">
+                            <img src="assets/hero-bg.jpg" alt="Coastal village" class="editable-image" data-image-slot="lifestyle-image-3">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -209,23 +253,38 @@
         <section id="selected-opportunities" class="visible">
             <div class="container">
                 <div class="max-900">
-                    <h2>Selected opportunities.</h2>
-                    <p>Not every opportunity appears publicly.</p>
-                    <p>Through our network we curate a small number of homes, restoration projects and unique properties each year.</p>
-                    <a href="access/off-market/index.html" class="discovery-btn">Request Access to Opportunities</a>
+                    <h2 data-editable="opportunities-headline">Selected opportunities.</h2>
+                    <p data-editable="opportunities-intro-1">Not every opportunity appears publicly.</p>
+                    <p data-editable="opportunities-intro-2">Through our network we curate a small number of homes, restoration projects and unique properties each year.</p>
+                    <a href="access/off-market/index.html" class="discovery-btn" data-editable="opportunities-cta-text">Request Access to Opportunities</a>
                 </div>
                 <div class="grid-3 mt-30">
-                    <div class="service-card">
-                        <h3>Country Estate</h3>
-                        <p>[IMAGE: countryside estate]</p>
+                    <div class="service-card service-card--content">
+                        <div class="editable-image-frame editable-image-frame--card">
+                            <img src="assets/hero-bg.jpg" alt="Country estate" class="editable-image" data-image-slot="opportunity-image-1">
+                        </div>
+                        <div class="service-card__body">
+                            <h3 data-editable="opportunity-card-1-headline">Country Estate</h3>
+                            <p data-editable="opportunity-card-1-body">A discreet countryside residence with land, privacy and long-view potential.</p>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <h3>Restoration Project</h3>
-                        <p>[IMAGE: renovation property]</p>
+                    <div class="service-card service-card--content">
+                        <div class="editable-image-frame editable-image-frame--card">
+                            <img src="assets/hero-bg.jpg" alt="Restoration project" class="editable-image" data-image-slot="opportunity-image-2">
+                        </div>
+                        <div class="service-card__body">
+                            <h3 data-editable="opportunity-card-2-headline">Restoration Project</h3>
+                            <p data-editable="opportunity-card-2-body">For buyers seeking character, upside and a more personal route into Italian ownership.</p>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <h3>Coastal Apartment</h3>
-                        <p>[IMAGE: coastal apartment]</p>
+                    <div class="service-card service-card--content">
+                        <div class="editable-image-frame editable-image-frame--card">
+                            <img src="assets/hero-bg.jpg" alt="Coastal apartment" class="editable-image" data-image-slot="opportunity-image-3">
+                        </div>
+                        <div class="service-card__body">
+                            <h3 data-editable="opportunity-card-3-headline">Coastal Apartment</h3>
+                            <p data-editable="opportunity-card-3-body">A refined foothold near the Adriatic for easy living and seasonal retreats.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -233,23 +292,38 @@
 
         <section id="market-insights" class="visible">
             <div class="container">
-                <h2>Insights from the Marche property market.</h2>
+                <h2 data-editable="insights-headline">Insights from the Marche property market.</h2>
                 <div class="grid-3">
-                    <div class="service-card">
-                        <h3>Why Marche is attracting international buyers</h3>
-                        <p>[IMAGE: editorial property scene]</p>
+                    <div class="service-card service-card--content">
+                        <div class="editable-image-frame editable-image-frame--card">
+                            <img src="assets/hero-bg.jpg" alt="Editorial property scene" class="editable-image" data-image-slot="insight-image-1">
+                        </div>
+                        <div class="service-card__body">
+                            <h3 data-editable="insight-card-1-headline">Why Marche is attracting international buyers</h3>
+                            <p data-editable="insight-card-1-body">An emerging region with stronger value, deeper calm and less market noise than Italy's obvious names.</p>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <h3>Buying property in Italy - what international buyers should know</h3>
-                        <p>[IMAGE: Italian landscape]</p>
+                    <div class="service-card service-card--content">
+                        <div class="editable-image-frame editable-image-frame--card">
+                            <img src="assets/hero-bg.jpg" alt="Italian landscape" class="editable-image" data-image-slot="insight-image-2">
+                        </div>
+                        <div class="service-card__body">
+                            <h3 data-editable="insight-card-2-headline">Buying property in Italy - what international buyers should know</h3>
+                            <p data-editable="insight-card-2-body">A calm guide to process, local nuance and the details that matter before you commit.</p>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <h3>The rise of quieter regions in Southern Europe</h3>
-                        <p>[IMAGE: village architecture]</p>
+                    <div class="service-card service-card--content">
+                        <div class="editable-image-frame editable-image-frame--card">
+                            <img src="assets/hero-bg.jpg" alt="Village architecture" class="editable-image" data-image-slot="insight-image-3">
+                        </div>
+                        <div class="service-card__body">
+                            <h3 data-editable="insight-card-3-headline">The rise of quieter regions in Southern Europe</h3>
+                            <p data-editable="insight-card-3-body">Where buyers are looking now when they want beauty, authenticity and long-term livability.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="mt-30">
-                    <a href="insights/market-insights/index.html" class="discovery-btn">Read Market Insights</a>
+                    <a href="insights/market-insights/index.html" class="discovery-btn" data-editable="insights-cta-text">Read Market Insights</a>
                 </div>
             </div>
         </section>
@@ -258,13 +332,15 @@
             <div class="container">
                 <div class="grid-2">
                     <div>
-                        <h2>Private access. Curated introductions.</h2>
-                        <p>Many of the most interesting opportunities are never publicly listed.</p>
-                        <p>Through LUX you gain access to a curated network of agents, owners and local partners across the region.</p>
-                        <a href="access/private-introductions/index.html" class="btn">Request Private Access</a>
+                        <h2 data-editable="private-access-headline">Private access. Curated introductions.</h2>
+                        <p data-editable="private-access-body-1">Many of the most interesting opportunities are never publicly listed.</p>
+                        <p data-editable="private-access-body-2">Through LUX you gain access to a curated network of agents, owners and local partners across the region.</p>
+                        <a href="access/private-introductions/index.html" class="btn" data-editable="private-access-cta-text">Request Private Access</a>
                     </div>
-                    <div class="service-card" style="min-height: 280px; display: flex; align-items: center; justify-content: center;">
-                        <span class="text-uppercase text-terracotta">[IMAGE: terrace view / Italian countryside home]</span>
+                    <div class="service-card service-card--media">
+                        <div class="editable-image-frame editable-image-frame--landscape">
+                            <img src="assets/hero-bg.jpg" alt="Terrace view over the Italian countryside" class="editable-image" data-image-slot="private-access-image">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -272,13 +348,13 @@
 
         <section id="three-founders" class="visible">
             <div class="container text-center three-founders-inner">
-                <span class="three-founders-label">About LUX</span>
-                <h2>Three founders. One purpose.</h2>
+                <span class="three-founders-label" data-editable="about-label">About LUX</span>
+                <h2 data-editable="about-headline">Three founders. One purpose.</h2>
                 <p class="three-founders-subtext">
-                    A Swedish-Italian collaboration shaped by strategy, communication and deep local roots.
+                    <span data-editable="about-subtext">A Swedish-Italian collaboration shaped by strategy, communication and deep local roots.</span>
                 </p>
                 <p class="three-founders-statement">
-                    Our goal is simple: to make the Italian dream honest, calm and beautifully real.
+                    <span data-editable="about-statement">Our goal is simple: to make the Italian dream honest, calm and beautifully real.</span>
                 </p>
                 <div class="three-founders-divider"></div>
             </div>
@@ -287,39 +363,39 @@
         <section id="future-regions-preview" class="visible">
             <div class="container">
                 <div class="text-center max-700">
-                    <h2>Future Regions</h2>
-                    <p>LUX begins in Marche, but our network and long-term vision extend beyond one region.</p>
-                    <p>Through trusted contacts and selective partnerships, we are gradually building access to other parts of Italy that share the same sense of beauty, character and long-term appeal.</p>
+                    <h2 data-editable="future-regions-headline">Future Regions</h2>
+                    <p data-editable="future-regions-body-1">LUX begins in Marche, but our network and long-term vision extend beyond one region.</p>
+                    <p data-editable="future-regions-body-2">Through trusted contacts and selective partnerships, we are gradually building access to other parts of Italy that share the same sense of beauty, character and long-term appeal.</p>
                 </div>
 
                 <div class="grid-3 mt-30">
-                    <article class="service-card" style="padding:0; overflow:hidden;">
-                        <div style="min-height:280px; background:linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.15)); display:flex; align-items:center; justify-content:center;">
-                            <span class="text-uppercase text-terracotta">[IMAGE: Sicily landscape / coast / town]</span>
+                    <article class="service-card service-card--content" style="padding:0; overflow:hidden;">
+                        <div class="editable-image-frame editable-image-frame--card">
+                            <img src="assets/hero-bg.jpg" alt="Sicily landscape" class="editable-image" data-image-slot="future-region-sicily">
                         </div>
                         <div style="padding:16px 18px; background:rgba(247,245,242,0.95);">
-                            <h3 style="margin-bottom:4px;">Sicily</h3>
-                            <p style="margin:0; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;">Soon</p>
+                            <h3 style="margin-bottom:4px;" data-editable="future-region-sicily-name">Sicily</h3>
+                            <p style="margin:0; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;" data-editable="future-region-sicily-status">Soon</p>
                         </div>
                     </article>
 
-                    <article class="service-card" style="padding:0; overflow:hidden;">
-                        <div style="min-height:280px; background:linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.15)); display:flex; align-items:center; justify-content:center;">
-                            <span class="text-uppercase text-terracotta">[IMAGE: Puglia architecture / coast / white village]</span>
+                    <article class="service-card service-card--content" style="padding:0; overflow:hidden;">
+                        <div class="editable-image-frame editable-image-frame--card">
+                            <img src="assets/hero-bg.jpg" alt="Puglia architecture" class="editable-image" data-image-slot="future-region-puglia">
                         </div>
                         <div style="padding:16px 18px; background:rgba(247,245,242,0.95);">
-                            <h3 style="margin-bottom:4px;">Puglia</h3>
-                            <p style="margin:0; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;">Soon</p>
+                            <h3 style="margin-bottom:4px;" data-editable="future-region-puglia-name">Puglia</h3>
+                            <p style="margin:0; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;" data-editable="future-region-puglia-status">Soon</p>
                         </div>
                     </article>
 
-                    <article class="service-card" style="padding:0; overflow:hidden;">
-                        <div style="min-height:280px; background:linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.15)); display:flex; align-items:center; justify-content:center;">
-                            <span class="text-uppercase text-terracotta">[IMAGE: Umbria hills / stone village / countryside]</span>
+                    <article class="service-card service-card--content" style="padding:0; overflow:hidden;">
+                        <div class="editable-image-frame editable-image-frame--card">
+                            <img src="assets/hero-bg.jpg" alt="Umbria landscape" class="editable-image" data-image-slot="future-region-umbria">
                         </div>
                         <div style="padding:16px 18px; background:rgba(247,245,242,0.95);">
-                            <h3 style="margin-bottom:4px;">Umbria</h3>
-                            <p style="margin:0; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;">Soon</p>
+                            <h3 style="margin-bottom:4px;" data-editable="future-region-umbria-name">Umbria</h3>
+                            <p style="margin:0; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;" data-editable="future-region-umbria-status">Soon</p>
                         </div>
                     </article>
                 </div>
@@ -328,9 +404,9 @@
 
         <section id="platform-cta" class="visible">
             <div class="container text-center max-900">
-                <h2>Considering a place in Italy?</h2>
-                <p>Tell us what you are looking for and we will guide you toward curated opportunities that fit.</p>
-                <a href="access/off-market/index.html" class="btn">Request Access</a>
+                <h2 data-editable="platform-cta-headline">Considering a place in Italy?</h2>
+                <p data-editable="platform-cta-body">Tell us what you are looking for and we will guide you toward curated opportunities that fit.</p>
+                <a href="access/off-market/index.html" class="btn" data-editable="platform-cta-button">Request Access</a>
             </div>
         </section>
     </main>
@@ -339,8 +415,8 @@
     <!-- Footer CTA -->
     <section class="footer-cta">
         <div class="container">
-            <h2 data-i18n="footer.cta_title">Planning your move to Italy?</h2>
-            <a href="contact/index.html" class="discovery-btn" data-i18n="footer.cta_button">Book a Discovery Call</a>
+            <h2 data-i18n="footer.cta_title" data-editable="footer-cta-title">Planning your move to Italy?</h2>
+            <a href="contact/index.html" class="discovery-btn" data-i18n="footer.cta_button" data-editable="footer-cta-button">Book a Discovery Call</a>
         </div>
     </section>
 
@@ -349,23 +425,21 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <a href="index.html" class="footer-brand-logo">LUX<span class="logo-dot">.</span></a>
-                    <p class="footer-tagline" data-i18n="footer.tagline">Quiet luxury. True guidance. Real Italy.</p>
+                    <p class="footer-tagline" data-i18n="footer.tagline" data-editable="footer-tagline">Quiet luxury. True guidance. Real Italy.</p>
                 </div>
                 <div class="footer-cols">
                     <div class="footer-col">
-                        <h4 class="footer-col-title" data-i18n="footer.contact_title">Contact</h4>
-                        <a href="mailto:info@luxlb.com">info@luxlb.com</a>
-                        <p>+46 (0) 70 123 45 67</p>
+                        <h4 class="footer-col-title" data-i18n="footer.contact_title" data-editable="footer-contact-title">Contact</h4>
+                        <a href="mailto:info@luxlb.com" data-editable="footer-contact-email">info@luxlb.com</a>
+                        <p data-editable="footer-contact-phone">+46 (0) 70 123 45 67</p>
                     </div>
                     <div class="footer-col">
-                        <h4 class="footer-col-title">Locations</h4>
-                        <p><span data-i18n="footer.office_se">Sweden</span> — <span
-                                data-i18n="footer.stockholm">Stockholm</span></p>
-                        <p><span data-i18n="footer.office_it">Italy</span> — <span
-                                data-i18n="footer.marche">Marche</span></p>
+                        <h4 class="footer-col-title" data-editable="footer-locations-title">Locations</h4>
+                        <p data-editable="footer-location-sweden">Sweden — Stockholm</p>
+                        <p data-editable="footer-location-italy">Italy — Marche</p>
                     </div>
                     <div class="footer-col">
-                        <h4 class="footer-col-title">Follow</h4>
+                        <h4 class="footer-col-title" data-editable="footer-follow-title">Follow</h4>
                         <a href="https://instagram.com/lux.residency" target="_blank"
                             data-i18n="nav.instagram">Instagram</a>
                         <a href="#" data-i18n="nav.linkedin">LinkedIn</a>
@@ -375,8 +449,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-i18n="footer.rights">© 2026 LUX ITALIA. ALL RIGHTS RESERVED.</p>
-                <p data-i18n="footer.authenticity">AUTHENTICITY IN EVERY DETAIL.</p>
+                <p data-i18n="footer.rights" data-editable="footer-rights">© 2026 LUX ITALIA. ALL RIGHTS RESERVED.</p>
+                <p data-i18n="footer.authenticity" data-editable="footer-authenticity">AUTHENTICITY IN EVERY DETAIL.</p>
             </div>
         </div>
     </footer>

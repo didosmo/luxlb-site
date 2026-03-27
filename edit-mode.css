@@ -1,0 +1,169 @@
+.edit-mode-panel {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    bottom: 16px;
+    width: min(420px, calc(100vw - 32px));
+    z-index: 3000;
+    background: rgba(247, 245, 242, 0.96);
+    border: 1px solid rgba(30, 30, 30, 0.1);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(20px);
+    color: #1e1e1e;
+}
+
+.edit-mode-panel__inner {
+    height: 100%;
+    overflow: auto;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.edit-mode-panel__header,
+.edit-mode-panel__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.edit-mode-panel__eyebrow {
+    margin: 0 0 4px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(30, 30, 30, 0.58);
+}
+
+.edit-mode-panel h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.edit-mode-panel__status {
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(30, 30, 30, 0.06);
+    font-size: 13px;
+    line-height: 1.45;
+    color: rgba(30, 30, 30, 0.72);
+}
+
+.edit-mode-button {
+    appearance: none;
+    border: none;
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 10px 14px;
+    font: inherit;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.edit-mode-button--ghost {
+    background: rgba(30, 30, 30, 0.08);
+    color: #1e1e1e;
+}
+
+.edit-mode-group {
+    border: 1px solid rgba(30, 30, 30, 0.1);
+    background: rgba(255, 255, 255, 0.74);
+}
+
+.edit-mode-group summary {
+    cursor: pointer;
+    padding: 12px 14px;
+    font-weight: 600;
+    list-style: none;
+}
+
+.edit-mode-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.edit-mode-control-list,
+.edit-mode-slot-list,
+[data-edit-mode-image-list] {
+    padding: 0 14px 14px;
+    display: grid;
+    gap: 12px;
+}
+
+.edit-mode-control,
+.edit-mode-image-card {
+    display: grid;
+    gap: 8px;
+}
+
+.edit-mode-control span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.edit-mode-control input[type="text"] {
+    width: 100%;
+    border: 1px solid rgba(30, 30, 30, 0.16);
+    background: #ffffff;
+    padding: 10px 12px;
+    font: inherit;
+    font-size: 13px;
+}
+
+.edit-mode-control__inputs {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+}
+
+.edit-mode-control output {
+    min-width: 58px;
+    font-size: 12px;
+    color: rgba(30, 30, 30, 0.64);
+    text-align: right;
+}
+
+.edit-mode-slot-button {
+    appearance: none;
+    width: 100%;
+    text-align: left;
+    border: 1px solid rgba(30, 30, 30, 0.12);
+    background: #ffffff;
+    padding: 10px 12px;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.edit-mode-image-card {
+    padding: 12px;
+    border: 1px solid rgba(30, 30, 30, 0.1);
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.edit-mode-image-card[data-selected="true"] {
+    border-color: rgba(185, 111, 76, 0.9);
+    box-shadow: inset 0 0 0 1px rgba(185, 111, 76, 0.3);
+}
+
+body[data-edit-mode="true"] [data-image-slot][data-edit-selected] {
+    outline: 3px solid rgba(185, 111, 76, 0.95);
+    outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+    .edit-mode-panel {
+        top: auto;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        max-height: 72vh;
+    }
+}

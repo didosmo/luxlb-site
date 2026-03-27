@@ -1,6 +1,339 @@
 let currentLang = localStorage.getItem('lux_lang') || 'en';
 let translations = {};
 
+const EDIT_MODE_SECRET_KEY = 'lux-edit-2026';
+const DESIGN_CONFIG_STORAGE_KEY = 'lux_design_config_v1';
+const EDIT_ACCESS_STORAGE_KEY = 'lux_edit_access_granted_v1';
+const TOKEN_KEY_MAP = {
+    heroTitleDesktop: '--hero-title-size-desktop',
+    heroTitleTablet: '--hero-title-size-tablet',
+    heroTitleMobile: '--hero-title-size-mobile',
+    h1SizeDesktop: '--h1-size-desktop',
+    h1SizeTablet: '--h1-size-tablet',
+    h1SizeMobile: '--h1-size-mobile',
+    h2SizeDesktop: '--h2-size-desktop',
+    h2SizeTablet: '--h2-size-tablet',
+    h2SizeMobile: '--h2-size-mobile',
+    bodySizeDesktop: '--body-size-desktop',
+    bodySizeTablet: '--body-size-tablet',
+    bodySizeMobile: '--body-size-mobile',
+    buttonTextSizeDesktop: '--button-text-size-desktop',
+    buttonTextSizeTablet: '--button-text-size-tablet',
+    buttonTextSizeMobile: '--button-text-size-mobile',
+    headingLineHeight: '--line-height-heading',
+    bodyLineHeight: '--line-height-body',
+    headlineLetterSpacing: '--headline-letter-spacing',
+    sectionSpacingDesktop: '--section-spacing-desktop',
+    sectionSpacingTablet: '--section-spacing-tablet',
+    sectionSpacingMobile: '--section-spacing-mobile',
+    contentGapDesktop: '--content-gap-desktop',
+    contentGapTablet: '--content-gap-tablet',
+    contentGapMobile: '--content-gap-mobile',
+    containerMaxWidth: '--container-max-width',
+    sectionContentMaxWidth: '--section-content-max-width',
+    heroHeightDesktop: '--hero-height-desktop',
+    heroHeightTablet: '--hero-height-tablet',
+    heroHeightMobile: '--hero-height-mobile',
+    heroTextMaxWidth: '--hero-text-max-width',
+    heroTextOffsetY: '--hero-text-offset-y',
+    buttonPaddingXDesktop: '--button-padding-x-desktop',
+    buttonPaddingXTablet: '--button-padding-x-tablet',
+    buttonPaddingXMobile: '--button-padding-x-mobile',
+    buttonPaddingYDesktop: '--button-padding-y-desktop',
+    buttonPaddingYTablet: '--button-padding-y-tablet',
+    buttonPaddingYMobile: '--button-padding-y-mobile'
+};
+
+function slugifyValue(value) {
+    return String(value || '')
+        .toLowerCase()
+        .trim()
+        .replace(/&/g, 'and')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '') || 'item';
+}
+
+function getPageEditScope() {
+    const path = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '').replace(/\/$/, '');
+    return slugifyValue(path || 'home');
+}
+
+function getSectionEditScope(element) {
+    const section = element.closest('section');
+    if (!section) return 'global';
+    if (section.id) return slugifyValue(section.id);
+    const namedClass = Array.from(section.classList).find((className) => className !== 'visible');
+    return slugifyValue(namedClass || 'section');
+}
+
+function buildEditableKey(element, role, index) {
+    return `${getPageEditScope()}-${getSectionEditScope(element)}-${role}-${index}`;
+}
+
+function parseBackgroundImageUrl(value) {
+    if (!value || value === 'none') return '';
+    const match = value.match(/url\((['"]?)(.*?)\1\)/i);
+    return match ? match[2] : '';
+}
+
+function isImagePlaceholderElement(element) {
+    return /^\s*\[IMAGE:.*\]\s*$/i.test((element.textContent || '').trim());
+}
+
+function getDefaultGeneratedImageSrc() {
+    return `${getPathPrefix()}assets/hero-bg.jpg`;
+}
+
+function getGeneratedImageRatioClass(element) {
+    if (element.closest('.hero')) return 'editable-image-frame--hero';
+    if (element.closest('.grid-3, .grid-4, article.service-card')) return 'editable-image-frame--card';
+    if (element.closest('.service-card') && element.closest('.service-card').querySelector('h3, h4, p:not(.text-uppercase), a.btn, a.discovery-btn')) {
+        return 'editable-image-frame--card';
+    }
+    return 'editable-image-frame--landscape';
+}
+
+function ensureHeroImageSlot(heroSection) {
+    if (!heroSection || heroSection.querySelector('[data-image-slot]')) return;
+
+    const imageUrl = parseBackgroundImageUrl(heroSection.style.backgroundImage) || getDefaultGeneratedImageSrc();
+    const frame = document.createElement('div');
+    frame.className = 'editable-image-frame editable-image-frame--hero hero-media';
+
+    const img = document.createElement('img');
+    img.className = 'editable-image';
+    img.src = imageUrl;
+    img.alt = (heroSection.querySelector('h1')?.textContent || document.title || 'Hero image').trim();
+    img.setAttribute('data-image-slot', `${getPageEditScope()}-${getSectionEditScope(heroSection)}-image-1`);
+
+    frame.appendChild(img);
+    heroSection.insertBefore(frame, heroSection.firstChild);
+    heroSection.style.backgroundImage = 'none';
+}
+
+function upgradeImagePlaceholders() {
+    const placeholders = Array.from(document.querySelectorAll('main section span, main section p, main section div'));
+    let imageIndex = 0;
+
+    placeholders.forEach((element) => {
+        if (!isImagePlaceholderElement(element)) return;
+        if (element.closest('.editable-image-frame') || element.closest('[data-image-slot]')) return;
+
+        imageIndex += 1;
+        const frame = document.createElement('div');
+        frame.className = `editable-image-frame ${getGeneratedImageRatioClass(element)}`;
+
+        const img = document.createElement('img');
+        img.className = 'editable-image';
+        img.src = getDefaultGeneratedImageSrc();
+        img.alt = element.textContent.replace(/^\s*\[IMAGE:\s*/i, '').replace(/\]\s*$/, '').trim() || 'Editable image';
+        img.setAttribute('data-image-slot', buildEditableKey(element, 'image', imageIndex));
+
+        frame.appendChild(img);
+        element.replaceWith(frame);
+    });
+}
+
+function isEligibleEditableText(element) {
+    if (!element || element.hasAttribute('data-image-slot') || element.closest('[data-image-slot]')) return false;
+    if (element.closest('header, nav, .mobile-nav-overlay, .dropdown-menu, .lang-switcher, .footer-legal-links')) return false;
+    if (element.closest('form')) return false;
+    if (!element.textContent || !element.textContent.trim()) return false;
+    if (isImagePlaceholderElement(element)) return false;
+
+    const tagName = element.tagName;
+    const allowedSpan = tagName === 'SPAN' && (element.classList.contains('kicker') || element.classList.contains('text-uppercase') || element.className.includes('label'));
+    const allowedTag = ['H1', 'H2', 'H3', 'H4', 'P', 'A', 'BUTTON'].includes(tagName) || allowedSpan;
+    if (!allowedTag) return false;
+
+    if (tagName === 'A' && !element.matches('.btn, .discovery-btn, .nav-cta, .footer-col a, .footer-cta a')) return false;
+    if (tagName === 'BUTTON' && !element.matches('.submit-btn')) return false;
+
+    return true;
+}
+
+function applySiteWideEditableMappings() {
+    document.querySelectorAll('main > section.hero').forEach(ensureHeroImageSlot);
+    upgradeImagePlaceholders();
+
+    const buckets = new Map();
+    const candidates = Array.from(document.querySelectorAll('main h1, main h2, main h3, main h4, main p, main a, main button, main span, .footer-cta h2, .footer-cta a, footer h4, footer p, footer a'));
+
+    candidates.forEach((element) => {
+        if (!isEligibleEditableText(element)) return;
+        if (element.hasAttribute('data-editable')) return;
+
+        const role = slugifyValue(
+            element.classList.contains('kicker') ? 'kicker' :
+            element.classList.contains('text-uppercase') ? 'label' :
+            element.tagName.toLowerCase()
+        );
+        const bucketKey = `${getPageEditScope()}-${getSectionEditScope(element)}-${role}`;
+        const count = (buckets.get(bucketKey) || 0) + 1;
+        buckets.set(bucketKey, count);
+        element.setAttribute('data-editable', `${bucketKey}-${count}`);
+    });
+
+    const imageCandidates = Array.from(document.querySelectorAll('main img, .footer-cta img, footer img'));
+    const imageBuckets = new Map();
+
+    imageCandidates.forEach((image) => {
+        if (image.hasAttribute('data-image-slot')) return;
+        const bucketKey = `${getPageEditScope()}-${getSectionEditScope(image)}-image`;
+        const count = (imageBuckets.get(bucketKey) || 0) + 1;
+        imageBuckets.set(bucketKey, count);
+        image.setAttribute('data-image-slot', `${bucketKey}-${count}`);
+    });
+
+    document.dispatchEvent(new CustomEvent('lux:editable-map-updated'));
+}
+
+function cloneDefaultConfig() {
+    return {
+        tokens: {},
+        text: {},
+        images: {}
+    };
+}
+
+function normalizeDesignConfig(rawConfig) {
+    const base = cloneDefaultConfig();
+    if (!rawConfig || typeof rawConfig !== 'object') return base;
+    if (rawConfig.tokens && typeof rawConfig.tokens === 'object') base.tokens = { ...rawConfig.tokens };
+    if (rawConfig.text && typeof rawConfig.text === 'object') base.text = { ...rawConfig.text };
+    if (rawConfig.images && typeof rawConfig.images === 'object') base.images = { ...rawConfig.images };
+    return base;
+}
+
+function getStoredDesignConfig() {
+    try {
+        return normalizeDesignConfig(JSON.parse(localStorage.getItem(DESIGN_CONFIG_STORAGE_KEY) || '{}'));
+    } catch (error) {
+        console.error('Unable to parse saved design config:', error);
+        return cloneDefaultConfig();
+    }
+}
+
+function saveDesignConfig(config) {
+    const normalized = normalizeDesignConfig(config);
+    localStorage.setItem(DESIGN_CONFIG_STORAGE_KEY, JSON.stringify(normalized));
+    window.__LUX_DESIGN_CONFIG__ = normalized;
+    return normalized;
+}
+
+function getConfigTextValue(element, value) {
+    if (typeof value !== 'string') return null;
+    if (element.tagName === 'A') return value;
+    return value;
+}
+
+function applyDesignConfig(config = getStoredDesignConfig()) {
+    const normalized = normalizeDesignConfig(config);
+    window.__LUX_DESIGN_CONFIG__ = normalized;
+
+    Object.entries(TOKEN_KEY_MAP).forEach(([configKey, cssVariable]) => {
+        const value = normalized.tokens[configKey];
+        if (typeof value === 'string' && value.trim()) {
+            document.documentElement.style.setProperty(cssVariable, value);
+        } else {
+            document.documentElement.style.removeProperty(cssVariable);
+        }
+    });
+
+    document.querySelectorAll('[data-editable]').forEach((element) => {
+        const editableKey = element.getAttribute('data-editable');
+        if (!element.dataset.defaultText) {
+            element.dataset.defaultText = element.textContent;
+        }
+        const nextValue = getConfigTextValue(element, normalized.text[editableKey]);
+        element.textContent = nextValue === null ? element.dataset.defaultText : nextValue;
+        const activeValue = nextValue === null ? element.dataset.defaultText : nextValue;
+        if (element.tagName === 'A' && editableKey.includes('email') && activeValue.includes('@')) {
+            element.href = `mailto:${activeValue}`;
+        }
+    });
+
+    document.querySelectorAll('[data-image-slot]').forEach((image) => {
+        const slotKey = image.getAttribute('data-image-slot');
+        if (!image.dataset.defaultSrc) {
+            image.dataset.defaultSrc = image.getAttribute('src') || '';
+        }
+        const slotConfig = normalized.images[slotKey];
+        if (slotConfig && typeof slotConfig === 'object' && typeof slotConfig.src === 'string' && slotConfig.src.trim()) {
+            image.src = slotConfig.src;
+        } else {
+            image.src = image.dataset.defaultSrc;
+        }
+        const positionX = slotConfig && typeof slotConfig.positionX === 'string' && slotConfig.positionX.trim() ? slotConfig.positionX : '50%';
+        const positionY = slotConfig && typeof slotConfig.positionY === 'string' && slotConfig.positionY.trim() ? slotConfig.positionY : '50%';
+        image.style.objectPosition = `${positionX} ${positionY}`;
+    });
+
+    return normalized;
+}
+
+function grantEditAccessFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('key') === EDIT_MODE_SECRET_KEY) {
+        localStorage.setItem(EDIT_ACCESS_STORAGE_KEY, 'true');
+        return true;
+    }
+    return localStorage.getItem(EDIT_ACCESS_STORAGE_KEY) === 'true';
+}
+
+function hasEditAccess() {
+    return grantEditAccessFromUrl();
+}
+
+function isEditRequested() {
+    return new URLSearchParams(window.location.search).get('edit') === 'true';
+}
+
+function setEditQueryState(enabled) {
+    const url = new URL(window.location.href);
+    if (enabled) {
+        url.searchParams.set('edit', 'true');
+        if (url.searchParams.get('key') !== EDIT_MODE_SECRET_KEY && hasEditAccess()) {
+            url.searchParams.delete('key');
+        }
+    } else {
+        url.searchParams.delete('edit');
+        url.searchParams.delete('key');
+    }
+    window.location.href = url.toString();
+}
+
+function loadEditModeAssets() {
+    if (document.querySelector('link[data-edit-mode-asset="css"]') || document.querySelector('script[data-edit-mode-asset="js"]')) return;
+
+    const prefix = getPathPrefix();
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = `${prefix}edit-mode.css`;
+    css.setAttribute('data-edit-mode-asset', 'css');
+    document.head.appendChild(css);
+
+    const script = document.createElement('script');
+    script.src = `${prefix}edit-mode.js`;
+    script.defer = true;
+    script.setAttribute('data-edit-mode-asset', 'js');
+    document.body.appendChild(script);
+}
+
+function setupEditModeShortcut() {
+    document.addEventListener('keydown', (event) => {
+        const isToggleShortcut = (event.metaKey || event.ctrlKey) && event.shiftKey && event.key.toLowerCase() === 'e';
+        if (!isToggleShortcut || !hasEditAccess()) return;
+        event.preventDefault();
+        setEditQueryState(!isEditRequested());
+    });
+}
+
+function maybeLoadEditMode() {
+    if (!isEditRequested() || !hasEditAccess()) return;
+    loadEditModeAssets();
+}
+
 function getPathPrefix() {
     const path = window.location.pathname;
     const segments = path.split('/').filter(Boolean);
@@ -209,8 +542,13 @@ async function loadTranslations() {
         if (isHome) {
             populateOpportunityList();
         }
+
+        applySiteWideEditableMappings();
+        applyDesignConfig();
     } catch (error) {
         console.error('Error loading translations:', error);
+    } finally {
+        applySiteWideEditableMappings();
     }
 }
 
@@ -253,6 +591,8 @@ function updateContent() {
             btn.classList.remove('active');
         }
     });
+
+    applyDesignConfig();
 }
 
 function getTranslation(path) {
@@ -722,6 +1062,7 @@ function setupUI() {
                 populateOpportunityList();
                 populateFutureRegions();
             }
+            applySiteWideEditableMappings();
         });
     });
 
@@ -757,12 +1098,34 @@ function setupUI() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+    window.LUXEditRuntime = {
+        EDIT_MODE_SECRET_KEY,
+        DESIGN_CONFIG_STORAGE_KEY,
+        TOKEN_KEY_MAP,
+        getPathPrefix,
+        getPageEditScope,
+        getStoredDesignConfig,
+        saveDesignConfig,
+        applyDesignConfig,
+        normalizeDesignConfig,
+        applySiteWideEditableMappings
+    };
+
+    grantEditAccessFromUrl();
+    setupEditModeShortcut();
     normalizeNavigationStructure();
     ensureBrandLogoDot();
-    loadTranslations();
+    applySiteWideEditableMappings();
+    applyDesignConfig();
+    const translationsPromise = loadTranslations();
     setupUI();
     setupDesktopDropdowns();
     setupImagePerformance();
     ensureFooterLegalLinks();
     initCookieConsent();
+    Promise.resolve(translationsPromise).finally(() => {
+        applySiteWideEditableMappings();
+        applyDesignConfig();
+        maybeLoadEditMode();
+    });
 });

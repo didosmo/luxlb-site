@@ -3859,3 +3859,253 @@ main section > .container > .service-card[style*="justify-content: center"] {
         margin-bottom: 28px;
     }
 }
+
+/* ============================================================
+   EDIT MODE TOKEN LAYER
+   Controlled overrides for content-safe visual adjustments.
+   ============================================================ */
+
+:root {
+    --edit-outline-color: rgba(185, 111, 76, 0.9);
+
+    /* Typography */
+    --hero-title-size-desktop: 62px;
+    --hero-title-size-tablet: 52px;
+    --hero-title-size-mobile: 38px;
+    --h1-size-desktop: 62px;
+    --h1-size-tablet: 52px;
+    --h1-size-mobile: 38px;
+    --h2-size-desktop: 42px;
+    --h2-size-tablet: 34px;
+    --h2-size-mobile: 28px;
+    --body-size-desktop: 18px;
+    --body-size-tablet: 17px;
+    --body-size-mobile: 16px;
+    --button-text-size-desktop: 11px;
+    --button-text-size-tablet: 11px;
+    --button-text-size-mobile: 11px;
+    --line-height-body: 1.6;
+    --line-height-heading: 1.15;
+    --headline-letter-spacing: 0em;
+
+    /* Spacing */
+    --section-spacing-desktop: 120px;
+    --section-spacing-tablet: 96px;
+    --section-spacing-mobile: 80px;
+    --content-gap-desktop: 60px;
+    --content-gap-tablet: 40px;
+    --content-gap-mobile: 24px;
+
+    /* Layout */
+    --container-max-width: 1200px;
+    --section-content-max-width: 900px;
+    --hero-height-desktop: 100svh;
+    --hero-height-tablet: 90svh;
+    --hero-height-mobile: 85svh;
+    --hero-text-max-width: 900px;
+    --hero-text-offset-y: 0px;
+
+    /* Buttons */
+    --button-padding-x-desktop: 40px;
+    --button-padding-x-tablet: 32px;
+    --button-padding-x-mobile: 24px;
+    --button-padding-y-desktop: 14px;
+    --button-padding-y-tablet: 14px;
+    --button-padding-y-mobile: 12px;
+
+    /* Active breakpoint values */
+    --hero-title-size: var(--hero-title-size-mobile);
+    --h1-size: var(--h1-size-mobile);
+    --h2-size: var(--h2-size-mobile);
+    --body-size: var(--body-size-mobile);
+    --button-text-size: var(--button-text-size-mobile);
+    --section-spacing: var(--section-spacing-mobile);
+    --content-gap: var(--content-gap-mobile);
+    --hero-height: var(--hero-height-mobile);
+    --button-padding-x: var(--button-padding-x-mobile);
+    --button-padding-y: var(--button-padding-y-mobile);
+}
+
+@media (min-width: 769px) {
+    :root {
+        --hero-title-size: var(--hero-title-size-tablet);
+        --h1-size: var(--h1-size-tablet);
+        --h2-size: var(--h2-size-tablet);
+        --body-size: var(--body-size-tablet);
+        --button-text-size: var(--button-text-size-tablet);
+        --section-spacing: var(--section-spacing-tablet);
+        --content-gap: var(--content-gap-tablet);
+        --hero-height: var(--hero-height-tablet);
+        --button-padding-x: var(--button-padding-x-tablet);
+        --button-padding-y: var(--button-padding-y-tablet);
+    }
+}
+
+@media (min-width: 1025px) {
+    :root {
+        --hero-title-size: var(--hero-title-size-desktop);
+        --h1-size: var(--h1-size-desktop);
+        --h2-size: var(--h2-size-desktop);
+        --body-size: var(--body-size-desktop);
+        --button-text-size: var(--button-text-size-desktop);
+        --section-spacing: var(--section-spacing-desktop);
+        --content-gap: var(--content-gap-desktop);
+        --hero-height: var(--hero-height-desktop);
+        --button-padding-x: var(--button-padding-x-desktop);
+        --button-padding-y: var(--button-padding-y-desktop);
+    }
+}
+
+.container {
+    max-width: var(--container-max-width);
+}
+
+.max-900 {
+    max-width: var(--section-content-max-width);
+}
+
+.max-700 {
+    max-width: min(700px, var(--section-content-max-width));
+}
+
+section {
+    padding-top: var(--section-spacing);
+    padding-bottom: var(--section-spacing);
+}
+
+.grid-2,
+.grid-3,
+#properties-grid,
+#future-regions-grid,
+#services-grid,
+.footer-inner,
+.footer-cols,
+.contact-methods,
+.custom-form,
+.form-row {
+    gap: var(--content-gap);
+}
+
+h1,
+.h1 {
+    font-size: var(--h1-size);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--headline-letter-spacing);
+}
+
+h2,
+.h2 {
+    font-size: var(--h2-size);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--headline-letter-spacing);
+}
+
+p,
+.body-text,
+.service-card-text,
+.footer-tagline,
+.footer-bottom p,
+.footer-col p,
+.footer-col a {
+    font-size: var(--body-size);
+    line-height: var(--line-height-body);
+}
+
+.btn,
+.discovery-btn,
+.submit-btn {
+    font-size: var(--button-text-size);
+}
+
+.btn {
+    padding: var(--button-padding-y) var(--button-padding-x);
+}
+
+.hero {
+    min-height: var(--hero-height);
+    background-image: none;
+}
+
+.hero-primary,
+.hero-secondary,
+.hero-minimal {
+    min-height: var(--hero-height);
+}
+
+.hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-content {
+    max-width: var(--hero-text-max-width);
+    transform: translateY(var(--hero-text-offset-y));
+}
+
+.hero h1,
+.hero .h1 {
+    font-size: var(--hero-title-size);
+    max-width: var(--hero-text-max-width);
+}
+
+.editable-image-frame {
+    position: relative;
+    overflow: hidden;
+    background: rgba(30, 30, 30, 0.06);
+}
+
+.editable-image-frame--hero {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.editable-image-frame--landscape {
+    aspect-ratio: 3 / 2;
+}
+
+.editable-image-frame--card {
+    aspect-ratio: 4 / 3;
+}
+
+.editable-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    display: block;
+}
+
+.service-card--media,
+.service-card--content {
+    padding: 0;
+    overflow: hidden;
+}
+
+.service-card__body {
+    padding: var(--sp-lg);
+}
+
+.service-card--media .editable-image-frame {
+    height: 100%;
+}
+
+body[data-edit-mode="true"] [data-editable],
+body[data-edit-mode="true"] [data-image-slot] {
+    cursor: pointer;
+}
+
+body[data-edit-mode="true"] [data-editable]:hover,
+body[data-edit-mode="true"] [data-image-slot]:hover {
+    outline: 2px solid var(--edit-outline-color);
+    outline-offset: 4px;
+}
+
+body[data-edit-mode="true"] [data-editable][data-edit-active="true"] {
+    outline: 2px solid var(--edit-outline-color);
+    outline-offset: 4px;
+    background: rgba(255, 255, 255, 0.82);
+    color: var(--c-text);
+}
